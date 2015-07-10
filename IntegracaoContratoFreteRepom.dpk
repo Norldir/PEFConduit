@@ -1,0 +1,48 @@
+package IntegracaoContratoFreteRepom;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  xmlrtl,
+  inet,
+  dbrtl,
+  soaprtl,
+  janxml,
+  T5SOAP;
+
+contains
+  urpm_Cadastros_v1_00 in 'Repom\urpm_Cadastros_v1_00.pas',
+  urpm_ValidacaoAberturaContrato_v1_00 in 'Repom\urpm_ValidacaoAberturaContrato_v1_00.pas',
+  urpm_soap_v1_00 in 'Repom\urpm_soap_v1_00.pas',
+  urpm_AberturaContrato_v1_00 in 'Repom\urpm_AberturaContrato_v1_00.pas',
+  urpm_AberturaContratoRetorno_v1_00 in 'Repom\urpm_AberturaContratoRetorno_v1_00.pas',
+  urpm_CancelamentoContrato_v1_00 in 'Repom\urpm_CancelamentoContrato_v1_00.pas',
+  urpm_EmiteContabil_v1_00 in 'Repom\urpm_EmiteContabil_v1_00.pas',
+  urpm_jxml_EmiteContabil_v1_00 in 'Repom\urpm_jxml_EmiteContabil_v1_00.pas',
+  urpm_jxml_EmiteFinanceiro_v1_00 in 'Repom\urpm_jxml_EmiteFinanceiro_v1_00.pas',
+  urpm_jxml_ConsultaContrato_v1_00 in 'Repom\urpm_jxml_ConsultaContrato_v1_00.pas';
+
+end.

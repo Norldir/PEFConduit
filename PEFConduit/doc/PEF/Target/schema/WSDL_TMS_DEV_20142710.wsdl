@@ -1,0 +1,1837 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TMSService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_ITMSService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:SecureConversationToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:BootstrapPolicy>
+                  <wsp:Policy>
+                    <sp:SignedParts>
+                      <sp:Body />
+                      <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+                    </sp:SignedParts>
+                    <sp:EncryptedParts>
+                      <sp:Body />
+                    </sp:EncryptedParts>
+                    <sp:TransportBinding>
+                      <wsp:Policy>
+                        <sp:TransportToken>
+                          <wsp:Policy>
+                            <sp:HttpsToken RequireClientCertificate="false" />
+                          </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                          <wsp:Policy>
+                            <sp:Basic256 />
+                          </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                          <wsp:Policy>
+                            <sp:Strict />
+                          </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp />
+                      </wsp:Policy>
+                    </sp:TransportBinding>
+                    <sp:SignedSupportingTokens>
+                      <wsp:Policy>
+                        <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                          <wsp:Policy>
+                            <sp:WssUsernameToken10 />
+                          </wsp:Policy>
+                        </sp:UsernameToken>
+                      </wsp:Policy>
+                    </sp:SignedSupportingTokens>
+                    <sp:Wss11>
+                      <wsp:Policy />
+                    </sp:Wss11>
+                    <sp:Trust10>
+                      <wsp:Policy>
+                        <sp:MustSupportIssuedTokens />
+                        <sp:RequireClientEntropy />
+                        <sp:RequireServerEntropy />
+                      </wsp:Policy>
+                    </sp:Trust10>
+                  </wsp:Policy>
+                </sp:BootstrapPolicy>
+              </wsp:Policy>
+            </sp:SecureConversationToken>
+          </wsp:Policy>
+        </sp:EndorsingSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens />
+            <sp:RequireClientEntropy />
+            <sp:RequireServerEntropy />
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_ITMSService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITMSService_CadastrarCentroDeCusto_InputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarCentroDeCusto" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_CadastrarCentroDeCusto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarCentroDeCustoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterCentroDeCustoPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterCentroDeCustoPorId" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterCentroDeCustoPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterCentroDeCustoPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterCentroDeCusto_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterCentroDeCusto" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterCentroDeCusto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterCentroDeCustoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AtualizarCentroDeCusto_InputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarCentroDeCusto" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AtualizarCentroDeCusto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarCentroDeCustoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_BuscarCentrosDeCustosAtivos_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarCentrosDeCustosAtivos" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_BuscarCentrosDeCustosAtivos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarCentrosDeCustosAtivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_CadastrarParticipante_InputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarParticipante" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_CadastrarParticipante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarParticipanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterParticipantePorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterParticipantePorId" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterParticipantePorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterParticipantePorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterParticipante_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterParticipante" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterParticipante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterParticipanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AtualizarParticipante_InputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarParticipante" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AtualizarParticipante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarParticipanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_BuscarParticipantesAtivos_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarParticipantesAtivos" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_BuscarParticipantesAtivos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarParticipantesAtivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_CadastrarAutonomo_InputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarAutonomo" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_CadastrarAutonomo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarAutonomoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_CadastrarEquiparado_InputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarEquiparado" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_CadastrarEquiparado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarEquiparadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ConsultarSituacaoTransportadorAntt_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarSituacaoTransportadorAntt" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ConsultarSituacaoTransportadorAntt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarSituacaoTransportadorAnttResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AtualizarOperacao_InputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarOperacao" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AtualizarOperacao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarOperacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AnularOperacao_InputMessage">
+    <wsdl:part name="parameters" element="tns:AnularOperacao" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AnularOperacao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AnularOperacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_CadastrarOperacaoDescritiva_InputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarOperacaoDescritiva" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_CadastrarOperacaoDescritiva_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarOperacaoDescritivaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_RegistrarOperacao_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarOperacao" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_RegistrarOperacao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarOperacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_CancelarOperacao_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelarOperacao" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_CancelarOperacao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelarOperacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_RetificarOperacao_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetificarOperacao" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_RetificarOperacao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetificarOperacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_RetificarPlacasOperacao_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetificarPlacasOperacao" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_RetificarPlacasOperacao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetificarPlacasOperacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_EncerrarOperacao_InputMessage">
+    <wsdl:part name="parameters" element="tns:EncerrarOperacao" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_EncerrarOperacao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EncerrarOperacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_FinalizarOperacao_InputMessage">
+    <wsdl:part name="parameters" element="tns:FinalizarOperacao" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_FinalizarOperacao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FinalizarOperacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterContratado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterContratado" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterContratado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterContratadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterMunicipio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterMunicipio" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterMunicipio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterMunicipioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterMunicipioPorCodigoIBGE_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterMunicipioPorCodigoIBGE" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterMunicipioPorCodigoIBGE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterMunicipioPorCodigoIBGEResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterNaturezaCarga_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterNaturezaCarga" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterNaturezaCarga_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterNaturezaCargaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_BuscarOperacaoTranporteParcelasPorPeriodo_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarOperacaoTranporteParcelasPorPeriodo" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_BuscarOperacaoTranporteParcelasPorPeriodo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarOperacaoTranporteParcelasPorPeriodoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_BuscarOperacaoTranporteParcelas_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarOperacaoTranporteParcelas" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_BuscarOperacaoTranporteParcelas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarOperacaoTranporteParcelasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterOperacaoPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterOperacaoPorId" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterOperacaoPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterOperacaoPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterOperacaoPorCIOT_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterOperacaoPorCIOT" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterOperacaoPorCIOT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterOperacaoPorCIOTResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ConferirDocumentacaoOperacaoTransporteTriagem_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConferirDocumentacaoOperacaoTransporteTriagem" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ConferirDocumentacaoOperacaoTransporteTriagem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConferirDocumentacaoOperacaoTransporteTriagemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AssociarCartaoAutonomo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssociarCartaoAutonomo" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AssociarCartaoAutonomo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssociarCartaoAutonomoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AssociarCartaoEquiparado_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssociarCartaoEquiparado" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AssociarCartaoEquiparado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssociarCartaoEquiparadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AssociarCartaoNaoEquiparado_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssociarCartaoNaoEquiparado" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AssociarCartaoNaoEquiparado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssociarCartaoNaoEquiparadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AssociarCartaoMotorista_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssociarCartaoMotorista" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AssociarCartaoMotorista_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssociarCartaoMotoristaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_DesbloquearCartao_InputMessage">
+    <wsdl:part name="parameters" element="tns:DesbloquearCartao" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_DesbloquearCartao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DesbloquearCartaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ProcessarCargaFreteAvulsa_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessarCargaFreteAvulsa" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ProcessarCargaFreteAvulsa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessarCargaFreteAvulsaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_SubstituirCartaoDoPortador_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubstituirCartaoDoPortador" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_SubstituirCartaoDoPortador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubstituirCartaoDoPortadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AssociarCartaoEmpresa_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssociarCartaoEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AssociarCartaoEmpresa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssociarCartaoEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_BuscarParametrosComerciais_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarParametrosComerciais" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_BuscarParametrosComerciais_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarParametrosComerciaisResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ConsultarSaldoContaPrePagaVectio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarSaldoContaPrePagaVectio" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ConsultarSaldoContaPrePagaVectio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarSaldoContaPrePagaVectioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ConsultarExtratoContaPrePagaVectio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarExtratoContaPrePagaVectio" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ConsultarExtratoContaPrePagaVectio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarExtratoContaPrePagaVectioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_BuscarCobrancasGestora_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarCobrancasGestora" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_BuscarCobrancasGestora_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarCobrancasGestoraResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_EmitirReciboValePedagioVectio_InputMessage">
+    <wsdl:part name="parameters" element="tns:EmitirReciboValePedagioVectio" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_EmitirReciboValePedagioVectio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EmitirReciboValePedagioVectioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_EmitirReciboValePedagioViaFacil_InputMessage">
+    <wsdl:part name="parameters" element="tns:EmitirReciboValePedagioViaFacil" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_EmitirReciboValePedagioViaFacil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EmitirReciboValePedagioViaFacilResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_EmitirDeclaracaoOperacaoTransporte_InputMessage">
+    <wsdl:part name="parameters" element="tns:EmitirDeclaracaoOperacaoTransporte" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_EmitirDeclaracaoOperacaoTransporte_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EmitirDeclaracaoOperacaoTransporteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_EmitirContratoOperacaoTransporte_InputMessage">
+    <wsdl:part name="parameters" element="tns:EmitirContratoOperacaoTransporte" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_EmitirContratoOperacaoTransporte_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EmitirContratoOperacaoTransporteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_CadastrarTriagemDocumentoObjeto_InputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarTriagemDocumentoObjeto" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_CadastrarTriagemDocumentoObjeto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarTriagemDocumentoObjetoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterTriagemDocumentoObjeto_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterTriagemDocumentoObjeto" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterTriagemDocumentoObjeto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterTriagemDocumentoObjetoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AtualizarTriagemDocumentoObjeto_InputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarTriagemDocumentoObjeto" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AtualizarTriagemDocumentoObjeto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarTriagemDocumentoObjetoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_BuscarTriagemDocumentoObjetoAtivos_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarTriagemDocumentoObjetoAtivos" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_BuscarTriagemDocumentoObjetoAtivos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarTriagemDocumentoObjetoAtivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_CadastrarMotorista_InputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarMotorista" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_CadastrarMotorista_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarMotoristaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterMotorista_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterMotorista" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterMotorista_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterMotoristaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AtualizarMotorista_InputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarMotorista" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AtualizarMotorista_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarMotoristaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_BuscarMotoristasAtivos_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarMotoristasAtivos" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_BuscarMotoristasAtivos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarMotoristasAtivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterMotoristaPorCPF_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterMotoristaPorCPF" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterMotoristaPorCPF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterMotoristaPorCPFResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterMotoristaPorCPFTerceiros_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterMotoristaPorCPFTerceiros" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterMotoristaPorCPFTerceiros_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterMotoristaPorCPFTerceirosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ComprarValePedagioAvulso_InputMessage">
+    <wsdl:part name="parameters" element="tns:ComprarValePedagioAvulso" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ComprarValePedagioAvulso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ComprarValePedagioAvulsoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterLogRequisicoes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterLogRequisicoes" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterLogRequisicoes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterLogRequisicoesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterCustoRota_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterCustoRota" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_ObterCustoRota_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterCustoRotaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITMSService">
+    <wsdl:operation name="CadastrarCentroDeCusto">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICentroDeCustoExternal/CadastrarCentroDeCusto" message="tns:ITMSService_CadastrarCentroDeCusto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICentroDeCustoExternal/CadastrarCentroDeCustoResponse" message="tns:ITMSService_CadastrarCentroDeCusto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterCentroDeCustoPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICentroDeCustoExternal/ObterCentroDeCustoPorId" message="tns:ITMSService_ObterCentroDeCustoPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICentroDeCustoExternal/ObterCentroDeCustoPorIdResponse" message="tns:ITMSService_ObterCentroDeCustoPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterCentroDeCusto">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICentroDeCustoExternal/ObterCentroDeCusto" message="tns:ITMSService_ObterCentroDeCusto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICentroDeCustoExternal/ObterCentroDeCustoResponse" message="tns:ITMSService_ObterCentroDeCusto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarCentroDeCusto">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICentroDeCustoExternal/AtualizarCentroDeCusto" message="tns:ITMSService_AtualizarCentroDeCusto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICentroDeCustoExternal/AtualizarCentroDeCustoResponse" message="tns:ITMSService_AtualizarCentroDeCusto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCentrosDeCustosAtivos">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICentroDeCustoExternal/BuscarCentrosDeCustosAtivos" message="tns:ITMSService_BuscarCentrosDeCustosAtivos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICentroDeCustoExternal/BuscarCentrosDeCustosAtivosResponse" message="tns:ITMSService_BuscarCentrosDeCustosAtivos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarParticipante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParticipanteExternal/CadastrarParticipante" message="tns:ITMSService_CadastrarParticipante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParticipanteExternal/CadastrarParticipanteResponse" message="tns:ITMSService_CadastrarParticipante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterParticipantePorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParticipanteExternal/ObterParticipantePorId" message="tns:ITMSService_ObterParticipantePorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParticipanteExternal/ObterParticipantePorIdResponse" message="tns:ITMSService_ObterParticipantePorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterParticipante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParticipanteExternal/ObterParticipante" message="tns:ITMSService_ObterParticipante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParticipanteExternal/ObterParticipanteResponse" message="tns:ITMSService_ObterParticipante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarParticipante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParticipanteExternal/AtualizarParticipante" message="tns:ITMSService_AtualizarParticipante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParticipanteExternal/AtualizarParticipanteResponse" message="tns:ITMSService_AtualizarParticipante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarParticipantesAtivos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParticipanteExternal/BuscarParticipantesAtivos" message="tns:ITMSService_BuscarParticipantesAtivos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParticipanteExternal/BuscarParticipantesAtivosResponse" message="tns:ITMSService_BuscarParticipantesAtivos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarAutonomo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParticipanteExternal/CadastrarAutonomo" message="tns:ITMSService_CadastrarAutonomo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParticipanteExternal/CadastrarAutonomoResponse" message="tns:ITMSService_CadastrarAutonomo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarEquiparado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParticipanteExternal/CadastrarEquiparado" message="tns:ITMSService_CadastrarEquiparado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParticipanteExternal/CadastrarEquiparadoResponse" message="tns:ITMSService_CadastrarEquiparado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSituacaoTransportadorAntt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParticipanteExternal/ConsultarSituacaoTransportadorAntt" message="tns:ITMSService_ConsultarSituacaoTransportadorAntt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParticipanteExternal/ConsultarSituacaoTransportadorAnttResponse" message="tns:ITMSService_ConsultarSituacaoTransportadorAntt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarOperacao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/AtualizarOperacao" message="tns:ITMSService_AtualizarOperacao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/AtualizarOperacaoResponse" message="tns:ITMSService_AtualizarOperacao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AnularOperacao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/AnularOperacao" message="tns:ITMSService_AnularOperacao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/AnularOperacaoResponse" message="tns:ITMSService_AnularOperacao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarOperacaoDescritiva">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/CadastrarOperacaoDescritiva" message="tns:ITMSService_CadastrarOperacaoDescritiva_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/CadastrarOperacaoDescritivaResponse" message="tns:ITMSService_CadastrarOperacaoDescritiva_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarOperacao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/RegistrarOperacao" message="tns:ITMSService_RegistrarOperacao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/RegistrarOperacaoResponse" message="tns:ITMSService_RegistrarOperacao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelarOperacao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/CancelarOperacao" message="tns:ITMSService_CancelarOperacao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/CancelarOperacaoResponse" message="tns:ITMSService_CancelarOperacao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetificarOperacao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/RetificarOperacao" message="tns:ITMSService_RetificarOperacao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/RetificarOperacaoResponse" message="tns:ITMSService_RetificarOperacao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetificarPlacasOperacao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/RetificarPlacasOperacao" message="tns:ITMSService_RetificarPlacasOperacao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/RetificarPlacasOperacaoResponse" message="tns:ITMSService_RetificarPlacasOperacao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EncerrarOperacao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/EncerrarOperacao" message="tns:ITMSService_EncerrarOperacao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/EncerrarOperacaoResponse" message="tns:ITMSService_EncerrarOperacao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FinalizarOperacao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/FinalizarOperacao" message="tns:ITMSService_FinalizarOperacao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/FinalizarOperacaoResponse" message="tns:ITMSService_FinalizarOperacao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterContratado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/ObterContratado" message="tns:ITMSService_ObterContratado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/ObterContratadoResponse" message="tns:ITMSService_ObterContratado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterMunicipio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/ObterMunicipio" message="tns:ITMSService_ObterMunicipio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/ObterMunicipioResponse" message="tns:ITMSService_ObterMunicipio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterMunicipioPorCodigoIBGE">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/ObterMunicipioPorCodigoIBGE" message="tns:ITMSService_ObterMunicipioPorCodigoIBGE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/ObterMunicipioPorCodigoIBGEResponse" message="tns:ITMSService_ObterMunicipioPorCodigoIBGE_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterNaturezaCarga">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/ObterNaturezaCarga" message="tns:ITMSService_ObterNaturezaCarga_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/ObterNaturezaCargaResponse" message="tns:ITMSService_ObterNaturezaCarga_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarOperacaoTranporteParcelasPorPeriodo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/BuscarOperacaoTranporteParcelasPorPeriodo" message="tns:ITMSService_BuscarOperacaoTranporteParcelasPorPeriodo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/BuscarOperacaoTranporteParcelasPorPeriodoResponse" message="tns:ITMSService_BuscarOperacaoTranporteParcelasPorPeriodo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarOperacaoTranporteParcelas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/BuscarOperacaoTranporteParcelas" message="tns:ITMSService_BuscarOperacaoTranporteParcelas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/BuscarOperacaoTranporteParcelasResponse" message="tns:ITMSService_BuscarOperacaoTranporteParcelas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterOperacaoPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/ObterOperacaoPorId" message="tns:ITMSService_ObterOperacaoPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/ObterOperacaoPorIdResponse" message="tns:ITMSService_ObterOperacaoPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterOperacaoPorCIOT">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/ObterOperacaoPorCIOT" message="tns:ITMSService_ObterOperacaoPorCIOT_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/ObterOperacaoPorCIOTResponse" message="tns:ITMSService_ObterOperacaoPorCIOT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConferirDocumentacaoOperacaoTransporteTriagem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/ConferirDocumentacaoOperacaoTransporteTriagem" message="tns:ITMSService_ConferirDocumentacaoOperacaoTransporteTriagem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperacaoTransporteExternal/ConferirDocumentacaoOperacaoTransporteTriagemResponse" message="tns:ITMSService_ConferirDocumentacaoOperacaoTransporteTriagem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssociarCartaoAutonomo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICartaoExternal/AssociarCartaoAutonomo" message="tns:ITMSService_AssociarCartaoAutonomo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICartaoExternal/AssociarCartaoAutonomoResponse" message="tns:ITMSService_AssociarCartaoAutonomo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssociarCartaoEquiparado">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICartaoExternal/AssociarCartaoEquiparado" message="tns:ITMSService_AssociarCartaoEquiparado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICartaoExternal/AssociarCartaoEquiparadoResponse" message="tns:ITMSService_AssociarCartaoEquiparado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssociarCartaoNaoEquiparado">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICartaoExternal/AssociarCartaoNaoEquiparado" message="tns:ITMSService_AssociarCartaoNaoEquiparado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICartaoExternal/AssociarCartaoNaoEquiparadoResponse" message="tns:ITMSService_AssociarCartaoNaoEquiparado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssociarCartaoMotorista">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICartaoExternal/AssociarCartaoMotorista" message="tns:ITMSService_AssociarCartaoMotorista_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICartaoExternal/AssociarCartaoMotoristaResponse" message="tns:ITMSService_AssociarCartaoMotorista_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DesbloquearCartao">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICartaoExternal/DesbloquearCartao" message="tns:ITMSService_DesbloquearCartao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICartaoExternal/DesbloquearCartaoResponse" message="tns:ITMSService_DesbloquearCartao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessarCargaFreteAvulsa">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICartaoExternal/ProcessarCargaFreteAvulsa" message="tns:ITMSService_ProcessarCargaFreteAvulsa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICartaoExternal/ProcessarCargaFreteAvulsaResponse" message="tns:ITMSService_ProcessarCargaFreteAvulsa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubstituirCartaoDoPortador">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICartaoExternal/SubstituirCartaoDoPortador" message="tns:ITMSService_SubstituirCartaoDoPortador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICartaoExternal/SubstituirCartaoDoPortadorResponse" message="tns:ITMSService_SubstituirCartaoDoPortador_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssociarCartaoEmpresa">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICartaoExternal/AssociarCartaoEmpresa" message="tns:ITMSService_AssociarCartaoEmpresa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICartaoExternal/AssociarCartaoEmpresaResponse" message="tns:ITMSService_AssociarCartaoEmpresa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarParametrosComerciais">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFinanceiroExternal/BuscarParametrosComerciais" message="tns:ITMSService_BuscarParametrosComerciais_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFinanceiroExternal/BuscarParametrosComerciaisResponse" message="tns:ITMSService_BuscarParametrosComerciais_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSaldoContaPrePagaVectio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFinanceiroExternal/ConsultarSaldoContaPrePagaVectio" message="tns:ITMSService_ConsultarSaldoContaPrePagaVectio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFinanceiroExternal/ConsultarSaldoContaPrePagaVectioResponse" message="tns:ITMSService_ConsultarSaldoContaPrePagaVectio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarExtratoContaPrePagaVectio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFinanceiroExternal/ConsultarExtratoContaPrePagaVectio" message="tns:ITMSService_ConsultarExtratoContaPrePagaVectio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFinanceiroExternal/ConsultarExtratoContaPrePagaVectioResponse" message="tns:ITMSService_ConsultarExtratoContaPrePagaVectio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCobrancasGestora">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFinanceiroExternal/BuscarCobrancasGestora" message="tns:ITMSService_BuscarCobrancasGestora_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFinanceiroExternal/BuscarCobrancasGestoraResponse" message="tns:ITMSService_BuscarCobrancasGestora_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirReciboValePedagioVectio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmissaoDocumentosExternal/EmitirReciboValePedagioVectio" message="tns:ITMSService_EmitirReciboValePedagioVectio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmissaoDocumentosExternal/EmitirReciboValePedagioVectioResponse" message="tns:ITMSService_EmitirReciboValePedagioVectio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirReciboValePedagioViaFacil">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmissaoDocumentosExternal/EmitirReciboValePedagioViaFacil" message="tns:ITMSService_EmitirReciboValePedagioViaFacil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmissaoDocumentosExternal/EmitirReciboValePedagioViaFacilResponse" message="tns:ITMSService_EmitirReciboValePedagioViaFacil_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirDeclaracaoOperacaoTransporte">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmissaoDocumentosExternal/EmitirDeclaracaoOperacaoTransporte" message="tns:ITMSService_EmitirDeclaracaoOperacaoTransporte_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmissaoDocumentosExternal/EmitirDeclaracaoOperacaoTransporteResponse" message="tns:ITMSService_EmitirDeclaracaoOperacaoTransporte_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EmitirContratoOperacaoTransporte">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmissaoDocumentosExternal/EmitirContratoOperacaoTransporte" message="tns:ITMSService_EmitirContratoOperacaoTransporte_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmissaoDocumentosExternal/EmitirContratoOperacaoTransporteResponse" message="tns:ITMSService_EmitirContratoOperacaoTransporte_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarTriagemDocumentoObjeto">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITriagemDocumentoObjetoExternal/CadastrarTriagemDocumentoObjeto" message="tns:ITMSService_CadastrarTriagemDocumentoObjeto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITriagemDocumentoObjetoExternal/CadastrarTriagemDocumentoObjetoResponse" message="tns:ITMSService_CadastrarTriagemDocumentoObjeto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterTriagemDocumentoObjeto">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITriagemDocumentoObjetoExternal/ObterTriagemDocumentoObjeto" message="tns:ITMSService_ObterTriagemDocumentoObjeto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITriagemDocumentoObjetoExternal/ObterTriagemDocumentoObjetoResponse" message="tns:ITMSService_ObterTriagemDocumentoObjeto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarTriagemDocumentoObjeto">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITriagemDocumentoObjetoExternal/AtualizarTriagemDocumentoObjeto" message="tns:ITMSService_AtualizarTriagemDocumentoObjeto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITriagemDocumentoObjetoExternal/AtualizarTriagemDocumentoObjetoResponse" message="tns:ITMSService_AtualizarTriagemDocumentoObjeto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarTriagemDocumentoObjetoAtivos">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITriagemDocumentoObjetoExternal/BuscarTriagemDocumentoObjetoAtivos" message="tns:ITMSService_BuscarTriagemDocumentoObjetoAtivos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITriagemDocumentoObjetoExternal/BuscarTriagemDocumentoObjetoAtivosResponse" message="tns:ITMSService_BuscarTriagemDocumentoObjetoAtivos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarMotorista">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMotoristaExternal/CadastrarMotorista" message="tns:ITMSService_CadastrarMotorista_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMotoristaExternal/CadastrarMotoristaResponse" message="tns:ITMSService_CadastrarMotorista_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterMotorista">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMotoristaExternal/ObterMotorista" message="tns:ITMSService_ObterMotorista_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMotoristaExternal/ObterMotoristaResponse" message="tns:ITMSService_ObterMotorista_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarMotorista">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMotoristaExternal/AtualizarMotorista" message="tns:ITMSService_AtualizarMotorista_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMotoristaExternal/AtualizarMotoristaResponse" message="tns:ITMSService_AtualizarMotorista_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarMotoristasAtivos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMotoristaExternal/BuscarMotoristasAtivos" message="tns:ITMSService_BuscarMotoristasAtivos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMotoristaExternal/BuscarMotoristasAtivosResponse" message="tns:ITMSService_BuscarMotoristasAtivos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterMotoristaPorCPF">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMotoristaExternal/ObterMotoristaPorCPF" message="tns:ITMSService_ObterMotoristaPorCPF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMotoristaExternal/ObterMotoristaPorCPFResponse" message="tns:ITMSService_ObterMotoristaPorCPF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterMotoristaPorCPFTerceiros">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMotoristaExternal/ObterMotoristaPorCPFTerceiros" message="tns:ITMSService_ObterMotoristaPorCPFTerceiros_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMotoristaExternal/ObterMotoristaPorCPFTerceirosResponse" message="tns:ITMSService_ObterMotoristaPorCPFTerceiros_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ComprarValePedagioAvulso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IValePedagioExternal/ComprarValePedagioAvulso" message="tns:ITMSService_ComprarValePedagioAvulso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IValePedagioExternal/ComprarValePedagioAvulsoResponse" message="tns:ITMSService_ComprarValePedagioAvulso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterLogRequisicoes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDeveloperExternal/ObterLogRequisicoes" message="tns:ITMSService_ObterLogRequisicoes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDeveloperExternal/ObterLogRequisicoesResponse" message="tns:ITMSService_ObterLogRequisicoes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterCustoRota">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRotaExternal/ObterCustoRota" message="tns:ITMSService_ObterCustoRota_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRotaExternal/ObterCustoRotaResponse" message="tns:ITMSService_ObterCustoRota_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_ITMSService" type="tns:ITMSService">
+    <wsp:PolicyReference URI="#WSHttpBinding_ITMSService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CadastrarCentroDeCusto">
+      <soap12:operation soapAction="http://tempuri.org/ICentroDeCustoExternal/CadastrarCentroDeCusto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterCentroDeCustoPorId">
+      <soap12:operation soapAction="http://tempuri.org/ICentroDeCustoExternal/ObterCentroDeCustoPorId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterCentroDeCusto">
+      <soap12:operation soapAction="http://tempuri.org/ICentroDeCustoExternal/ObterCentroDeCusto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarCentroDeCusto">
+      <soap12:operation soapAction="http://tempuri.org/ICentroDeCustoExternal/AtualizarCentroDeCusto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCentrosDeCustosAtivos">
+      <soap12:operation soapAction="http://tempuri.org/ICentroDeCustoExternal/BuscarCentrosDeCustosAtivos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarParticipante">
+      <soap12:operation soapAction="http://tempuri.org/IParticipanteExternal/CadastrarParticipante" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterParticipantePorId">
+      <soap12:operation soapAction="http://tempuri.org/IParticipanteExternal/ObterParticipantePorId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterParticipante">
+      <soap12:operation soapAction="http://tempuri.org/IParticipanteExternal/ObterParticipante" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarParticipante">
+      <soap12:operation soapAction="http://tempuri.org/IParticipanteExternal/AtualizarParticipante" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarParticipantesAtivos">
+      <soap12:operation soapAction="http://tempuri.org/IParticipanteExternal/BuscarParticipantesAtivos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarAutonomo">
+      <soap12:operation soapAction="http://tempuri.org/IParticipanteExternal/CadastrarAutonomo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarEquiparado">
+      <soap12:operation soapAction="http://tempuri.org/IParticipanteExternal/CadastrarEquiparado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSituacaoTransportadorAntt">
+      <soap12:operation soapAction="http://tempuri.org/IParticipanteExternal/ConsultarSituacaoTransportadorAntt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarOperacao">
+      <soap12:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/AtualizarOperacao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnularOperacao">
+      <soap12:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/AnularOperacao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarOperacaoDescritiva">
+      <soap12:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/CadastrarOperacaoDescritiva" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarOperacao">
+      <soap12:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/RegistrarOperacao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarOperacao">
+      <soap12:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/CancelarOperacao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetificarOperacao">
+      <soap12:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/RetificarOperacao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetificarPlacasOperacao">
+      <soap12:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/RetificarPlacasOperacao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EncerrarOperacao">
+      <soap12:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/EncerrarOperacao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinalizarOperacao">
+      <soap12:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/FinalizarOperacao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterContratado">
+      <soap12:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/ObterContratado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterMunicipio">
+      <soap12:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/ObterMunicipio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterMunicipioPorCodigoIBGE">
+      <soap12:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/ObterMunicipioPorCodigoIBGE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterNaturezaCarga">
+      <soap12:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/ObterNaturezaCarga" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarOperacaoTranporteParcelasPorPeriodo">
+      <soap12:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/BuscarOperacaoTranporteParcelasPorPeriodo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarOperacaoTranporteParcelas">
+      <soap12:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/BuscarOperacaoTranporteParcelas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterOperacaoPorId">
+      <soap12:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/ObterOperacaoPorId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterOperacaoPorCIOT">
+      <soap12:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/ObterOperacaoPorCIOT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConferirDocumentacaoOperacaoTransporteTriagem">
+      <soap12:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/ConferirDocumentacaoOperacaoTransporteTriagem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssociarCartaoAutonomo">
+      <soap12:operation soapAction="http://tempuri.org/ICartaoExternal/AssociarCartaoAutonomo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssociarCartaoEquiparado">
+      <soap12:operation soapAction="http://tempuri.org/ICartaoExternal/AssociarCartaoEquiparado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssociarCartaoNaoEquiparado">
+      <soap12:operation soapAction="http://tempuri.org/ICartaoExternal/AssociarCartaoNaoEquiparado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssociarCartaoMotorista">
+      <soap12:operation soapAction="http://tempuri.org/ICartaoExternal/AssociarCartaoMotorista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DesbloquearCartao">
+      <soap12:operation soapAction="http://tempuri.org/ICartaoExternal/DesbloquearCartao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessarCargaFreteAvulsa">
+      <soap12:operation soapAction="http://tempuri.org/ICartaoExternal/ProcessarCargaFreteAvulsa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubstituirCartaoDoPortador">
+      <soap12:operation soapAction="http://tempuri.org/ICartaoExternal/SubstituirCartaoDoPortador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssociarCartaoEmpresa">
+      <soap12:operation soapAction="http://tempuri.org/ICartaoExternal/AssociarCartaoEmpresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarParametrosComerciais">
+      <soap12:operation soapAction="http://tempuri.org/IFinanceiroExternal/BuscarParametrosComerciais" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSaldoContaPrePagaVectio">
+      <soap12:operation soapAction="http://tempuri.org/IFinanceiroExternal/ConsultarSaldoContaPrePagaVectio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarExtratoContaPrePagaVectio">
+      <soap12:operation soapAction="http://tempuri.org/IFinanceiroExternal/ConsultarExtratoContaPrePagaVectio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCobrancasGestora">
+      <soap12:operation soapAction="http://tempuri.org/IFinanceiroExternal/BuscarCobrancasGestora" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirReciboValePedagioVectio">
+      <soap12:operation soapAction="http://tempuri.org/IEmissaoDocumentosExternal/EmitirReciboValePedagioVectio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirReciboValePedagioViaFacil">
+      <soap12:operation soapAction="http://tempuri.org/IEmissaoDocumentosExternal/EmitirReciboValePedagioViaFacil" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirDeclaracaoOperacaoTransporte">
+      <soap12:operation soapAction="http://tempuri.org/IEmissaoDocumentosExternal/EmitirDeclaracaoOperacaoTransporte" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirContratoOperacaoTransporte">
+      <soap12:operation soapAction="http://tempuri.org/IEmissaoDocumentosExternal/EmitirContratoOperacaoTransporte" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarTriagemDocumentoObjeto">
+      <soap12:operation soapAction="http://tempuri.org/ITriagemDocumentoObjetoExternal/CadastrarTriagemDocumentoObjeto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterTriagemDocumentoObjeto">
+      <soap12:operation soapAction="http://tempuri.org/ITriagemDocumentoObjetoExternal/ObterTriagemDocumentoObjeto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarTriagemDocumentoObjeto">
+      <soap12:operation soapAction="http://tempuri.org/ITriagemDocumentoObjetoExternal/AtualizarTriagemDocumentoObjeto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarTriagemDocumentoObjetoAtivos">
+      <soap12:operation soapAction="http://tempuri.org/ITriagemDocumentoObjetoExternal/BuscarTriagemDocumentoObjetoAtivos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarMotorista">
+      <soap12:operation soapAction="http://tempuri.org/IMotoristaExternal/CadastrarMotorista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterMotorista">
+      <soap12:operation soapAction="http://tempuri.org/IMotoristaExternal/ObterMotorista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarMotorista">
+      <soap12:operation soapAction="http://tempuri.org/IMotoristaExternal/AtualizarMotorista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarMotoristasAtivos">
+      <soap12:operation soapAction="http://tempuri.org/IMotoristaExternal/BuscarMotoristasAtivos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterMotoristaPorCPF">
+      <soap12:operation soapAction="http://tempuri.org/IMotoristaExternal/ObterMotoristaPorCPF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterMotoristaPorCPFTerceiros">
+      <soap12:operation soapAction="http://tempuri.org/IMotoristaExternal/ObterMotoristaPorCPFTerceiros" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComprarValePedagioAvulso">
+      <soap12:operation soapAction="http://tempuri.org/IValePedagioExternal/ComprarValePedagioAvulso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterLogRequisicoes">
+      <soap12:operation soapAction="http://tempuri.org/IDeveloperExternal/ObterLogRequisicoes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterCustoRota">
+      <soap12:operation soapAction="http://tempuri.org/IRotaExternal/ObterCustoRota" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ITMSService" type="tns:ITMSService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_ITMSService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CadastrarCentroDeCusto">
+      <soap:operation soapAction="http://tempuri.org/ICentroDeCustoExternal/CadastrarCentroDeCusto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterCentroDeCustoPorId">
+      <soap:operation soapAction="http://tempuri.org/ICentroDeCustoExternal/ObterCentroDeCustoPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterCentroDeCusto">
+      <soap:operation soapAction="http://tempuri.org/ICentroDeCustoExternal/ObterCentroDeCusto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarCentroDeCusto">
+      <soap:operation soapAction="http://tempuri.org/ICentroDeCustoExternal/AtualizarCentroDeCusto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCentrosDeCustosAtivos">
+      <soap:operation soapAction="http://tempuri.org/ICentroDeCustoExternal/BuscarCentrosDeCustosAtivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarParticipante">
+      <soap:operation soapAction="http://tempuri.org/IParticipanteExternal/CadastrarParticipante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterParticipantePorId">
+      <soap:operation soapAction="http://tempuri.org/IParticipanteExternal/ObterParticipantePorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterParticipante">
+      <soap:operation soapAction="http://tempuri.org/IParticipanteExternal/ObterParticipante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarParticipante">
+      <soap:operation soapAction="http://tempuri.org/IParticipanteExternal/AtualizarParticipante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarParticipantesAtivos">
+      <soap:operation soapAction="http://tempuri.org/IParticipanteExternal/BuscarParticipantesAtivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarAutonomo">
+      <soap:operation soapAction="http://tempuri.org/IParticipanteExternal/CadastrarAutonomo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarEquiparado">
+      <soap:operation soapAction="http://tempuri.org/IParticipanteExternal/CadastrarEquiparado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSituacaoTransportadorAntt">
+      <soap:operation soapAction="http://tempuri.org/IParticipanteExternal/ConsultarSituacaoTransportadorAntt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarOperacao">
+      <soap:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/AtualizarOperacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnularOperacao">
+      <soap:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/AnularOperacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarOperacaoDescritiva">
+      <soap:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/CadastrarOperacaoDescritiva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarOperacao">
+      <soap:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/RegistrarOperacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarOperacao">
+      <soap:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/CancelarOperacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetificarOperacao">
+      <soap:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/RetificarOperacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetificarPlacasOperacao">
+      <soap:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/RetificarPlacasOperacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EncerrarOperacao">
+      <soap:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/EncerrarOperacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinalizarOperacao">
+      <soap:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/FinalizarOperacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterContratado">
+      <soap:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/ObterContratado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterMunicipio">
+      <soap:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/ObterMunicipio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterMunicipioPorCodigoIBGE">
+      <soap:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/ObterMunicipioPorCodigoIBGE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterNaturezaCarga">
+      <soap:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/ObterNaturezaCarga" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarOperacaoTranporteParcelasPorPeriodo">
+      <soap:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/BuscarOperacaoTranporteParcelasPorPeriodo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarOperacaoTranporteParcelas">
+      <soap:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/BuscarOperacaoTranporteParcelas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterOperacaoPorId">
+      <soap:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/ObterOperacaoPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterOperacaoPorCIOT">
+      <soap:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/ObterOperacaoPorCIOT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConferirDocumentacaoOperacaoTransporteTriagem">
+      <soap:operation soapAction="http://tempuri.org/IOperacaoTransporteExternal/ConferirDocumentacaoOperacaoTransporteTriagem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssociarCartaoAutonomo">
+      <soap:operation soapAction="http://tempuri.org/ICartaoExternal/AssociarCartaoAutonomo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssociarCartaoEquiparado">
+      <soap:operation soapAction="http://tempuri.org/ICartaoExternal/AssociarCartaoEquiparado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssociarCartaoNaoEquiparado">
+      <soap:operation soapAction="http://tempuri.org/ICartaoExternal/AssociarCartaoNaoEquiparado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssociarCartaoMotorista">
+      <soap:operation soapAction="http://tempuri.org/ICartaoExternal/AssociarCartaoMotorista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DesbloquearCartao">
+      <soap:operation soapAction="http://tempuri.org/ICartaoExternal/DesbloquearCartao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessarCargaFreteAvulsa">
+      <soap:operation soapAction="http://tempuri.org/ICartaoExternal/ProcessarCargaFreteAvulsa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubstituirCartaoDoPortador">
+      <soap:operation soapAction="http://tempuri.org/ICartaoExternal/SubstituirCartaoDoPortador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssociarCartaoEmpresa">
+      <soap:operation soapAction="http://tempuri.org/ICartaoExternal/AssociarCartaoEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarParametrosComerciais">
+      <soap:operation soapAction="http://tempuri.org/IFinanceiroExternal/BuscarParametrosComerciais" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSaldoContaPrePagaVectio">
+      <soap:operation soapAction="http://tempuri.org/IFinanceiroExternal/ConsultarSaldoContaPrePagaVectio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarExtratoContaPrePagaVectio">
+      <soap:operation soapAction="http://tempuri.org/IFinanceiroExternal/ConsultarExtratoContaPrePagaVectio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCobrancasGestora">
+      <soap:operation soapAction="http://tempuri.org/IFinanceiroExternal/BuscarCobrancasGestora" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirReciboValePedagioVectio">
+      <soap:operation soapAction="http://tempuri.org/IEmissaoDocumentosExternal/EmitirReciboValePedagioVectio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirReciboValePedagioViaFacil">
+      <soap:operation soapAction="http://tempuri.org/IEmissaoDocumentosExternal/EmitirReciboValePedagioViaFacil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirDeclaracaoOperacaoTransporte">
+      <soap:operation soapAction="http://tempuri.org/IEmissaoDocumentosExternal/EmitirDeclaracaoOperacaoTransporte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmitirContratoOperacaoTransporte">
+      <soap:operation soapAction="http://tempuri.org/IEmissaoDocumentosExternal/EmitirContratoOperacaoTransporte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarTriagemDocumentoObjeto">
+      <soap:operation soapAction="http://tempuri.org/ITriagemDocumentoObjetoExternal/CadastrarTriagemDocumentoObjeto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterTriagemDocumentoObjeto">
+      <soap:operation soapAction="http://tempuri.org/ITriagemDocumentoObjetoExternal/ObterTriagemDocumentoObjeto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarTriagemDocumentoObjeto">
+      <soap:operation soapAction="http://tempuri.org/ITriagemDocumentoObjetoExternal/AtualizarTriagemDocumentoObjeto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarTriagemDocumentoObjetoAtivos">
+      <soap:operation soapAction="http://tempuri.org/ITriagemDocumentoObjetoExternal/BuscarTriagemDocumentoObjetoAtivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarMotorista">
+      <soap:operation soapAction="http://tempuri.org/IMotoristaExternal/CadastrarMotorista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterMotorista">
+      <soap:operation soapAction="http://tempuri.org/IMotoristaExternal/ObterMotorista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarMotorista">
+      <soap:operation soapAction="http://tempuri.org/IMotoristaExternal/AtualizarMotorista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarMotoristasAtivos">
+      <soap:operation soapAction="http://tempuri.org/IMotoristaExternal/BuscarMotoristasAtivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterMotoristaPorCPF">
+      <soap:operation soapAction="http://tempuri.org/IMotoristaExternal/ObterMotoristaPorCPF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterMotoristaPorCPFTerceiros">
+      <soap:operation soapAction="http://tempuri.org/IMotoristaExternal/ObterMotoristaPorCPFTerceiros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComprarValePedagioAvulso">
+      <soap:operation soapAction="http://tempuri.org/IValePedagioExternal/ComprarValePedagioAvulso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterLogRequisicoes">
+      <soap:operation soapAction="http://tempuri.org/IDeveloperExternal/ObterLogRequisicoes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterCustoRota">
+      <soap:operation soapAction="http://tempuri.org/IRotaExternal/ObterCustoRota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TMSService">
+    <wsdl:port name="WSHttpBinding_ITMSService" binding="tns:WSHttpBinding_ITMSService">
+      <soap12:address location="https://dev.cartaovectio.com.br/targetservices/target/tms/TMSService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://dev.cartaovectio.com.br/targetservices/target/tms/TMSService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ITMSService" binding="tns:BasicHttpBinding_ITMSService">
+      <soap:address location="https://dev.cartaovectio.com.br/targetservices/target/tms/TMSService.svc/soap" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

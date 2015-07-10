@@ -1,0 +1,5 @@
+mensagem.codigo=0
+mensagem.descricao=Insercao de Contrato de Frete efetuado com sucesso
+viagem.antt.ciot.numero=031001005840
+viagem.antt.ciot.protocolo=0980
+viagem.id=1049603

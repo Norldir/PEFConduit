@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="XMLSchemaCancelamento" targetNamespace="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaCancelamento_1.0.xsd" elementFormDefault="qualified" xmlns="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaCancelamento_1.0.xsd" xmlns:mstns="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaCancelamento_1.0.xsd" xmlns:c="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaComum_1.2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="SchemaComum_1.2.xsd" namespace="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaComum_1.2.xsd" ></xs:import>
+  <xs:element name="LoteDeCancelamentos">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="50" name="Ciot" nillable="false" type="c:NumeroCiot"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

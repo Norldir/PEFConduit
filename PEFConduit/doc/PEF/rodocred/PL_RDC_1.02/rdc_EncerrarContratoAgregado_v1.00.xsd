@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<xs:schema xmlns:rdc="https://ws.rodocred.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ws.rodocred.com.br/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="rdc_TiposPadrao_v1.02.xsd"/>
+	<xs:element name="EncerrarContratoAgregado">
+		<xs:annotation>
+			<xs:documentation>Mensagem que Permite Consultar os Contratos Agregados</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:EncerrarContratoAgregadoRequest"/>
+				<xs:element ref="rdc:EncerrarContratoAgregadoResponse"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EncerrarContratoAgregadoRequest">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Requisição que Permite Consultar os Contratos Agregados</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:IdentificacaoIntegracao"/>
+				<xs:element ref="rdc:IdClienteResponsavel" minOccurs="0"/>
+				<xs:element ref="rdc:NumeroContrato" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EncerrarContratoAgregadoResponse">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Retorno que Permite Consultar os Contratos Agregados</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:RetornoMensagem"/>
+				<xs:element ref="rdc:SituacaoContrato" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

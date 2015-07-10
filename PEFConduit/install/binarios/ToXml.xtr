@@ -1,0 +1,841 @@
+<XmlTransformation Version="1.0">
+	<Transform Direction="ToXml" DataEncoding="utf-8">
+		<SelectEach from="DATAPACKET\ROWDATA\ROW" dest="\configuracao">
+			<Select from="@diretorioBase" dest="\diretorioBase"/>
+			<Select from="@proxy" dest="\proxy"/>
+			<Select from="@proxyusuario" dest="\proxyusuario"/>
+			<Select from="@proxysenha" dest="\proxysenha"/>
+			<Select from="@retornocomhora" dest="\retornocomhora"/>
+			<SelectEach from="grupo\ROWgrupo" dest="\grupos\grupo">
+				<Select from="@id" dest="@id"/>
+				<SelectEach from="cnpj\ROWcnpj" dest="\cnpjs\cnpj">
+					<SelectEach from="repom\ROWrepom" dest="\administradoras\repom">
+						<Select from="@webserver" dest="\webserver"/>
+						<Select from="@usuario" dest="\usuario"/>
+						<Select from="@senha" dest="\senha"/>
+						<Select from="@OPERACAO_CODIGO" dest="\parametrosRepom\OPERACAO_CODIGO"/>
+						<Select from="@ROTEIRO_IDA_VOLTA" dest="\parametrosRepom\ROTEIRO_IDA_VOLTA"/>
+					</SelectEach>
+					<SelectEach from="pancary\ROWpancary" dest="\administradoras\pancary">
+						<Select from="@envio" dest="\envio"/>
+						<Select from="@retorno" dest="\retorno"/>
+						<Select from="@viagem_parcelaA_efetivacao_tipo" dest="\parametrosPancary\viagem_parcelaA_efetivacao_tipo"/>
+						<Select from="@viagem_parcelaA_status_id" dest="\parametrosPancary\viagem_parcelaA_status_id"/>
+						<Select from="@viagem_parcelaS_efetivacao_tipo" dest="\parametrosPancary\viagem_parcelaS_efetivacao_tipo"/>
+
+						<Select from="@viagem_parcelaS_status_id" dest="\parametrosPancary\viagem_parcelaS_status_id"/>
+						<Select from="@viagem_quitacao" dest="\parametrosPancary\viagem_quitacao"/>
+						<Select from="@valor_minimo_VA" dest="\parametrosPancary\valor_minimo_VA"/>
+						
+					</SelectEach>
+					<SelectEach from="nddcargo\ROWnddcargo" dest="\administradoras\nddcargo">
+						<Select from="@tipoIntegracao" dest="\tipoIntegracao"/>
+
+						<Select from="@nddws" dest="\nddws"/>
+						<Select from="@nddcertificado" dest="\nddcertificado"/>
+
+						<Select from="@envio" dest="\envio"/>
+						<Select from="@retorno" dest="\retorno"/>
+						<Select from="@GerarMovimentacaoFinanceira" dest="\parametrosNddCargo\GerarMovimentacaoFinanceira"/>
+						<Select from="@ImpressaoAutomaticaDOT" dest="\parametrosNddCargo\ImpressaoAutomaticaDOT"/>
+						<Select from="@TipodeOperacaodeTransporte" dest="\parametrosNddCargo\TipodeOperacaodeTransporte"/>
+						<Select from="@TipodaCarga" dest="\parametrosNddCargo\TipodaCarga"/>
+						<Select from="@ProprietariodaCarga" dest="\parametrosNddCargo\ProprietariodaCarga"/>
+						<Select from="@TipodeRotaPadrao" dest="\parametrosNddCargo\TipodeRotaPadrao"/>
+						<Select from="@UtilizaRoteirizador" dest="\parametrosNddCargo\UtilizaRoteirizador"/>
+						<Select from="@NotificaRotaContratante" dest="\parametrosNddCargo\NotificaRotaContratante"/>
+						<Select from="@LocaldeEfetivacaodoPagamento" dest="\parametrosNddCargo\LocaldeEfetivacaodoPagamento"/>
+						<Select from="@LocaldeEfetivacaodoPagamentoAdt" dest="\parametrosNddCargo\LocaldeEfetivacaodoPagamentoAdt"/>
+						<Select from="@DocumentoParaEntregar" dest="\parametrosNddCargo\DocumentoParaEntregar"/>
+
+						<Select from="@DiasParaLiberarSaldo" dest="\parametrosNddCargo\DiasParaLiberarSaldo"/>
+						<Select from="@MinutosParaLiberarAdiantamento" dest="\parametrosNddCargo\MinutosParaLiberarAdiantamento"/>
+
+						<Select from="@Confirmador" dest="\parametrosNddCargo\Confirmador"/>
+					</SelectEach>
+					<SelectEach from="dbtrans\ROWdbtrans" dest="\administradoras\dbtrans">
+						<Select from="@webserver" dest="\webserver"/>
+						<Select from="@usuario" dest="\usuario"/>
+						<Select from="@senha" dest="\senha"/>
+						<Select from="@cliente" dest="\cliente"/>
+						<Select from="@CondicaoLiberacaoOperacao_Adt" dest="\parametrosDBTrans\CondicaoLiberacaoOperacao_Adt"/>
+						<Select from="@LocalRealizacao_Adiantamento" dest="\parametrosDBTrans\LocalRealizacao_Adiantamento"/>
+						<Select from="@CodigoOperacao_Saldo" dest="\parametrosDBTrans\CodigoOperacao_Saldo"/>
+						<Select from="@CondicaoLiberacaoOperacao_Saldo" dest="\parametrosDBTrans\CondicaoLiberacaoOperacao_Saldo"/>
+						<Select from="@LocalRealizacao_Saldo" dest="\parametrosDBTrans\LocalRealizacao_Saldo"/>
+						<Select from="@CodigoClausula" dest="\parametrosDBTrans\CodigoClausula"/>
+						<Select from="@CodigoClausulaViagem" dest="\parametrosDBTrans\CodigoClausulaViagem"/>
+						<Select from="@CodigoClausulaPeso" dest="\parametrosDBTrans\CodigoClausulaPeso"/>
+						<Select from="@Documentos_Entrega" dest="\parametrosDBTrans\Documentos_Entrega"/>
+					</SelectEach>
+					<Select from="@id" dest="@id"/>
+					<SelectEach from="ticket\ROWticket" dest="\administradoras\ticket">
+						<Select from="@webserver" dest="\webserver"/>
+						<Select from="@usuario" dest="\usuario"/>
+						<Select from="@senha" dest="\senha"/>
+						<Select from="@codigoBase" dest="\codigoBase"/>
+						<Select from="@codigoCliente" dest="\codigoCliente"/>
+						<Select from="@parametrosTicket" dest="\parametrosTicket"/>
+					</SelectEach>
+					<SelectEach from="target\ROWtarget" dest="\administradoras\target">
+						<Select from="@webserver" dest="\webserver"/>
+						<Select from="@identification" dest="\identification"/>
+						<Select from="@token" dest="\token"/>
+						<Select from="@parametrostarget" dest="\parametrostarget"/>
+					</SelectEach>
+
+				</SelectEach>
+			</SelectEach>
+		</SelectEach>
+	</Transform>
+	<XmlSchema RootName="configuracao">
+		<![CDATA[<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="configuracao" type="configuracaoType"/>
+  <xs:complexType name="configuracaoType">
+    <xs:sequence>
+      <xs:element name="diretorioBase" type="diretorioBaseType"/>
+      <xs:element name="proxy" type="proxyType"/>
+      <xs:element name="proxyusuario" type="proxyusuarioType"/>
+      <xs:element name="proxysenha" type="proxysenhaType"/>
+      <xs:element name="retornocomhora" type="retornocomhoraType"/>
+      <xs:element name="grupos" type="gruposType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="diretorioBase" type="diretorioBaseType"/>
+  <xs:simpleType name="diretorioBaseType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="proxy" type="proxyType"/>
+  <xs:simpleType name="proxyType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="proxyusuario" type="proxyusuarioType"/>
+  <xs:simpleType name="proxyusuarioType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="proxysenha" type="proxysenhaType"/>
+  <xs:simpleType name="proxysenhaType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+
+  <xs:element name="retornocomhora" type="retornocomhoraType"/>
+  <xs:simpleType name="retornocomhoraType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+
+  <xs:element name="grupos" type="gruposType"/>
+  <xs:complexType name="gruposType">
+    <xs:sequence>
+      <xs:element name="grupo" type="grupoType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="grupo" type="grupoType"/>
+  <xs:complexType name="grupoType">
+    <xs:sequence>
+      <xs:element name="cnpjs" type="cnpjsType"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="cnpjs" type="cnpjsType"/>
+  <xs:complexType name="cnpjsType">
+    <xs:sequence>
+      <xs:element name="cnpj" type="cnpjType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cnpj" type="cnpjType"/>
+  <xs:complexType name="cnpjType">
+    <xs:sequence>
+      <xs:element name="administradoras" type="administradorasType"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string"/>
+  </xs:complexType>
+  <xs:element name="administradoras" type="administradorasType"/>
+  <xs:complexType name="administradorasType">
+    <xs:sequence>
+      <xs:element name="repom" type="repomType" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="pancary" type="pancaryType" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="nddcargo" type="nddcargoType" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="dbtrans" type="dbtransType" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="ticket" type="ticketType" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="target" type="targetType" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="repom" type="repomType"/>
+  <xs:complexType name="repomType">
+    <xs:sequence>
+      <xs:element name="webserver" type="webserverType"/>
+      <xs:element name="usuario" type="usuarioType"/>
+      <xs:element name="senha" type="senhaType"/>
+      <xs:element name="parametrosRepom" type="parametrosRepomType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="webserver" type="webserverType"/>
+  <xs:simpleType name="webserverType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="usuario" type="usuarioType"/>
+  <xs:simpleType name="usuarioType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="senha" type="senhaType"/>
+  <xs:simpleType name="senhaType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="parametrosRepom" type="parametrosRepomType"/>
+  <xs:complexType name="parametrosRepomType">
+    <xs:sequence>
+      <xs:element name="OPERACAO_CODIGO" type="OPERACAO_CODIGOType"/>
+      <xs:element name="ROTEIRO_IDA_VOLTA" type="ROTEIRO_IDA_VOLTAType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OPERACAO_CODIGO" type="OPERACAO_CODIGOType"/>
+  <xs:simpleType name="OPERACAO_CODIGOType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="ROTEIRO_IDA_VOLTA" type="ROTEIRO_IDA_VOLTAType"/>
+  <xs:simpleType name="ROTEIRO_IDA_VOLTAType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="pancary" type="pancaryType"/>
+  <xs:complexType name="pancaryType">
+    <xs:sequence>
+      <xs:element name="envio" type="envioType"/>
+      <xs:element name="retorno" type="retornoType"/>
+      <xs:element name="parametrosPancary" type="parametrosPancaryType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="envio" type="envioType"/>
+  <xs:simpleType name="envioType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="retorno" type="retornoType"/>
+  <xs:simpleType name="retornoType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="parametrosPancary" type="parametrosPancaryType"/>
+  <xs:complexType name="parametrosPancaryType">
+    <xs:sequence>
+      <xs:element name="viagem_parcelaA_efetivacao_tipo" type="viagem_parcelaA_efetivacao_tipoType"/>
+      <xs:element name="viagem_parcelaA_status_id" type="viagem_parcelaA_status_idType"/>
+      <xs:element name="viagem_parcelaS_efetivacao_tipo" type="viagem_parcelaS_efetivacao_tipoType"/>
+
+      <xs:element name="viagem_parcelaS_status_id" type="viagem_parcelaS_status_idType"/>
+      <xs:element name="viagem_quitacao" type="viagem_quitacaoType"/>
+      <xs:element name="valor_minimo_VA" type="valor_minimo_VAType"/>
+
+  </xs:sequence>
+  </xs:complexType>
+  
+  <xs:element name="viagem_parcelaA_efetivacao_tipo" type="viagem_parcelaA_efetivacao_tipoType"/>
+  <xs:simpleType name="viagem_parcelaA_efetivacao_tipoType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>  
+  <xs:element name="viagem_parcelaA_status_id" type="viagem_parcelaA_status_idType"/>
+  <xs:simpleType name="viagem_parcelaA_status_idType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>  
+  <xs:element name="viagem_parcelaS_efetivacao_tipo" type="viagem_parcelaS_efetivacao_tipoType"/>
+  <xs:simpleType name="viagem_parcelaS_efetivacao_tipoType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>  
+
+  <xs:element name="viagem_parcelaS_status_id" type="viagem_parcelaS_status_idType"/>
+  <xs:simpleType name="viagem_parcelaS_status_idType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>  
+  <xs:element name="viagem_quitacao" type="viagem_quitacaoType"/>
+  <xs:simpleType name="viagem_quitacaoType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>  
+  <xs:element name="valor_minimo_VA" type="valor_minimo_VAType"/>
+  <xs:simpleType name="valor_minimo_VAType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>  
+
+
+  <xs:element name="nddcargo" type="nddcargoType"/>
+  <xs:complexType name="nddcargoType">
+    <xs:sequence>
+      <xs:element name="tipoIntegracao" type="tipoIntegracaoType"/>
+
+      <xs:element name="nddws" type="nddwsType"/>
+      <xs:element name="nddcertificado" type="nddcertificadoType"/>
+
+      <xs:element name="envio" type="envioType"/>
+      <xs:element name="retorno" type="retornoType"/>
+      <xs:element name="parametrosNddCargo" type="parametrosNddCargoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tipoIntegracao" type="tipoIntegracaoType"/>
+  <xs:simpleType name="tipoIntegracaoType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+
+  <xs:element name="nddws" type="nddwsType"/>
+  <xs:simpleType name="nddwsType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="nddcertificado" type="nddcertificadoType"/>
+  <xs:simpleType name="nddcertificadoType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+
+  <xs:element name="envio" type="envioType"/>
+  <xs:simpleType name="envioType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="retorno" type="retornoType"/>
+  <xs:simpleType name="retornoType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="parametrosNddCargo" type="parametrosNddCargoType"/>
+  <xs:complexType name="parametrosNddCargoType">
+    <xs:sequence>
+      <xs:element name="GerarMovimentacaoFinanceira" type="GerarMovimentacaoFinanceiraType"/>
+      <xs:element name="ImpressaoAutomaticaDOT" type="ImpressaoAutomaticaDOTType"/>
+      <xs:element name="TipodeOperacaodeTransporte" type="TipodeOperacaodeTransporteType"/>
+      <xs:element name="TipodaCarga" type="TipodaCargaType"/>
+      <xs:element name="ProprietariodaCarga" type="ProprietariodaCargaType"/>
+      <xs:element name="TipodeRotaPadrao" type="TipodeRotaPadraoType"/>
+      <xs:element name="UtilizaRoteirizador" type="UtilizaRoteirizadorType"/>
+      <xs:element name="NotificaRotaContratante" type="NotificaRotaContratanteType"/>
+      <xs:element name="LocaldeEfetivacaodoPagamento" type="LocaldeEfetivacaodoPagamentoType"/>
+      <xs:element name="LocaldeEfetivacaodoPagamentoAdt" type="LocaldeEfetivacaodoPagamentoAdtType"/>
+      <xs:element name="DocumentoParaEntregar" type="DocumentoParaEntregarType"/>
+
+      <xs:element name="DiasParaLiberarSaldo" type="DiasParaLiberarSaldoType"/>
+      <xs:element name="MinutosParaLiberarAdiantamento" type="MinutosParaLiberarAdiantamentoType"/>
+
+      <xs:element name="Confirmador" type="ConfirmadorType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GerarMovimentacaoFinanceira" type="GerarMovimentacaoFinanceiraType"/>
+  <xs:simpleType name="GerarMovimentacaoFinanceiraType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="ImpressaoAutomaticaDOT" type="ImpressaoAutomaticaDOTType"/>
+  <xs:simpleType name="ImpressaoAutomaticaDOTType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TipodeOperacaodeTransporte" type="TipodeOperacaodeTransporteType"/>
+  <xs:simpleType name="TipodeOperacaodeTransporteType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TipodaCarga" type="TipodaCargaType"/>
+  <xs:simpleType name="TipodaCargaType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="ProprietariodaCarga" type="ProprietariodaCargaType"/>
+  <xs:simpleType name="ProprietariodaCargaType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TipodeRotaPadrao" type="TipodeRotaPadraoType"/>
+  <xs:simpleType name="TipodeRotaPadraoType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="UtilizaRoteirizador" type="UtilizaRoteirizadorType"/>
+  <xs:simpleType name="UtilizaRoteirizadorType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="NotificaRotaContratante" type="NotificaRotaContratanteType"/>
+  <xs:simpleType name="NotificaRotaContratanteType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="LocaldeEfetivacaodoPagamento" type="LocaldeEfetivacaodoPagamentoType"/>
+  <xs:simpleType name="LocaldeEfetivacaodoPagamentoType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="LocaldeEfetivacaodoPagamentoAdt" type="LocaldeEfetivacaodoPagamentoAdtType"/>
+  <xs:simpleType name="LocaldeEfetivacaodoPagamentoAdtType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="DocumentoParaEntregar" type="DocumentoParaEntregarType"/>
+  <xs:simpleType name="DocumentoParaEntregarType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+
+  <xs:element name="DiasParaLiberarSaldo" type="DiasParaLiberarSaldoType"/>
+  <xs:simpleType name="DiasParaLiberarSaldoType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="MinutosParaLiberarAdiantamento" type="MinutosParaLiberarAdiantamentoType"/>
+  <xs:simpleType name="MinutosParaLiberarAdiantamentoType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+
+  <xs:element name="Confirmador" type="ConfirmadorType"/>
+  <xs:simpleType name="ConfirmadorType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+
+  <xs:element name="dbtrans" type="dbtransType"/>
+  <xs:complexType name="dbtransType">
+    <xs:sequence>
+      <xs:element name="webserver" type="webserverType"/>
+      <xs:element name="usuario" type="usuarioType"/>
+      <xs:element name="senha" type="senhaType"/>
+      <xs:element name="cliente" type="clienteType"/>
+      <xs:element name="parametrosDBTrans" type="parametrosDBTransType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="webserver" type="webserverType"/>
+  <xs:simpleType name="webserverType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="usuario" type="usuarioType"/>
+  <xs:simpleType name="usuarioType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="senha" type="senhaType"/>
+  <xs:simpleType name="senhaType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="cliente" type="clienteType"/>
+  <xs:simpleType name="clienteType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="parametrosDBTrans" type="parametrosDBTransType"/>
+  <xs:complexType name="parametrosDBTransType">
+    <xs:sequence>
+      <xs:element name="CondicaoLiberacaoOperacao_Adt" type="CondicaoLiberacaoOperacao_AdtType"/>
+      <xs:element name="LocalRealizacao_Adiantamento" type="LocalRealizacao_AdiantamentoType"/>
+      <xs:element name="CodigoOperacao_Saldo" type="CodigoOperacao_SaldoType"/>
+      <xs:element name="CondicaoLiberacaoOperacao_Saldo" type="CondicaoLiberacaoOperacao_SaldoType"/>
+      <xs:element name="LocalRealizacao_Saldo" type="LocalRealizacao_SaldoType"/>
+      <xs:element name="CodigoClausula" type="CodigoClausulaType"/>
+      <xs:element name="CodigoClausulaViagem" type="CodigoClausulaViagemType"/>
+      <xs:element name="CodigoClausulaPeso" type="CodigoClausulaPesoType"/>
+      <xs:element name="Documentos_Entrega" type="Documentos_EntregaType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CondicaoLiberacaoOperacao_Adt" type="CondicaoLiberacaoOperacao_AdtType"/>
+  <xs:simpleType name="CondicaoLiberacaoOperacao_AdtType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="LocalRealizacao_Adiantamento" type="LocalRealizacao_AdiantamentoType"/>
+  <xs:simpleType name="LocalRealizacao_AdiantamentoType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="CodigoOperacao_Saldo" type="CodigoOperacao_SaldoType"/>
+  <xs:simpleType name="CodigoOperacao_SaldoType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="CondicaoLiberacaoOperacao_Saldo" type="CondicaoLiberacaoOperacao_SaldoType"/>
+  <xs:simpleType name="CondicaoLiberacaoOperacao_SaldoType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="LocalRealizacao_Saldo" type="LocalRealizacao_SaldoType"/>
+  <xs:simpleType name="LocalRealizacao_SaldoType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="CodigoClausula" type="CodigoClausulaType"/>
+  <xs:simpleType name="CodigoClausulaType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="CodigoClausulaViagem" type="CodigoClausulaViagemType"/>
+  <xs:simpleType name="CodigoClausulaViagemType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="CodigoClausulaPeso" type="CodigoClausulaPesoType"/>
+  <xs:simpleType name="CodigoClausulaPesoType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Documentos_Entrega" type="Documentos_EntregaType"/>
+  <xs:simpleType name="Documentos_EntregaType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="ticket" type="ticketType"/>
+  <xs:complexType name="ticketType">
+    <xs:sequence>
+      <xs:element name="webserver" type="webserverType"/>
+      <xs:element name="usuario" type="usuarioType"/>
+      <xs:element name="senha" type="senhaType"/>
+      <xs:element name="codigoBase" type="codigoBaseType"/>
+      <xs:element name="codigoCliente" type="codigoClienteType"/>
+      <xs:element name="parametrosTicket" type="parametrosTicketType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="webserver" type="webserverType"/>
+  <xs:simpleType name="webserverType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="usuario" type="usuarioType"/>
+  <xs:simpleType name="usuarioType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="senha" type="senhaType"/>
+  <xs:simpleType name="senhaType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="codigoBase" type="codigoBaseType"/>
+  <xs:simpleType name="codigoBaseType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="codigoCliente" type="codigoClienteType"/>
+  <xs:simpleType name="codigoClienteType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="parametrosTicket" type="parametrosTicketType"/>
+  <xs:simpleType name="parametrosTicketType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+
+  <xs:element name="target" type="targetType"/>
+  <xs:complexType name="targetType">
+    <xs:sequence>
+      <xs:element name="webserver" type="webserverType"/>
+      <xs:element name="identification" type="identificationType"/>
+      <xs:element name="token" type="tokenType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="webserver" type="webserverType"/>
+  <xs:simpleType name="webserverType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="identification" type="identificationType"/>
+  <xs:simpleType name="identificationType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="identification" type="identificationType"/>
+  <xs:simpleType name="identificationType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="parametrostarget" type="parametrostargetType"/>
+  <xs:simpleType name="parametrostargetType">
+    <xs:restriction base="xs:string"/>
+
+
+	</xs:simpleType>
+</xs:schema>]]></XmlSchema>
+	<CdsSkeleton>
+		<![CDATA[<DATAPACKET Version="2.0">
+	<METADATA>
+		<FIELDS>
+			<FIELD attrname="diretorioBase" fieldtype="string" WIDTH="200"/>
+			<FIELD attrname="proxy" fieldtype="string" WIDTH="255"/>
+			<FIELD attrname="proxyusuario" fieldtype="string" WIDTH="255"/>
+			<FIELD attrname="proxysenha" fieldtype="string" WIDTH="255"/>
+			<FIELD attrname="retornocomhora" fieldtype="string" WIDTH="1"/>
+			<FIELD attrname="grupo" fieldtype="nested">
+				<FIELDS>
+					<FIELD attrname="id" fieldtype="string" WIDTH="200"/>
+					<FIELD attrname="cnpj" fieldtype="nested">
+						<FIELDS>
+							<FIELD attrname="id" fieldtype="string" WIDTH="200"/>
+							<FIELD attrname="repom" fieldtype="nested">
+								<FIELDS>
+									<FIELD attrname="webserver" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="usuario" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="senha" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="OPERACAO_CODIGO" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="ROTEIRO_IDA_VOLTA" fieldtype="string" WIDTH="200"/>
+								</FIELDS>
+								<PARAMS/>
+							</FIELD>
+							<FIELD attrname="pancary" fieldtype="nested">
+								<FIELDS>
+									<FIELD attrname="envio" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="retorno" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="viagem_parcelaA_efetivacao_tipo" fieldtype="string" WIDTH="32"/>
+									<FIELD attrname="viagem_parcelaA_status_id" fieldtype="string" WIDTH="32"/>
+									<FIELD attrname="viagem_parcelaS_efetivacao_tipo" fieldtype="string" WIDTH="32"/>
+									
+									<FIELD attrname="viagem_parcelaS_status_id" fieldtype="string" WIDTH="1"/>
+									<FIELD attrname="viagem_quitacao" fieldtype="string" WIDTH="1"/>
+									<FIELD attrname="valor_minimo_VA" fieldtype="string" WIDTH="19"/>
+								</FIELDS>
+								<PARAMS/>
+							</FIELD>
+							<FIELD attrname="nddcargo" fieldtype="nested">
+								<FIELDS>
+									<FIELD attrname="tipoIntegracao" fieldtype="string" WIDTH="200"/>
+
+									<FIELD attrname="nddws" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="nddcertificado" fieldtype="string" WIDTH="200"/>
+
+									<FIELD attrname="envio" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="retorno" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="GerarMovimentacaoFinanceira" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="ImpressaoAutomaticaDOT" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="TipodeOperacaodeTransporte" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="TipodaCarga" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="ProprietariodaCarga" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="TipodeRotaPadrao" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="UtilizaRoteirizador" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="NotificaRotaContratante" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="LocaldeEfetivacaodoPagamento" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="LocaldeEfetivacaodoPagamentoAdt" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="DocumentoParaEntregar" fieldtype="string" WIDTH="200"/>
+									
+									<FIELD attrname="DiasParaLiberarSaldo" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="MinutosParaLiberarAdiantamento" fieldtype="string" WIDTH="200"/>
+
+									<FIELD attrname="Confirmador" fieldtype="string" WIDTH="200"/>
+								</FIELDS>
+								<PARAMS/>
+							</FIELD>
+							<FIELD attrname="dbtrans" fieldtype="nested">
+								<FIELDS>
+									<FIELD attrname="webserver" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="usuario" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="senha" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="cliente" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="CondicaoLiberacaoOperacao_Adt" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="LocalRealizacao_Adiantamento" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="CodigoOperacao_Saldo" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="CondicaoLiberacaoOperacao_Saldo" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="LocalRealizacao_Saldo" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="CodigoClausula" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="CodigoClausulaViagem" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="CodigoClausulaPeso" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="Documentos_Entrega" fieldtype="string" WIDTH="200"/>
+								</FIELDS>
+								<PARAMS/>
+							</FIELD>
+							<FIELD attrname="ticket" fieldtype="nested">
+								<FIELDS>
+									<FIELD attrname="webserver" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="usuario" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="senha" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="codigoBase" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="codigoCliente" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="parametrosTicket" fieldtype="string" WIDTH="32"/>
+								</FIELDS>
+								<PARAMS/>
+							</FIELD>
+							<FIELD attrname="target" fieldtype="nested">
+								<FIELDS>
+									<FIELD attrname="webserver" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="identification" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="token" fieldtype="string" WIDTH="200"/>
+								</FIELDS>
+								<PARAMS/>
+							</FIELD>
+						</FIELDS>
+						<PARAMS/>
+					</FIELD>
+				</FIELDS>
+				<PARAMS/>
+			</FIELD>
+		</FIELDS>
+		<PARAMS/>
+	</METADATA>
+	<ROWDATA/>
+	<METADATA>
+		<FIELDS>
+			<FIELD attrname="diretorioBase" fieldtype="string" WIDTH="200"/>
+			<FIELD attrname="proxy" fieldtype="string" WIDTH="255"/>
+			<FIELD attrname="proxyusuario" fieldtype="string" WIDTH="255"/>
+			<FIELD attrname="proxysenha" fieldtype="string" WIDTH="255"/>
+			<FIELD attrname="retornocomhora" fieldtype="string" WIDTH="1"/>
+			<FIELD attrname="grupo" fieldtype="nested">
+				<FIELDS>
+					<FIELD attrname="id" fieldtype="string" WIDTH="200"/>
+					<FIELD attrname="cnpj" fieldtype="nested">
+						<FIELDS>
+							<FIELD attrname="id" fieldtype="string" WIDTH="200"/>
+							<FIELD attrname="repom" fieldtype="nested">
+								<FIELDS>
+									<FIELD attrname="webserver" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="usuario" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="senha" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="OPERACAO_CODIGO" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="ROTEIRO_IDA_VOLTA" fieldtype="string" WIDTH="200"/>
+								</FIELDS>
+								<PARAMS/>
+							</FIELD>
+							<FIELD attrname="pancary" fieldtype="nested">
+								<FIELDS>
+									<FIELD attrname="envio" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="retorno" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="viagem_parcelaA_efetivacao_tipo" fieldtype="string" WIDTH="32"/>
+									<FIELD attrname="viagem_parcelaA_status_id" fieldtype="string" WIDTH="32"/>
+									<FIELD attrname="viagem_parcelaS_efetivacao_tipo" fieldtype="string" WIDTH="32"/>
+									
+									<FIELD attrname="viagem_parcelaS_status_id" fieldtype="string" WIDTH="1"/>
+									<FIELD attrname="viagem_quitacao" fieldtype="string" WIDTH="1"/>
+									<FIELD attrname="valor_minimo_VA" fieldtype="string" WIDTH="19"/>
+									
+								</FIELDS>
+								<PARAMS/>
+							</FIELD>
+							<FIELD attrname="nddcargo" fieldtype="nested">
+								<FIELDS>
+									<FIELD attrname="tipoIntegracao" fieldtype="string" WIDTH="200"/>
+
+									<FIELD attrname="nddws" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="nddcertificado" fieldtype="string" WIDTH="200"/>
+
+									<FIELD attrname="envio" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="retorno" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="GerarMovimentacaoFinanceira" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="ImpressaoAutomaticaDOT" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="TipodeOperacaodeTransporte" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="TipodaCarga" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="ProprietariodaCarga" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="TipodeRotaPadrao" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="UtilizaRoteirizador" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="NotificaRotaContratante" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="LocaldeEfetivacaodoPagamento" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="LocaldeEfetivacaodoPagamentoAdt" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="DocumentoParaEntregar" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="DiasParaLiberarSaldo" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="MinutosParaLiberarAdiantamento" fieldtype="string" WIDTH="200"/>
+
+									<FIELD attrname="Confirmador" fieldtype="string" WIDTH="200"/>
+								</FIELDS>
+								<PARAMS/>
+							</FIELD>
+							<FIELD attrname="dbtrans" fieldtype="nested">
+								<FIELDS>
+									<FIELD attrname="webserver" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="usuario" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="senha" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="cliente" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="CondicaoLiberacaoOperacao_Adt" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="LocalRealizacao_Adiantamento" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="CodigoOperacao_Saldo" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="CondicaoLiberacaoOperacao_Saldo" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="LocalRealizacao_Saldo" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="CodigoClausula" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="CodigoClausulaViagem" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="CodigoClausulaPeso" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="Documentos_Entrega" fieldtype="string" WIDTH="200"/>
+								</FIELDS>
+								<PARAMS/>
+							</FIELD>
+							<FIELD attrname="ticket" fieldtype="nested">
+								<FIELDS>
+									<FIELD attrname="webserver" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="usuario" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="senha" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="codigoBase" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="codigoCliente" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="parametrosTicket" fieldtype="string" WIDTH="32"/>
+								</FIELDS>
+								<PARAMS/>
+							</FIELD>
+							<FIELD attrname="target" fieldtype="nested">
+								<FIELDS>
+									<FIELD attrname="webserver" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="identification" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="token" fieldtype="string" WIDTH="200"/>
+									<FIELD attrname="parametrostarget" fieldtype="string" WIDTH="32"/>
+								</FIELDS>
+								<PARAMS/>
+							</FIELD>
+						</FIELDS>
+						<PARAMS/>
+					</FIELD>
+				</FIELDS>
+				<PARAMS/>
+			</FIELD>
+		</FIELDS>
+		<PARAMS/>
+	</METADATA>
+	<ROWDATA/>
+</DATAPACKET>
+]]></CdsSkeleton>
+	<XslTransform/>
+	<Skeleton>
+		<![CDATA[<?xml version="1.0"?>
+<configuracao>
+	<diretorioBase></diretorioBase>
+	<proxy></proxy>
+	<proxyusuario></proxyusuario>
+	<proxysenha></proxysenha>
+	<retornocomhora></retornocomhora>
+	<grupos>
+		<grupo id="">
+			<cnpjs>
+				<cnpj id="">
+					<administradoras>
+						<repom>
+							<webserver></webserver>
+							<usuario></usuario>
+							<senha></senha>
+							<parametrosRepom>
+								<OPERACAO_CODIGO></OPERACAO_CODIGO>
+								<ROTEIRO_IDA_VOLTA></ROTEIRO_IDA_VOLTA>
+							</parametrosRepom>
+						</repom>
+						<pancary>
+							<envio></envio>
+							<retorno></retorno>
+							<parametrosPancary>
+								<viagem_parcelaA_efetivacao_tipo></viagem_parcelaA_efetivacao_tipo>
+								<viagem_parcelaA_status_id></viagem_parcelaA_status_id>
+								<viagem_parcelaS_efetivacao_tipo></viagem_parcelaS_efetivacao_tipo>
+
+								<viagem_parcelaS_status_id></viagem_parcelaS_status_id>
+								<viagem_quitacao></viagem_quitacao>
+								<valor_minimo_VA></valor_minimo_VA>
+							</parametrosPancary>
+						</pancary>
+						<nddcargo>
+							<tipoIntegracao></tipoIntegracao>
+
+							<nddws></nddws>
+							<nddcertificado></nddcertificado>
+
+							<envio></envio>
+							<retorno></retorno>
+							<parametrosNddCargo>
+								<GerarMovimentacaoFinanceira></GerarMovimentacaoFinanceira>
+								<ImpressaoAutomaticaDOT></ImpressaoAutomaticaDOT>
+								<TipodeOperacaodeTransporte></TipodeOperacaodeTransporte>
+								<TipodaCarga></TipodaCarga>
+								<ProprietariodaCarga></ProprietariodaCarga>
+								<TipodeRotaPadrao></TipodeRotaPadrao>
+								<UtilizaRoteirizador></UtilizaRoteirizador>
+								<NotificaRotaContratante></NotificaRotaContratante>
+								<LocaldeEfetivacaodoPagamento></LocaldeEfetivacaodoPagamento>
+								<LocaldeEfetivacaodoPagamentoAdt></LocaldeEfetivacaodoPagamentoAdt>
+								<DocumentoParaEntregar></DocumentoParaEntregar>
+								<DiasParaLiberarSaldo></DiasParaLiberarSaldo>
+								<MinutosParaLiberarAdiantamento></MinutosParaLiberarAdiantamento>
+								
+								<Confirmador></Confirmador>
+							</parametrosNddCargo>
+						</nddcargo>
+						<dbtrans>
+							<webserver></webserver>
+							<usuario></usuario>
+							<senha></senha>
+							<cliente></cliente>
+							<parametrosDBTrans>
+								<CondicaoLiberacaoOperacao_Adt></CondicaoLiberacaoOperacao_Adt>
+								<LocalRealizacao_Adiantamento></LocalRealizacao_Adiantamento>
+								<CodigoOperacao_Saldo></CodigoOperacao_Saldo>
+								<CondicaoLiberacaoOperacao_Saldo></CondicaoLiberacaoOperacao_Saldo>
+								<LocalRealizacao_Saldo></LocalRealizacao_Saldo>
+								<CodigoClausula></CodigoClausula>
+								<CodigoClausulaViagem></CodigoClausulaViagem>
+								<CodigoClausulaPeso></CodigoClausulaPeso>
+								<Documentos_Entrega></Documentos_Entrega>
+							</parametrosDBTrans>
+						</dbtrans>
+						<ticket>
+							<webserver></webserver>
+							<usuario></usuario>
+							<senha></senha>
+							<codigoBase></codigoBase>
+							<codigoCliente></codigoCliente>
+							<parametrosTicket>
+							</parametrosTicket>
+						</ticket>
+						<target>
+							<webserver></webserver>
+							<identification></identification>
+							<token></token>
+							<parametrostarget>
+							</parametrostarget>
+						</target>
+					</administradoras>
+				</cnpj>
+			</cnpjs>
+		</grupo>
+	</grupos>
+</configuracao>
+]]></Skeleton>
+</XmlTransformation>

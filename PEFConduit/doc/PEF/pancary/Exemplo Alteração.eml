@@ -1,0 +1,1618 @@
+Delivered-To: norldir@tecinco.com.br
+Received: by 10.50.46.133 with SMTP id v5csp145299igm;
+        Tue, 3 Jul 2012 14:03:16 -0700 (PDT)
+Received: by 10.236.74.74 with SMTP id w50mr22206385yhd.34.1341349396137;
+        Tue, 03 Jul 2012 14:03:16 -0700 (PDT)
+Return-Path: <operacoespamcard@roadcard.com.br>
+Received: from bootes.pamcary.com.br (mail.pamcary.com.br. [200.182.254.44])
+        by mx.google.com with ESMTPS id b26si13652531yhe.150.2012.07.03.14.03.14
+        (version=TLSv1/SSLv3 cipher=OTHER);
+        Tue, 03 Jul 2012 14:03:15 -0700 (PDT)
+Received-SPF: neutral (google.com: 200.182.254.44 is neither permitted nor denied by best guess record for domain of operacoespamcard@roadcard.com.br) client-ip=200.182.254.44;
+Authentication-Results: mx.google.com; spf=neutral (google.com: 200.182.254.44 is neither permitted nor denied by best guess record for domain of operacoespamcard@roadcard.com.br) smtp.mail=operacoespamcard@roadcard.com.br
+Received: (qmail 24367 invoked by uid 509); 3 Jul 2012 21:03:13 -0000
+Received: from 192.168.24.39 by bootes (envelope-from <operacoespamcard@roadcard.com.br>, uid 502) with qmail-scanner-1.25 
+ (clamdscan: 0.92.1-exp/5777.  
+ Clear:RC:1(192.168.24.39):. 
+ Processed in 0.263352 secs); 03 Jul 2012 21:03:13 -0000
+Received: from unknown (HELO DMICT02047) ([192.168.24.39])
+          (envelope-sender <operacoespamcard@roadcard.com.br>)
+          by bootes.pamcary.com.br (qmail-ldap-1.03) with SMTP
+          for <norldir@tecinco.com.br>; 3 Jul 2012 21:03:12 -0000
+From: =?iso-8859-1?Q?Opera=E7=F5es_Pamcard?= <operacoespamcard@roadcard.com.br>
+To: "'Norldir Kunkel'" <norldir@tecinco.com.br>
+References: <CAHGooaG583YYHoxWyiV502z3TjT5BQnGyOasHoiL5bmnAtPgmw@mail.gmail.com>
+In-Reply-To: <CAHGooaG583YYHoxWyiV502z3TjT5BQnGyOasHoiL5bmnAtPgmw@mail.gmail.com>
+Subject: Como enviar descontos.
+Date: Tue, 3 Jul 2012 18:06:38 -0300
+Message-ID: <04a501cd595f$bc5c1950$35144bf0$@roadcard.com.br>
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+	boundary="----=_NextPart_000_04A6_01CD5946.97145F90"
+X-Mailer: Microsoft Outlook 14.0
+Thread-Index: AQLjt9qesT79NTZZui3397bPGa+UqJTrTz0A
+Content-Language: pt-br
+
+This is a multipart message in MIME format.
+
+------=_NextPart_000_04A6_01CD5946.97145F90
+Content-Type: multipart/related;
+	boundary="----=_NextPart_001_04A7_01CD5946.97145F90"
+
+
+------=_NextPart_001_04A7_01CD5946.97145F90
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_002_04A8_01CD5946.97145F90"
+
+
+------=_NextPart_002_04A8_01CD5946.97145F90
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Norldir Boa Tarde,
+
+=20
+
+Esses descontos podem ser atribu=EDdos atrav=E9s da funcionalidade =
+=93Alterar
+Valores do Contrato de Frete=94.
+
+=20
+
+Abaixo estou lhe enviando a lista de itens de frete e anexo exemplos =
+para
+melhor entendimento.
+
+=20
+
+
+C=F3digo
+
+Item
+
+Nomenclatura
+
+
+1
+
+D=C9BITO
+
+IRRPF
+
+
+2
+
+D=C9BITO
+
+INSS
+
+
+3
+
+D=C9BITO
+
+SEST/SENAT
+
+
+4
+
+CR=C9DITO
+
+Premia=E7=E3o
+
+
+5
+
+CR=C9DITO
+
+Di=E1ria
+
+
+6
+
+CR=C9DITO
+
+Complemento
+
+
+7
+
+COMPENSA=C7=C3O
+
+Funilaria
+
+
+8
+
+D=C9BITO
+
+Falta Item Kit Emerg=EAncia
+
+
+9
+
+D=C9BITO
+
+Falta Comprovante de Entrega
+
+
+21
+
+D=C9BITO
+
+Perda Danos ou Avaria de Carga
+
+
+41
+
+D=C9BITO
+
+Debito
+
+
+42
+
+CR=C9DITO
+
+Credito
+
+
+61
+
+D=C9BITO
+
+ISS
+
+
+62
+
+D=C9BITO
+
+PIS
+
+
+63
+
+D=C9BITO
+
+COFINS
+
+
+81
+
+CR=C9DITO
+
+Bonificacao
+
+
+82
+
+D=C9BITO
+
+Outros
+
+
+83
+
+D=C9BITO
+
+Multa
+
+
+101
+
+D=C9BITO
+
+OUTROS DESCONTOS
+
+
+121
+
+D=C9BITO
+
+Desobediencia do PME
+
+
+122
+
+D=C9BITO
+
+Falta da Catraca
+
+
+123
+
+D=C9BITO
+
+Falta de Cinta
+
+
+124
+
+D=C9BITO
+
+Falta Conj Cinta / Catraca
+
+
+125
+
+D=C9BITO
+
+Falta do Rastreador
+
+
+126
+
+D=C9BITO
+
+Falta Pino do Berco Metalico
+
+
+127
+
+D=C9BITO
+
+Falta Longarina Berco Metalico
+
+
+128
+
+D=C9BITO
+
+Falta Sapata do Berco Metalico
+
+
+129
+
+D=C9BITO
+
+Falta Travessa Berco Metalico
+
+
+130
+
+D=C9BITO
+
+Falta Berco Metalico Completo
+
+
+141
+
+D=C9BITO
+
+Seguro
+
+
+161
+
+D=C9BITO
+
+Quebra de Peso
+
+
+162
+
+CR=C9DITO
+
+Vlr Diferenca Manual Positiva
+
+
+163
+
+D=C9BITO
+
+Vlr Diferenca Manual Negativa
+
+
+164
+
+D=C9BITO
+
+Valor Outros
+
+
+181
+
+D=C9BITO
+
+ISSQN
+
+
+201
+
+D=C9BITO
+
+Seguro de Vida
+
+
+202
+
+D=C9BITO
+
+Pamcary
+
+
+203
+
+D=C9BITO
+
+PamTax
+
+
+204
+
+D=C9BITO
+
+Quebras e Faltas
+
+
+221
+
+D=C9BITO
+
+Fueiro(s) e Suporte(s)
+
+
+222
+
+D=C9BITO
+
+Corda
+
+
+223
+
+D=C9BITO
+
+Lona
+
+
+224
+
+D=C9BITO
+
+Madeirite
+
+
+241
+
+D=C9BITO
+
+CSLL
+
+
+261
+
+D=C9BITO
+
+Ajuste
+
+=20
+
+At.
+
+Descri=E7=E3o:
+http://intranet.pamcary-interno.com.br/assinatura_road/img/caio.carvalho.=
+gif
+
+P Antes de imprimir, pense em sua responsabilidade e compromisso com o =
+MEIO
+AMBIENTE!
+
+
+"As informa=E7=F5es contidas nesta mensagem, incluindo seus anexos, =
+s=E3o
+CONFIDENCIAIS e protegidas pelo sigilo legal. Caso n=E3o seja o =
+destinat=E1rio,
+favor apag=E1-la e notificar seu remetente imediatamente. A leitura,
+divulga=E7=E3o ou c=F3pia s=E3o proibidas e estar=E1 sujeita =E0s normas =
+da empresa e/ou
+a legisla=E7=E3o em vigor".
+
+=20
+
+-----Mensagem original-----
+De: Norldir Kunkel [mailto:norldir@tecinco.com.br]=20
+Enviada em: ter=E7a-feira, 3 de julho de 2012 17:28
+Para: Operacoes Pamcard
+Assunto: Como enviar descontos.
+
+=20
+
+Boa tarde Caio,
+
+=20
+
+=20
+
+Em algumas opera=E7=F5es de transporte temos a necessidade enviar =
+descontos no
+valor do frete.
+
+=20
+
+=20
+
+por exemplo o frete de
+
+=20
+
+viagem.frete.valor.bruto=3D3873.02
+
+=20
+
+=20
+
+mais 2 reten=E7=F5es
+
+viagem.frete.item.qtde=3D2
+
+viagem.frete.item1.tipo=3D1
+
+viagem.frete.item1.valor=3D25.39
+
+viagem.frete.item2.tipo=3D2
+
+viagem.frete.item2.valor=3D85.21
+
+=20
+
+=20
+
+sendo que este frete vai ser pago em 2 parcelas
+
+=20
+
+=20
+
+viagem.parcela.qtde=3D2
+
+viagem.parcela1.efetivacao.tipo=3D1
+
+viagem.parcela1.valor=3D2000.00
+
+viagem.parcela1.subtipo=3D1
+
+viagem.parcela1.base=3DN
+
+viagem.parcela1.status.id=3D2
+
+viagem.parcela1.data=3D19/06/2012
+
+viagem.parcela1.favorecido=3D1
+
+viagem.parcela2.efetivacao.tipo=3D1
+
+viagem.parcela2.valor=3D1752.43
+
+viagem.parcela2.subtipo=3D3
+
+viagem.parcela2.base=3DN
+
+viagem.parcela2.data=3D19/06/2012
+
+viagem.parcela2.favorecido=3D1
+
+=20
+
+=20
+
+=20
+
+=20
+
+veja que a a soma das parcelas n=E3o fecha, falta 9.99 que =E9 um =
+desconto que
+tenho que fazer no frete, que =E9 referente a participa=E7=E3o do =
+motorista no
+seguro da carga. mas temos casos que tem desconto de seguro, valor do =
+cart=E3o
+VP, outros descontos.
+
+=20
+
+=20
+
+como posso enviar este desconto ?
+
+=20
+
+att
+
+=20
+
+=20
+
+=20
+
+=20
+
+--
+
+-----
+
+=20
+
+Norldir Kunkel
+
+Diretor Produtos
+
+=20
+
+            +55 (45) 3301-5050      
+
+ <mailto:norldir@tecinco.com.br> norldir@tecinco.com.br
+
+
+------=_NextPart_002_04A8_01CD5946.97145F90
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<META HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =
+charset=3Diso-8859-1">
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" =
+xmlns:o=3D"urn:schemas-microsoft-com:office:office" =
+xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:x=3D"urn:schemas-microsoft-com:office:excel" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" =
+xmlns=3D"http://www.w3.org/TR/REC-html40"><head><meta name=3DGenerator =
+content=3D"Microsoft Word 14 (filtered medium)"><!--[if =
+!mso]><style>v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style><![endif]--><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Webdings;
+	panose-1:5 3 1 2 1 5 9 6 7 3;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-fareast-language:EN-US;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-priority:99;
+	color:purple;
+	text-decoration:underline;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-priority:99;
+	mso-style-link:"Texto sem Formata=E7=E3o Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-priority:99;
+	mso-style-link:"Texto de bal=E3o Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-fareast-language:EN-US;}
+span.TextosemFormataoChar
+	{mso-style-name:"Texto sem Formata=E7=E3o Char";
+	mso-style-priority:99;
+	mso-style-link:"Texto sem Formata=E7=E3o";
+	font-family:"Calibri","sans-serif";
+	mso-fareast-language:PT-BR;}
+span.TextodebaloChar
+	{mso-style-name:"Texto de bal=E3o Char";
+	mso-style-priority:99;
+	mso-style-link:"Texto de bal=E3o";
+	font-family:"Tahoma","sans-serif";}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-family:"Calibri","sans-serif";
+	mso-fareast-language:EN-US;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:70.85pt 3.0cm 70.85pt 3.0cm;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]--></head><body lang=3DPT-BR link=3Dblue =
+vlink=3Dpurple><div class=3DWordSection1><p class=3DMsoPlainText>Norldir =
+Boa Tarde,<o:p></o:p></p><p class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p =
+class=3DMsoPlainText>Esses descontos podem ser atribu=EDdos atrav=E9s da =
+funcionalidade &#8220;Alterar Valores do Contrato de =
+Frete&#8221;.<o:p></o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p class=3DMsoPlainText>Abaixo =
+estou lhe enviando a lista de itens de frete e anexo exemplos para =
+melhor entendimento.<o:p></o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><table class=3DMsoNormalTable =
+border=3D0 cellspacing=3D0 cellpadding=3D0 width=3D405 =
+style=3D'width:304.0pt;margin-left:-1.15pt;border-collapse:collapse'><tr =
+style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;background:#0070C0;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><b><span =
+style=3D'color:white;mso-fareast-language:PT-BR'>C=F3digo<o:p></o:p></spa=
+n></b></p></td><td width=3D109 nowrap style=3D'width:82.0pt;border:solid =
+windowtext 1.0pt;border-left:none;background:#0070C0;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal align=3Dcenter =
+style=3D'text-align:center'><b><span =
+style=3D'color:white;mso-fareast-language:PT-BR'>Item<o:p></o:p></span></=
+b></p></td><td width=3D205 nowrap style=3D'width:154.0pt;border:solid =
+windowtext 1.0pt;border-left:none;background:#0070C0;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal align=3Dcenter =
+style=3D'text-align:center'><b><span =
+style=3D'color:white;mso-fareast-language:PT-BR'>Nomenclatura<o:p></o:p><=
+/span></b></p></td></tr><tr style=3D'height:15.0pt'><td width=3D91 =
+nowrap style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>1<o:p></o:p></span></p><=
+/td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>IRRPF<o:p></o:p></span><=
+/p></td></tr><tr style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>2<o:p></o:p></span></p><=
+/td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>INSS<o:p></o:p></span></=
+p></td></tr><tr style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>3<o:p></o:p></span></p><=
+/td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>SEST/SENAT<o:p></o:p></s=
+pan></p></td></tr><tr style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>4<o:p></o:p></span></p><=
+/td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>CR=C9DITO<o:p></o:p></sp=
+an></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Premia=E7=E3o<o:p></o:p>=
+</span></p></td></tr><tr style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>5<o:p></o:p></span></p><=
+/td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>CR=C9DITO<o:p></o:p></sp=
+an></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Di=E1ria<o:p></o:p></spa=
+n></p></td></tr><tr style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>6<o:p></o:p></span></p><=
+/td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>CR=C9DITO<o:p></o:p></sp=
+an></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Complemento<o:p></o:p></=
+span></p></td></tr><tr style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>7<o:p></o:p></span></p><=
+/td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>COMPENSA=C7=C3O<o:p></o:=
+p></span></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Funilaria<o:p></o:p></sp=
+an></p></td></tr><tr style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>8<o:p></o:p></span></p><=
+/td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Falta Item Kit =
+Emerg=EAncia<o:p></o:p></span></p></td></tr><tr =
+style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>9<o:p></o:p></span></p><=
+/td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Falta Comprovante de =
+Entrega<o:p></o:p></span></p></td></tr><tr style=3D'height:15.0pt'><td =
+width=3D91 nowrap style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>21<o:p></o:p></span></p>=
+</td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Perda Danos ou Avaria =
+de Carga<o:p></o:p></span></p></td></tr><tr style=3D'height:15.0pt'><td =
+width=3D91 nowrap style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>41<o:p></o:p></span></p>=
+</td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Debito<o:p></o:p></span>=
+</p></td></tr><tr style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>42<o:p></o:p></span></p>=
+</td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>CR=C9DITO<o:p></o:p></sp=
+an></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Credito<o:p></o:p></span=
+></p></td></tr><tr style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>61<o:p></o:p></span></p>=
+</td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>ISS<o:p></o:p></span></p=
+></td></tr><tr style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>62<o:p></o:p></span></p>=
+</td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>PIS<o:p></o:p></span></p=
+></td></tr><tr style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>63<o:p></o:p></span></p>=
+</td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>COFINS<o:p></o:p></span>=
+</p></td></tr><tr style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>81<o:p></o:p></span></p>=
+</td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>CR=C9DITO<o:p></o:p></sp=
+an></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Bonificacao<o:p></o:p></=
+span></p></td></tr><tr style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>82<o:p></o:p></span></p>=
+</td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Outros<o:p></o:p></span>=
+</p></td></tr><tr style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>83<o:p></o:p></span></p>=
+</td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Multa<o:p></o:p></span><=
+/p></td></tr><tr style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>101<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>OUTROS =
+DESCONTOS<o:p></o:p></span></p></td></tr><tr style=3D'height:15.0pt'><td =
+width=3D91 nowrap style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>121<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Desobediencia do =
+PME<o:p></o:p></span></p></td></tr><tr style=3D'height:15.0pt'><td =
+width=3D91 nowrap style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>122<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Falta da =
+Catraca<o:p></o:p></span></p></td></tr><tr style=3D'height:15.0pt'><td =
+width=3D91 nowrap style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>123<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Falta de =
+Cinta<o:p></o:p></span></p></td></tr><tr style=3D'height:15.0pt'><td =
+width=3D91 nowrap style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>124<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Falta Conj Cinta / =
+Catraca<o:p></o:p></span></p></td></tr><tr style=3D'height:15.0pt'><td =
+width=3D91 nowrap style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>125<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Falta do =
+Rastreador<o:p></o:p></span></p></td></tr><tr =
+style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>126<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Falta Pino do Berco =
+Metalico<o:p></o:p></span></p></td></tr><tr style=3D'height:15.0pt'><td =
+width=3D91 nowrap style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>127<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Falta Longarina Berco =
+Metalico<o:p></o:p></span></p></td></tr><tr style=3D'height:15.0pt'><td =
+width=3D91 nowrap style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>128<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Falta Sapata do Berco =
+Metalico<o:p></o:p></span></p></td></tr><tr style=3D'height:15.0pt'><td =
+width=3D91 nowrap style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>129<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Falta Travessa Berco =
+Metalico<o:p></o:p></span></p></td></tr><tr style=3D'height:15.0pt'><td =
+width=3D91 nowrap style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>130<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Falta Berco Metalico =
+Completo<o:p></o:p></span></p></td></tr><tr style=3D'height:15.0pt'><td =
+width=3D91 nowrap style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>141<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Seguro<o:p></o:p></span>=
+</p></td></tr><tr style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>161<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Quebra de =
+Peso<o:p></o:p></span></p></td></tr><tr style=3D'height:15.0pt'><td =
+width=3D91 nowrap style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>162<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>CR=C9DITO<o:p></o:p></sp=
+an></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Vlr Diferenca Manual =
+Positiva<o:p></o:p></span></p></td></tr><tr style=3D'height:15.0pt'><td =
+width=3D91 nowrap style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>163<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Vlr Diferenca Manual =
+Negativa<o:p></o:p></span></p></td></tr><tr style=3D'height:15.0pt'><td =
+width=3D91 nowrap style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>164<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Valor =
+Outros<o:p></o:p></span></p></td></tr><tr style=3D'height:15.0pt'><td =
+width=3D91 nowrap style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>181<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>ISSQN<o:p></o:p></span><=
+/p></td></tr><tr style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>201<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Seguro de =
+Vida<o:p></o:p></span></p></td></tr><tr style=3D'height:15.0pt'><td =
+width=3D91 nowrap style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>202<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Pamcary<o:p></o:p></span=
+></p></td></tr><tr style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>203<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>PamTax<o:p></o:p></span>=
+</p></td></tr><tr style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>204<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Quebras e =
+Faltas<o:p></o:p></span></p></td></tr><tr style=3D'height:15.0pt'><td =
+width=3D91 nowrap style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>221<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Fueiro(s) e =
+Suporte(s)<o:p></o:p></span></p></td></tr><tr =
+style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>222<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Corda<o:p></o:p></span><=
+/p></td></tr><tr style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>223<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Lona<o:p></o:p></span></=
+p></td></tr><tr style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>224<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Madeirite<o:p></o:p></sp=
+an></p></td></tr><tr style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>241<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>CSLL<o:p></o:p></span></=
+p></td></tr><tr style=3D'height:15.0pt'><td width=3D91 nowrap =
+style=3D'width:68.0pt;border:solid windowtext =
+1.0pt;border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'><p =
+class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>261<o:p></o:p></span></p=
+></td><td width=3D109 nowrap valign=3Dbottom =
+style=3D'width:82.0pt;border-top:none;border-left:none;border-bottom:soli=
+d windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 3.5pt =
+0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>D=C9BITO<o:p></o:p></spa=
+n></p></td><td width=3D205 nowrap valign=3Dbottom =
+style=3D'width:154.0pt;border-top:none;border-left:none;border-bottom:sol=
+id windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm =
+3.5pt 0cm 3.5pt;height:15.0pt'><p class=3DMsoNormal><span =
+style=3D'color:black;mso-fareast-language:PT-BR'>Ajuste<o:p></o:p></span>=
+</p></td></tr></table><p class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p =
+class=3DMsoNormal><span =
+style=3D'mso-fareast-language:PT-BR'>At.<o:p></o:p></span></p><p =
+class=3DMsoNormal><span style=3D'font-size:12.0pt;font-family:"Times New =
+Roman","serif";mso-fareast-language:PT-BR'><img width=3D439 height=3D96 =
+id=3D"Imagem_x0020_1" src=3D"cid:image001.gif@01CD5946.96E7AA40" =
+alt=3D"Descri=E7=E3o: =
+http://intranet.pamcary-interno.com.br/assinatura_road/img/caio.carvalho.=
+gif"><o:p></o:p></span></p><p class=3DMsoNormal><i><span =
+style=3D'font-size:24.0pt;font-family:Webdings;color:green;mso-fareast-la=
+nguage:PT-BR'>P</span></i><i><span =
+style=3D'font-size:7.5pt;font-family:"Tahoma","sans-serif";color:green;ms=
+o-fareast-language:PT-BR'> Antes de imprimir, pense em sua =
+responsabilidade e compromisso com o MEIO AMBIENTE!</span></i><i><span =
+style=3D'font-size:10.0pt;font-family:"Times New =
+Roman","serif";mso-fareast-language:PT-BR'><o:p></o:p></span></i></p><p =
+class=3DMsoNormal><i><span style=3D'font-size:10.0pt;font-family:"Times =
+New Roman","serif";mso-fareast-language:PT-BR'><br></span></i><i><span =
+style=3D'font-size:7.5pt;font-family:"Verdana","sans-serif";color:black;m=
+so-fareast-language:PT-BR'>&quot;As informa=E7=F5es contidas nesta =
+mensagem, incluindo seus anexos, s=E3o CONFIDENCIAIS e protegidas pelo =
+sigilo legal. Caso n=E3o seja o destinat=E1rio, favor apag=E1-la e =
+notificar seu remetente imediatamente. A leitura, divulga=E7=E3o ou =
+c=F3pia s=E3o proibidas e estar=E1 sujeita =E0s normas da empresa e/ou a =
+legisla=E7=E3o em vigor&quot;.</span></i><span =
+style=3D'mso-fareast-language:PT-BR'><o:p></o:p></span></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p =
+class=3DMsoPlainText>-----Mensagem original-----<br>De: Norldir Kunkel =
+[mailto:norldir@tecinco.com.br] <br>Enviada em: ter=E7a-feira, 3 de =
+julho de 2012 17:28<br>Para: Operacoes Pamcard<br>Assunto: Como enviar =
+descontos.</p><p class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p =
+class=3DMsoPlainText>Boa tarde Caio,<o:p></o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p class=3DMsoPlainText>Em =
+algumas opera=E7=F5es de transporte temos a necessidade enviar descontos =
+no valor do frete.<o:p></o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p class=3DMsoPlainText>por =
+exemplo o frete de<o:p></o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p =
+class=3DMsoPlainText>viagem.frete.valor.bruto=3D3873.02<o:p></o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p class=3DMsoPlainText>mais 2 =
+reten=E7=F5es<o:p></o:p></p><p =
+class=3DMsoPlainText>viagem.frete.item.qtde=3D2<o:p></o:p></p><p =
+class=3DMsoPlainText>viagem.frete.item1.tipo=3D1<o:p></o:p></p><p =
+class=3DMsoPlainText>viagem.frete.item1.valor=3D25.39<o:p></o:p></p><p =
+class=3DMsoPlainText>viagem.frete.item2.tipo=3D2<o:p></o:p></p><p =
+class=3DMsoPlainText>viagem.frete.item2.valor=3D85.21<o:p></o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p class=3DMsoPlainText>sendo =
+que este frete vai ser pago em 2 parcelas<o:p></o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p =
+class=3DMsoPlainText>viagem.parcela.qtde=3D2<o:p></o:p></p><p =
+class=3DMsoPlainText>viagem.parcela1.efetivacao.tipo=3D1<o:p></o:p></p><p=
+ class=3DMsoPlainText>viagem.parcela1.valor=3D2000.00<o:p></o:p></p><p =
+class=3DMsoPlainText>viagem.parcela1.subtipo=3D1<o:p></o:p></p><p =
+class=3DMsoPlainText>viagem.parcela1.base=3DN<o:p></o:p></p><p =
+class=3DMsoPlainText>viagem.parcela1.status.id=3D2<o:p></o:p></p><p =
+class=3DMsoPlainText>viagem.parcela1.data=3D19/06/2012<o:p></o:p></p><p =
+class=3DMsoPlainText>viagem.parcela1.favorecido=3D1<o:p></o:p></p><p =
+class=3DMsoPlainText>viagem.parcela2.efetivacao.tipo=3D1<o:p></o:p></p><p=
+ class=3DMsoPlainText>viagem.parcela2.valor=3D1752.43<o:p></o:p></p><p =
+class=3DMsoPlainText>viagem.parcela2.subtipo=3D3<o:p></o:p></p><p =
+class=3DMsoPlainText>viagem.parcela2.base=3DN<o:p></o:p></p><p =
+class=3DMsoPlainText>viagem.parcela2.data=3D19/06/2012<o:p></o:p></p><p =
+class=3DMsoPlainText>viagem.parcela2.favorecido=3D1<o:p></o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p class=3DMsoPlainText>veja =
+que a a soma das parcelas n=E3o fecha, falta 9.99 que =E9 um desconto =
+que tenho que fazer no frete, que =E9 referente a participa=E7=E3o do =
+motorista no seguro da carga. mas temos casos que tem desconto de =
+seguro, valor do cart=E3o VP, outros descontos.<o:p></o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p class=3DMsoPlainText>como =
+posso enviar este desconto ?<o:p></o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p =
+class=3DMsoPlainText>att<o:p></o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p =
+class=3DMsoPlainText>--<o:p></o:p></p><p =
+class=3DMsoPlainText>-----<o:p></o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p =
+class=3DMsoPlainText>Norldir Kunkel<o:p></o:p></p><p =
+class=3DMsoPlainText>Diretor Produtos<o:p></o:p></p><p =
+class=3DMsoPlainText><o:p>&nbsp;</o:p></p><p class=3DMsoPlainText>+55 =
+            (45) 3301-5050      <o:p></o:p></p><p class=3DMsoPlainText><a =
+href=3D"mailto:norldir@tecinco.com.br"><span =
+style=3D'color:windowtext;text-decoration:none'>norldir@tecinco.com.br</s=
+pan></a><o:p></o:p></p></div></body></html>
+------=_NextPart_002_04A8_01CD5946.97145F90--
+
+------=_NextPart_001_04A7_01CD5946.97145F90
+Content-Type: image/gif;
+	name="image001.gif"
+Content-Transfer-Encoding: base64
+Content-ID: <image001.gif@01CD5946.96E7AA40>
+
+R0lGODlhtwFgAPZlAAgICBYWFiYmJjY2NgA4aAA8cgBFeRREciRJdCVSfTVMdDdXeEdHR1dXV2Zm
+ZnR0dABMhQBTigBVmRNJhBlajgxdpBBeoQFjnABkowButAByqQB3thlkpDdbhC9omjhnlyNqqC1x
+rDV0qjx7skxlh09ym1x2mkN+s2J9p1J9xUmEt1aIvFyRv3yBhGSFqnmNpnCLt32Vul+TwGyZy3ab
+x3qlyn2i04OFh4qOk46Sl5aXmoubu5qeopuip5invaSfq6WnqKmusa+xtLW3uYmrzImr1Yuw0Zem
+xZu0zZe12KOsyKmzzqm51rK6zbG/26q84KrF3b/BxLvE26nC4bfF5b7T58bHycXK2dXX2MLO6czY
+6cPb8tve5Nje9Nvh5tvn+Obn5+Xr9O31+fr97Pz8/AA3aAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5
+BAEAAGUALAAAAAC3AWAAAAf+gGSCg4SFhoeIiYqLjI2Oj5CRkpOUlZaXmJmam5ydnp+goaKjpKWm
+p6ipqqusra6vsLGys7S1tre4ubq7vL2+v8DBwsPExcbHyMnKy8zNzs/Q0dLT1NXW19jZ2q5iNCAS
+EiE1i+BQj2E13xIi46HgTGTl2/P0zmHfHDMzHBKLNTVdHN2TkG9fP3cSzMmrx7AhsRkExQgKM0IQ
+lBDgOKj4ImihEXUzJBaCyCHMxIpkLmZUETCehBkYV0hQISgJwZQYCbLsKAEeOCMqJIDIMuijBAsh
+HSpd+opfkUNGRtCgwS8ET3hGwNEQIQElIaeHiozQV5Wn1BpUwEkMOo6IVBr+FsJ1rKAQnF2rZLJW
+gNmVqd9WIuctNBQGSpGgB8E5IfPNCJkv4LQUGlyo8GFwVwd9SyIGHEcyllNgdlm3iBiIB/k55hL5
+r+vXn/gROWTT7mh5CymTkU3b9u2Eg4hIOGHzRE3fiXuSTvlbCk8qsKNLtwQRhEgxNF3O+PLkt7lv
+TyFLkEyoukky2AXxY1HY+6AvFcJVgKc9DJPfPiU8YX4Q/OPW0wVYSWBkjCEIgehZEwYHERTEj3oS
+PFXDb1PkddRWfVXGj4OpSeDYhMnRJwhiFYikmhgg8uScPFCMlpUFNWDklYA0TmIgGVvAQN4gN1YT
+xgzqiCNIFSA0iFhmeYH+hOBEQIIjJBlE6vTbfoPc99IgUYJw5HIsjpbkUSwsWeOYjVSBwgUYQEfm
+mmxaU0UJE0RwwQXQ9djmnXge0wUJBhgAQQQS0BmYnXkWamguQFCwQAcelCCCCCrsOIiYh1ZqaSgS
+LeGDD0p0egQTSCwhKhOkMgGFE08wQYUUYFzq6qudjDGoAgTUSkABBRAAgZ8Q/BnonBJggIEG5sBq
+7LGZ0Grrrbj2GcGz0AY7ZwbQUepMCwIIMEAQojCAhQMCOBAJGABk6y0qYARAKLLKEGjgBMvWWsAE
+fkbga6C/DqtmNTgw0CoWAkRxC7mC9ItuAOxWI4ay8hbQJ69/AnpBsBr+CFuhNQJgMQgQDJCRLgPZ
+aswFyAJY4TEADQhggscDZCuEIGCQLC4WLftLBs3ZmkyGDuZqPEi6ggDMsssnpxzADSAH8LLHMg8t
+wMvkNjBACze3PADCCT9D4AskmOA1CmCj4IILMJQdQwwwxLDDVDa0RA3BgwhNrsk5dDyAyUJ0TK7G
+dkYhgCAD8EDI02TcIO7dZOSNHgA6FwL3Aw0Q0sTfc5NhBeNkRDEA4DkcMvnJPpPBgA43Y511M1bo
+0AMQPPAAxOpBCCFE7LEzMcTtTTRhUo/rag0AIWAIMAbQNwtAbrbZemy65SkLgDDcB/5e/BjlIi+I
+CQIAwEDjJ2frgIH+Vhj9PNZYYA10GNIPEn62408qPfGnLzOGEC3ccAMO+OOQQw446OB/6zzoweqA
+AIRWbSMAoeOY8oJmPAAYEGbLCwAQhocwMQCgR3ArH7nOQ4gxjCEHm/vZ8sggQQqSwQvmS2GB0icI
+CYoBaNCDG/zip4whtOCGOLif/vbnvx4A8HVACEIPHpiNGwygVVwQQBNOZqAHPIAMAxAXGKSYPnK1
+SghYYwAO0CMuAQyhcIcT1xik+ACJCOFvP2MhuczYvgW6UYvoeYAVyRCE57FQiWQYwghpeAwb2k+H
++MuBDvbXOgESUIgFLIS1nHED5AEBZgComUSwwIAABECKy7tBAAT+UEkGOm9m5vpXJQMQuZhtcgCh
+c+MgWmDJBtgRggUiHiU/WbhWtlEQQzDXHvlYDPrV74877F8P/Mc6AhqTiA2ZoSXKx8tmImKRi1QK
+9AaULdI585qF4EELAknMJWLzm+xaUg7qx0MrfAac6EyYRHhggvsJAZnpjCc0escJehaIEDq4ARC4
+AAmJRHNAm7CnPA0lUEWuq3cSKaggFPpPIWBBoZO65yNEAtGBWjSinqjoMxNkCTvdiED/NAVIebTR
+A13UUAgaqSJS+ogbKdSeH10oJQSq0UP06DpiOqhNT4qnmso0ESEthEcXYaCgJoJQMZ2pS3l6Up0e
+1RAwBSgieFf+0kZQFRJX7V1RV2pVprrKnxxl6SKuw1GIiomsGE2QUT1ICDEYVZHQPIS1lsrRSYHV
+q3e6kRSkQIUsOKGvWaCCYPn51Mc0wQYr0AcN9jXVQVwBClS4grskKogr/FWwgg0sFTiYVpOS4QpF
+QOwMbJAESQn1o114rBS4gKCbauEKmI0tFaBwhUR8ga+yFWxt8ZqnYWXgtxkQ1m81oAERVMGzgfkC
+DDJA3AsQFwMZEAESEkrSSVGBucElwqAMAV0NDFe4wSXOIp6gguE6d1gaWAF5kjqIMIggAxzIgAza
+aogTQPe+2P0tBzSQhLRSQVgbAC50gbsCcxDqrbylh7AWvOD+3wYrAx7YwpKo4AHhCitYFnbBZwID
+1hOgSVgfCAilhFUxYX04uMFywe4U6YLzViADc7pABl58ASZMdhA08C4G5tRfRQ7iBNglMYOHdYHZ
+FOK/wvLAxDSAporBGAatTfB0PlwEJ0jBylB4whEW7ILqVqHCGJDACojyGCSgAMMo6CBHt/xiDzB5
+B4qYU5qgIIUpPOEJNPjAhV2wXTHsIFjrWMIXJDIFFUwsAxI4wkjHEAY5i0BYHLAWYmCAZb42QQki
+mJgI1MyEBZtqCrOFggs+IAENvIS6Ug7QxC7gTQJB5AIioGqLA7VbiYrBBfgqliE8IIEIxMAIaPIA
+R3oHjgv+0FcMYUAMnTqoBQqEOc0dFMMWSiABFywmogZ6tbADFQEkIJQrF4CyIbozMUIxYWIHKcQX
+qB3m46YaNnaCljfbagJAlUCRFJATDCg7KQ8Ais+oFoMP7DJof0dg3z8dBKAiwG9BcAECE0vKICYE
+qDDc9D2DFlMYeh2BxcSg1x4gaY+44utDxIACF2B4IZggJ5XTtwrPokAMGv5u1/wJAh4QwQdKsPMP
+eAACveZzIf5kgP6KYagoeFYJOPwYCvT6KWRoArTcbQhoTfUDf/pAIWAAKK1Ddaz1jsCm0RMnA4jb
+EB941jp4vnMPeCBOEQj5yq3+0cD8/OB3rflresX3vtv+a1fCri7RjR5WQZSgTx5AEAx2lYCjoyft
+ETABRXnEd+oulQK9ureBDAQDPy3dpDn9qRbsZYDpyqoGf5rAOQnhb75DrFf2msC+RLIEA0TAADb9
+gp8m0GUE650adnoYBdzOKAo8DAVfYCtY6WUAzctUIl84wO1dwFaY8Z35u3qYAahOiIchYgm7gkDv
+D3SEAkDgAHyrrhR2667DQ2AC8DfAAZhvdlkVwgN9SoAHGOUBzCP+uHVHBrXXJzzSIzHQJxAQAz71
+ewpzIw5jAEsgUdHXJx1gCBJRAuZnAHCmbiZAAH3iHITgAgfwMA7zgA+zAGnVJwVwCFhgfH0iIoLQ
+BQj+QIFucyBIMIMlQBTX4QQqaAAlqH3yd06O5wEO02WE0AF9cgDcNwhKoIKTxQQj6IPk4XsMWA0q
+qARtdQQeSAArgyAy2CcEQAJHEAVigAQvEIUG0IWDIAUGUCsuADYm4AJxiAIq6AMYhSsFEDZh8wEH
+UIIrYwg7UIIHYAJI4Fc7gIG3YgB2eIQ+2AFe84Zg4wIJ4DAmQChISADQdk9ZMIIEgIIIogRbiAIm
+EImj5oG5InRV6Bf+JC9K4FaTQgK5QgARaAhNMIltGC+3SAIgVQIeuAAcdiMkUCsoWAjLkiuxuIVh
+eHFF9QK3Ei+xaAAIsAOTB4q3AoKodgS36ByBkQD+Hih5ZRWIp8hvTegwzFIrbXiL3khzqbgN9oce
+tnIEaqYFB1ArCoBUj1EC8xgvBKAA8GgnV2ArcLYu/1grdvhR+hgvCwCPnlUIUhCMB+kBtXYgykIC
+DScRE/l8C1ArK2MnYpCRtQKCCeIDB7ksC4CF6wgbR9ADPgBPZCAFm7KI6NFaTQADJlACJrAD81ZW
+XHAEPLlRTHAESsA9ZMCTO/ADO8ApmyIFN3YgIHUEXuM1rfhTjseTRyAZYpIFO/ApdqIEmxKRg9AF
+R9CVhYAFPOkDPOADZekDLbEkVHiSCmOBnaWOXOVS/uRS7QiX9FV97Th5G0VXCLVVC8WRl0BPk8f+
+VuzVlm65DNtVWC21kI4gVtXlCXknl1h1YCIXCYiJPNWDRsCzS2O5PMxkCA9wSjojNZy0NKUzCODC
+SV/EgqYzmtqiMceTLSF0RjmDCFywmSFUCaEZNLu0mgzQmraJOIlDmzozSwLwRIhgBa9pScQZBMYp
+CMiTPapQUHRFX3UFVIFJUtG0VYQpV0KFnXKpUe7ynT7mmICZneo5CcoEPCx0CJZkOtmzS3JEBkCw
+mw6HRvNpCMEDn5Y0CPXZA5szTegRAPwEBJzpOLu0gPspnQDgmTDzN2OAQPYpoQ5UodL5SGTQADfg
+n6/ZKve5OCCaoMWTCpB5norABVaQSpgiCRD+VVEF1Z0JF5eNOaOKAD/IaTLE056wJEKKADB2EgSR
+06OEIKSI0J5yM0ITajI0c6TLEwYt40WJEwAScQOl5JkzxKMbEzliEABWMAZN2qVMujnoEzf42ZmG
+IDRLWjWF0AA/8ApgMAQa80JYUKf8hAVDcAWDVqd12ipWwAMchKeENREacwUGxFpYcAV16gUquqhi
+EDpgcKhDcKh8qjFY4AXowVqKWqdhwAV8+kCeWqcOV6mDEKpYIBJYEKhDMKiPeiMP5XCYWqlc8AU+
+wwVgEKqeih5NYAWoOgS8SgnwMwACMwQDijVg6qRomggtIC6DkD2QOkLOiqyF8ABUlC0NYED+OqA9
+xMmfm9mamYNGkGMFAuBPLOqjpQqh0UoGP6CtOgME7FogEoRLWLpHyyoIPPCucUOiqmBDQ9A6eaQD
+uOMFLTA7OoCnPACwGhMEN6AzrjMEOoCaWCA492MSPOAFQ8A6cqoDQXA7dfoDInE79skDQ3ADS9QE
+P3A7JnMDOQCmPBCnrTMEXgCwt1NrOTAEQmACnWOzuDMIAXSxL2MF+oRLOsAEDysIQGACOmMCj8QF
+N0A6JnA7DoUFLfBITSAEVmBDPTAEYoADNnsDXMC0saOhCEY8FjSdqpQIWQqhk4NMlGSuhNC2ZGA9
+RCoIQnBEP4U0gsAAVssAysmthLA+zjP+CFfzqje6PFoaNB0jOr46AMoZnJqjnMiZMtKZPHNbnCLh
+uIxLCA0gOIBxA2CApzA7BDjAA9ziBePEA68qBK0JBjeABR2KBZ2DHlsUNDwgBi2QOmPAAwaCp4Iw
+SDrApNYkBrfDBTkQBlHQBJParw8rES0wBDkgBdYEsjujAzwgMINgTa7LBaLbA9wyCDmwsQJku1zQ
+AiZxA2FwtUMQBqyLBVskBqvjvP06Bi3gP4gaBDKrtWSQAwnrTX8KBjlwA6gLrFhjQatHoIeQtohQ
+t/CURG57rtKKS3ZbCFzwSql5wOnTpY9EPGNQSUJ5wIYLoWQwwSfjm4vDQIagA8zKn8v+k0sGZEEk
+zEALiAkEogOGyk4WGwUfxavjy0/S2wMt4MNaiwNIZE03IzgrkzrY25oFGzecm0dflAOeOk7Cm0pU
+EwTzix7SG7uFYE1BsEVyaggiK6rOywM30ANkMERYoAPk2wNl3Lw7s7VyasRvq7WDpMSWqqFBYAVg
+8KWuW66NEKxkpEp+fLY8qgMRLAgOUKWJq0oPYCAtMKQqPAg4cMhgoKEmMKQBIDAK5MFpBKJYQ61n
+ZECDjMCG8D2FEzkTqsmbM6FfxANnKq6jbDqT/ECsTAaurJpa3ApY0AM4cLuW4z/+gwVAcEM9wBFW
+oKNmDBpmnMY/HDpY8DJc3L1YYL3+9us/QZDGBxsEUcCk2oQDJtME1KuxZ0y3GrrNghAEglS9CVLN
+PaAxSCzO5zyoPXAeQPCoR+vNYZDMXvBIL3On3HKwB2sFXLBE7qszDiUITeBOIawDXpNIkoCjo3Sl
+lQs42RNC2RJJhvCgcltJnGRALVMueWtJNmMIHx1CGp08YNAyATDSwxnLPMJKAuBKiTMAEvEAerNL
+H41GJW0IHM0AhJVLsYlLtOkzwcNJHUzRkWQgm4lGQD0AhNWbBEUJbXmdXWUjajYdMZyKiJnVqoCY
+o+DViRnWYj3WZF3WZn3WaJ3War3WbN3Wr5LSqUAwh9tWD4A8DjColTDXfwzCAuz+1seiUDDE1x4j
+ADeQUDoQACwJCSJsCXrNnoLt18wwMtoiRVE6BCZUNR0NPE2T0tnyRVFD2IYjCOLqNEJgQuTiAFez
+NDjjL2O0sLQZAE50MuDyujXTKpwtpZh9NQ4HMlHkNJ4NALOd2yMUM95jObX92QGAA0Zj2WnUPFgQ
+NVMD2c4wAETMI34TwlhDOPUquLmsPpQDAET9yR16T9ct14wzBrkknS/zyGTgQF6qPKNdOeoNRoRw
+3VD0pqE5AN0tCOWNOQXCAIKz2NxNCANQ2oZTOVEAAAKjOe6pMTrgL/4t3czgwn/bPO1D4UITPYUA
+uLckOo+E2MzDPgu0oxUkPQD+ky4Uni79CT/UA8McvkKwROHqY+HK81HvszwyPsLFQ+IO98EM1NgS
+LgzUYycuFNg6nuGy8p4lZOSDkDdGSkL1DDQizOMY/jfuXUCHHT6qlEF/E68wdOMwTghFfksyZDpJ
+3lYm3kA9Sson/thBHgwM0DliUEYOND9tRDih7TNxHkcWdEUdPgba8ttsNOLq4kZSGtoO8ADho98D
+0ACyuTx47gBrNKXSOaxZJOd07sk13qyWHjR5u7Jh8EQFfsrEs9hAc6yPI+lu/ua+8KhJEzmaFNNt
+ZAW1vdizREq1REoII+CCUNeDEOudJOVYY+uhxDJ3XSAYtDy0ntmapOtCzUn+5PPqtSTrZwvUwR7t
+zhM5y+4vPE7oJyNJQM7qx0DV21mjTkWZ/HadHxSlDDBUNMdeyK5mWZVwm1eA8m7v4WmPVW2jkWmX
+V32Z6U5Z1Tee/C7hYC3u+05P5O7WU11WkRlPXI3wqHDurhHxUj0JW30KFu+WHoRWXKUIFyeeCaLv
+68mXIk8pTIfus6BVNHoeGy/xo3CXRDADNKAPNn/zOK9YNGADRdDzPu/zU0HzOT/0RF/0Q1/zRp/0
+Nm8DRND0Tv/0T28ERgD1VO/0Ul/1WI/1RaD0Sl/zbOPzWR/2US/2Yn/1ZN/0a31TJQYOC4YmMbZj
+cH9oGbABdF/3dF9iF9b+9m4P9yam9zvm9hgW94I/ZHImZ2H2YYVvYnu/ARpg947/+HP/+JI/+YxP
++Y/f93yfL26/aoYvZNBl+aAf+nXf+KJf+nTP1j0CY3w/ZKwvXJYfXKwf+HAv+7If+6yPJrXf+nk/
+ZBhGMab/+8BP+bo//G3f+6Qf/Mif/JYP2bDf9mFm+97l+Md/98RP/Lm/YIH/YQyG+9ev+3sPYMof
+/qLf/JjPYLKv/XAf+eK//soP2Rvw/bpPMeo/+Q62+ubf+ui/+7xf/fdf+93P/oCwIThIWGhomEGI
+gSGx2Ni4GBl5MbmYeIipgbnJ2elJSBYqOkpaanqKmqq6ytrq+gob2zqgJppB6SiJcauRcdmpAZkr
+zIg7DBmcG4xsPLyo+Qkd/ZnRfNusaymtvc0tKPsNHi4+Tl6Oals87OtJLRxsfR0PP2w9X7lI2a0v
+raERr5zr2b6BBAeZO4gwocKFq4DRa8SLHzFm9yRdWOYu3sRrj5wV/GgImb1kkNaBPCmNocqVLFu2
+2hAvokSLzTAmw1ZzZCRIOiOhLHjJX7FGPWX+PPopEAA7
+
+------=_NextPart_001_04A7_01CD5946.97145F90--
+
+------=_NextPart_000_04A6_01CD5946.97145F90
+Content-Type: application/octet-stream;
+	name="=?iso-8859-1?Q?Exemplo_Altera=E7=E3o.rar?="
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+	filename="=?iso-8859-1?Q?Exemplo_Altera=E7=E3o.rar?="
+
+UmFyIRoHAM+QcwAADQAAAAAAAACjNHQgkloABQEAAKkCAAACT0xNriRmTkAdMzUAIAAAAEV4ZW1w
+bG8gQWx0ZXJhh8ZvXEFsdGVyYYfGbyBWYWxvcmVzIElOLnR4dAABwwzn4wYM5+MOAPDf1xUNVRCN
+D90TfEpxW8Abjieh8YvB24hJtmQY336JN4smMZhGJRYoOcDEJGj9VZdVyCj58C1YI11/X6uBtYN+
+ApUu8bQX0LvkiuqY/r6dnJQ/BXAnW4LTXHaQVrTjcXcrC+HrHJNDh9+mdRH68qrq1KemjVPLFdBY
+krRD5bWVSJQHDJ4i2a0ZAIplLH8efaqGmNgT5h1ysJqsvyCH39F1HlRH5e2FFMpMMee75NmOY4ba
+X8DGi3HDeZKSuFdavRy8JcvCx0SqWDk80ku7Hef5jf8nfnX6x3WlGK+JmLX9op9wMaRCu3dG/ppu
+AR41wyOIca2gPbhdozuvNNsFPToZs6fq9I0If+nmbXQgklsAUgAAAFIAAAACimMYmiVmTkAdMzYA
+IAAAAEV4ZW1wbG8gQWx0ZXJhh8ZvXEFsdGVyYYfGbyBWYWxvcmVzIE9VVC50eHQAAcMM5+MGDOfj
+DwDwX5OTCYGNCX4M7/B7B5gSOAtDin5OhxwdGB0VoddaHDWtGda4X9Z9qqpo4mi4G0qTbLH/+X6p
+I52oYhc66pYdcsUGW4q1oovP0U4EgV9qT7HBu1/doAtodCCSVwCaAAAAHgEAAALrmtf302ZOQB0z
+MgAgAAAARXhlbXBsbyBBbHRlcmGHxm9cQ29uc3VsdGFyIENvbnRyYXRvIElOLnR4dAABwwzn4xkA
+8IkLdwmZDNC+FT3QeK03dUUfC8YjLFKG7Ytt29+fBRdto11BNCjwOECBn+YSE5Jn//hhgYfen3CH
+tBjgFZsC9B9Cywgabt+vV5YLDmWCBjdGPkd5IUY44FkTQymWyTZSrc7s2W3aILUmKbeG6Ld+b6vX
+OudHGZbcr81ku/hZuP0k+qcggbSHwOoX7m1Bh7apI6tclylfW/1xW/Pws7IfUXQgklgAagMAAJcM
+AAAC8xpf49ZmTkAdMzMAIAAAAEV4ZW1wbG8gQWx0ZXJhh8ZvXENvbnN1bHRhciBDb250cmF0byBP
+VVQudHh0AAHDDOfjGgDwVb4ZDAEMyNE9lX35Lvhz4I0JAKHgeBt3eXby3e3l2pd3tNKWqJBZdgF8
+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
+
+------=_NextPart_000_04A6_01CD5946.97145F90--
+

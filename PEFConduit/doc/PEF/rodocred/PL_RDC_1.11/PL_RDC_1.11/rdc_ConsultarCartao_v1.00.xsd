@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<xs:schema xmlns:rdc="https://ws.rodocred.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ws.rodocred.com.br/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="rdc_TiposPadrao_v1.03.xsd"/>
+	<xs:element name="ConsultarCartao">
+		<xs:annotation>
+			<xs:documentation>Mensagem para Consultar Cartão</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:ConsultarCartaoRequest">
+					<xs:annotation>
+						<xs:documentation>Mensagem de Requisição da Consulta de Boletos</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:ConsultarCartaoResponse">
+					<xs:annotation>
+						<xs:documentation>Mensagem de Resposta da Consulta de boletos</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarCartaoRequest">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Requisição da Consulta de Cartão</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:IdentificacaoIntegracao"/>
+				<xs:element ref="rdc:IdClienteResponsavel" minOccurs="0"/>
+				<xs:element ref="rdc:NumeroCartao"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarCartaoResponse">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Resposta da Consulta de Cartão</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:RetornoMensagem"/>
+				<xs:element name="DadosCartao" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="rdc:CNPJCPF"/>
+							<xs:element ref="rdc:RNTRC" minOccurs="0"/>
+							<xs:element name="NomePortador" type="xs:string">
+								<xs:annotation>
+									<xs:documentation>Nome do Portador do Cartão</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="SituacaoCartao">
+								<xs:annotation>
+									<xs:documentation>Situação do Cartão:
+ATI - Ativo
+INA - Inativo
+BLO - Bloqueado</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="ATI"/>
+										<xs:enumeration value="INA"/>
+										<xs:enumeration value="BLO"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element ref="rdc:TipoCartao"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

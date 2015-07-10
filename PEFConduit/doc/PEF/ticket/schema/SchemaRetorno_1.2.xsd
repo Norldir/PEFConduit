@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SchemaRetorno" targetNamespace="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaRetorno_1.2.xsd" elementFormDefault="qualified" xmlns="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaRetorno_1.2.xsd" xmlns:mstns="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaRetorno_1.2.xsd" xmlns:c="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaComum_1.2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="SchemaComum_1.2.xsd" namespace="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaComum_1.2.xsd" ></xs:import>
+  <xs:element name="Retornos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="Status" nillable="false" type="TipoStatus" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Operacao" nillable="false" type="TipoOperacao" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Protocolo" nillable="false" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Retorno" nillable="false" type="Retorno" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Retorno">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Referencia" nillable="false" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CodigoViagem" nillable="false" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Ciot" nillable="false" type="c:NumeroCiot" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Sucesso" nillable="false" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Motivos" nillable="false" type="Motivo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TipoOperacao">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Criacao" />
+      <xs:enumeration value="Cancelamento" />
+      <xs:enumeration value="Encerramento" />
+      <xs:enumeration value="CadastroAutonomo" />
+      <xs:enumeration value="Retificacao" />
+      <xs:enumeration value="InclusaoViagemFreteAgregado" />
+      <xs:enumeration value="ExclusaoViagemFreteAgregado" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TipoStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Pendente" />
+      <xs:enumeration value="Processado" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Motivo">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="Motivo" nillable="false" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

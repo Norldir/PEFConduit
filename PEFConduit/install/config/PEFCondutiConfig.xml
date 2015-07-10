@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuracao>
+	<diretorioBase>c:\pefconduit\</diretorioBase>
+	<grupos>
+		<grupo id="homologacao">
+			<cnpjs>
+			</cnpjs>
+		</grupo>
+	</grupos>
+</configuracao>

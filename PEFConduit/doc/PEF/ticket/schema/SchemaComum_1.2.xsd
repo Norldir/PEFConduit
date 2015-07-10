@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SchemaComum" targetNamespace="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaComum_1.2.xsd" elementFormDefault="qualified" xmlns="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaComum_1.2.xsd" xmlns:mstns="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaComum_1.2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Veiculo">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Placa" type="Placa" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Rntrc" type="RNTRC" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Documento" type="Documento" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ValePedagio" type="ValePedagio" />
+    </xs:sequence>
+    <xs:attribute name="TipoOperacao" type="TipoOperacaoRetificacao" default="Criacao" />
+  </xs:complexType>
+  <xs:complexType name="ValePedagio">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="TipoValePedagio">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Cartao" />
+            <xs:enumeration value="Vale" />
+            <xs:enumeration value="TAG" />
+            <xs:enumeration value="Nenhum" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="NumeroEixos">
+        <xs:simpleType>
+          <xs:restriction base="xs:int">
+            <xs:minInclusive value="2"/>
+            <xs:maxInclusive value="10"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="ValorValePedagio" type="DecimalValido" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Proprietario" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Rota" type="Rota" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Rota">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoRota" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="StatusProcessamento">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Pendente" />
+      <xs:enumeration value="Processado" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TipoPessoa">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Juridica"/>
+      <xs:enumeration value="Fisica"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TipoAutonomo">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TAC" />
+      <xs:enumeration value="ETC" />
+      <xs:enumeration value="CTC" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TipoContaBancaria">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ContaCorrente" />
+      <xs:enumeration value="Poupanca" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Documento">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([0-9]{11}|[0-9]{14})"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CPF">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([0-9]{11})"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CNPJ">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([0-9]{14})"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="RNTRC">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([0-9]{8})"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Renavam">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([0-9]{9})"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Placa">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([A-Z]{3}[0-9]{4})"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="NumeroCiot">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{12}/([0-9]{4}|[Xx]{4}|)"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="PessoaFisica">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Nome" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Sobrenome" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CPF" type="CPF" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Cartao" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="DecimalValido">
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="12" fixed="false"/>
+      <xs:fractionDigits value="2"/>
+      <xs:pattern value="^\d{1,10}(\.\d{1,2})?$"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Endereco">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CEP">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{5}-?[0-9]{3}"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoCidade" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Logradouro" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Numero" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Complemento" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Bairro" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TipoOperacaoRetificacao">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Criacao" />
+      <xs:enumeration value="Alteracao" />
+      <xs:enumeration value="Exclusao" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<xs:schema xmlns:rdc="https://ws.rodocred.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ws.rodocred.com.br/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="rdc_TiposPadrao_v1.01.xsd"/>
+	<xs:simpleType name="TipoBoletoType">
+		<xs:annotation>
+			<xs:documentation>Tipo Boleto</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="RODOCRED"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="VigenciaContratoType">
+		<xs:annotation>
+			<xs:documentation>Tipo Vigencia Contrato</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="DataInicial" type="xs:dateTime"/>
+			<xs:element name="DataFinal" type="xs:dateTime"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PeriodoEmissaoType">
+		<xs:annotation>
+			<xs:documentation>Tipo periodo Emissão</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="DataInicial" type="xs:dateTime"/>
+			<xs:element name="DataFinal" type="xs:dateTime"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PeriodoDeclaracaoType">
+		<xs:annotation>
+			<xs:documentation>Tipo periodo Declaração</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="DataInicial" type="xs:dateTime"/>
+			<xs:element name="DataFinal" type="xs:dateTime"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ContratoAgregadoType">
+		<xs:annotation>
+			<xs:documentation>Tipo Contrato Agregado</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="rdc:NumeroContrato"/>
+			<xs:element ref="rdc:CIOT" minOccurs="0"/>
+			<xs:element ref="rdc:Transportador" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Dados do Transportador na Viagem</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="rdc:DocumentoRef" minOccurs="0"/>
+			<xs:element name="DataVigencia" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Data e hora da vigência da viagem.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="rdc:SituacaoContrato"/>
+			<xs:element ref="rdc:VeiculosViagem" maxOccurs="unbounded"/>
+			<xs:element name="ViagemAgregada" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="rdc:NumeroViagem" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Número da Viagem
+Formato: x.xxxx.x
+Este campo será obrigatório para Operações de Alteração e Cancelamento </xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="rdc:DocumentoRef" minOccurs="0"/>
+						<xs:element ref="rdc:RotaViagem" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Rota definida para a viagem.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="rdc:SituacaoViagem" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ExtratoType">
+		<xs:annotation>
+			<xs:documentation>Tipo Extrato</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="SeqLancamento" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Sequencia do Lançamento</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DataLancamento" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Data e hora do Lançamento. Quando for o extrato consolidado será retornado somente a data.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DescricaoLancamento" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Descrição do tipo de lançamento no extrato.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="QtdeLancamento" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Quando consolidado será retornado a quantidade de lançamento do tipo.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NomeEstabelecimento" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Quando detalhado poderá retornar o nome do estabelecimento que foi feita o lançamento.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="rdc:NumeroViagem" minOccurs="0"/>
+			<xs:element name="TipoLancamento">
+				<xs:annotation>
+					<xs:documentation>Tipo de Lançamento:
+C - Crédito
+D - Débito</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="1"/>
+						<xs:enumeration value="C"/>
+						<xs:enumeration value="D"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ValorLancamento">
+				<xs:annotation>
+					<xs:documentation>Valor do Lançamento</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="12"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Saldo">
+				<xs:annotation>
+					<xs:documentation>Saldo da Conta Rodocred no momento do Lançamento.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="12"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ValoresViagemEncerrarType">
+		<xs:annotation>
+			<xs:documentation>Tipo Valores Viagem Encerrar</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="rdc:ValorDespesas" minOccurs="0"/>
+			<xs:element ref="rdc:ValorFrete" minOccurs="0"/>
+			<xs:element ref="rdc:ValorCombustivel" minOccurs="0"/>
+			<xs:element ref="rdc:PesoCarga" minOccurs="0"/>
+			<xs:element ref="rdc:UnidadeMedidaPeso" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="VigenciaContrato" type="rdc:VigenciaContratoType">
+		<xs:annotation>
+			<xs:documentation>Período de Datas de Vigencia do contrato</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="PeriodoDeclaracao" type="rdc:PeriodoDeclaracaoType">
+		<xs:annotation>
+			<xs:documentation>Período de Datas de Declaração do contrato agregado</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="SituacaoContrato">
+		<xs:annotation>
+			<xs:documentation>Situação da Viagem
+AND - Em Andamento
+CAN - Cancelado
+ENC - Encerrado
+PRO - Programado</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="ABE"/>
+				<xs:enumeration value="AGE"/>
+				<xs:enumeration value="AND"/>
+				<xs:enumeration value="CAN"/>
+				<xs:enumeration value="ENC"/>
+				<xs:enumeration value="PRO"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="NumeroContrato" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Numero do Contrado agregado xxx.xxx.xxx</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ContratoAgregado" type="rdc:ContratoAgregadoType">
+		<xs:annotation>
+			<xs:documentation>Dados do Contrato Agregado</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ListaPedidosValePedagio">
+		<xs:annotation>
+			<xs:documentation>Lista de Pedidos de Vale-pedágio informado quando e solicitado a compra de mais de uma vez para a mesma rota.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:PedidoValePedagio" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RegistroViagemRetorno">
+		<xs:annotation>
+			<xs:documentation> Informações de Registro das Operações das Viagens</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:NumeroViagem"/>
+				<xs:element ref="rdc:DocumentoRef"/>
+				<xs:element ref="rdc:ResumoFinanceiro"/>
+				<xs:element name="OperacaoRetorno" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="rdc:IDOperacaoViagem"/>
+							<xs:element name="CodigoOperacao">
+								<xs:annotation>
+									<xs:documentation>Código identificador do tipo de operação selecionado para a programação da viagem.
+ADF - Adiantamento de Frete
+EDL - Entrega de Documento 
+EDS - Entrega de Documento com Liberação de Saldo
+LSF - Libaração de Saldo de Frete
+MOV - Monitoramento Veículo
+DEP - Depósito do Frete Realizado pelo Cliente</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string"/>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="CondicaoLiberacaoOperacao">
+								<xs:annotation>
+									<xs:documentation>Condição de Liberação da Operação da Viahem
+DAD-Data Programada
+EST-No Estabelecimento
+FIL-Na Filial da Empresa
+LIB-Na Liberação Viagem</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:length value="3"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="DataOperacao" type="xs:date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Data e hora da realização do evento.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="LocalRealizacao" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Local da realização da Operação da Viagem
+QER - Qualquer Estabelecimento da Rota
+QFL - Qualquer Filial da Empresa
+RED - Qualquer Estabelecimento da Rede Credenciada
+FIL - Na Filial da Empresa
+EST - No Estabelecimento</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string"/>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element ref="rdc:Estabelecimento" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Dados do Estabelecimento para Execução da Operaçãoda Viagem</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element ref="rdc:FilialEmpresa" minOccurs="0"/>
+							<xs:element ref="rdc:EventoOperacaoRetorno" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="rdc:PesoCargaEntregue" minOccurs="0"/>
+							<xs:element ref="rdc:UnidadeMedidaPeso" minOccurs="0"/>
+							<xs:element name="Odometro" type="xs:decimal" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Odometro registrado na operação.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element ref="rdc:DocumentosRequeridos" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="rdc:SituacaoOperacaoViagem"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DataSituacaoExtrato" type="xs:dateTime">
+		<xs:annotation>
+			<xs:documentation>Data e hora da consulta do extrato.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Extrato" type="rdc:ExtratoType">
+		<xs:annotation>
+			<xs:documentation>Lista de Lançamento no Extrato Rodocred.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="PeriodoExtrato">
+		<xs:annotation>
+			<xs:documentation>Periodo do Extrato do Cliente.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DataInicialExtrato" type="xs:date">
+					<xs:annotation>
+						<xs:documentation>Data Inicial do Extrato do Cliente.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="DataFinalExtrato" type="xs:date">
+					<xs:annotation>
+						<xs:documentation>Data Final do Extrato do Cliente.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Comprometimento">
+		<xs:annotation>
+			<xs:documentation>Detalhe do Comprometimento dos Valores</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Servico" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Descrição do Serviço.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ValorComprometimento">
+					<xs:annotation>
+						<xs:documentation>Valor que está comprometido no momento da consulta.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:totalDigits value="12"/>
+							<xs:fractionDigits value="2"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ValorLimite">
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:totalDigits value="12"/>
+							<xs:fractionDigits value="2"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TipoBoleto" type="rdc:TipoBoletoType">
+		<xs:annotation>
+			<xs:documentation>Tipo do boleto</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="DataVencimento" type="xs:date">
+		<xs:annotation>
+			<xs:documentation>Data do vencimento do boleto</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ValorBoleto" type="rdc:ValorType">
+		<xs:annotation>
+			<xs:documentation>Valor do boleto</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="CodigoBarra" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Código de Barras do boleto</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="NossoNumero">
+		<xs:annotation>
+			<xs:documentation>Identificação do cliente</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:length value="13"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="LinkBoleto" type="xs:anyURI">
+		<xs:annotation>
+			<xs:documentation>Link para impressão do boleto gerado</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="PeriodoEmissao" type="rdc:PeriodoEmissaoType">
+		<xs:annotation>
+			<xs:documentation>Intervalo de Data da emissão do boleto</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ValoresViagemEncerrar" type="rdc:ValoresViagemEncerrarType">
+		<xs:annotation>
+			<xs:documentation>Valor da viagem para o encerramento de uma determinada viagem</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

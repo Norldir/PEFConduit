@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Cancelamentos
+xmlns="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/Schema
+Cancelamento_1.0.xsd">
+	<Ciot>123456789012/1234</Ciot>
+	<Ciot>123456789013/1234</Ciot>
+	<Ciot>123456789014/1234</Ciot>
+	<Ciot>123456789015/1234</Ciot>
+</Cancelamentos>

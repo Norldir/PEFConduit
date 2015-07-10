@@ -1,0 +1,39 @@
+·         https://qualidade.gps-pamcary.com.br/pamcardbrvisa/
+·         Login: master.agotran
+·         Senha:123456
+
+Assim que possível, me informe qual o modelo de integração que desenvolverão, pois, se optarem por Adaptador, encaminharei
+A seguir a nossa url de homologação, login e senha de acesso para consulta na web do comportamentos dos arquivos de inclusão do contrato de frete.
+
+·         https://qualidade.gps-pamcary.com.br/pamcardbrvisa/
+·         Login: master.agotran
+·         Senha:agotran2012
+
+
+Para consultas de RNTRC ou inclusão de contrato de frete, os dados deverão ser validos no ambiente de homologação da ANTT.
+Abaixo, cartões e seus favorecidos válidos no ambiente de homologação da ANTT e Pamcard, para inicio dos testes
+
+Nome: ANDRE FERNANDO CARDOSO
+CPF: 27269448841
+RNTRC: 169192
+Placa1: CZC8816
+Cartão: 4417810025759011
+
+
+Nome: Vair Destro
+CPF: 02445500850
+RNTRC: 169354
+Placa: CNI4503
+Cartão: 4417810094176014
+ 
+Nome: CREMILSON DA SILVA FERREIRA
+CPF: 42388112753
+RNTRC: 00169875
+Placa1: BTA1200
+Cartão: 4417810094165017
+
+Qualquer dúvida, me comunique.
+
+At,
+
+Millene.

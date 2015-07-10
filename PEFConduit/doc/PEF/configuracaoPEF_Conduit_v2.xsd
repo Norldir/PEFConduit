@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:simpleType name="tpString">
+		<xs:annotation>
+			<xs:documentation> Tipo string genérico</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="preserve"/>
+			<xs:pattern value="[!-ÿ]{1}[ -ÿ]{0,}[!-ÿ]{1}|[!-ÿ]{1}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="configuracao">
+		<xs:sequence>
+			<xs:element name="diretorioBase">
+				<xs:simpleType>
+					<xs:restriction base="tpString">
+						<xs:minLength value="3"/>
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>			
+			</xs:element>
+			<xs:element name="grupos">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" minOccurs="1" name="grupo">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="cnpjs" nillable="false">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element maxOccurs="unbounded" minOccurs="1" name="cnpj">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="administradoras">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="repom">
+																			<xs:complexType>
+																				<xs:sequence>
+																					<xs:element name="webserver">
+																						<xs:simpleType>
+																							<xs:restriction base="tpString">
+																								<xs:minLength value="3"/>
+																								<xs:maxLength value="255"/>
+																							</xs:restriction>
+																						</xs:simpleType>			
+																					</xs:element>
+																					<xs:element name="usuario">
+																						<xs:simpleType>
+																							<xs:restriction base="tpString">
+																								<xs:minLength value="3"/>
+																								<xs:maxLength value="255"/>
+																							</xs:restriction>
+																						</xs:simpleType>			
+																					</xs:element>
+
+																					<xs:element name="senha">
+																						<xs:simpleType>
+																							<xs:restriction base="tpString">
+																								<xs:minLength value="3"/>
+																								<xs:maxLength value="255"/>
+																							</xs:restriction>
+																						</xs:simpleType>			
+																					</xs:element>
+
+																					<xs:element name="parametrosRepom">
+																						<xs:complexType>
+																							<xs:sequence>
+																								<xs:element name="OPERACAO_CODIGO">
+																									<xs:simpleType>
+																										<xs:restriction base="tpString">
+																											<xs:minLength value="3"/>
+																											<xs:maxLength value="255"/>
+																										</xs:restriction>
+																									</xs:simpleType>			
+																								</xs:element>
+
+																								<xs:element name="ROTEIRO_IDA_VOLTA">
+																									<xs:simpleType>
+																										<xs:restriction base="tpString">
+																											<xs:minLength value="3"/>
+																											<xs:maxLength value="255"/>
+																										</xs:restriction>
+																									</xs:simpleType>			
+																								</xs:element>
+
+																							</xs:sequence>
+																						</xs:complexType>
+																					</xs:element>
+																				</xs:sequence>
+																			</xs:complexType>
+																		</xs:element>
+																		<xs:element name="pancary">
+																			<xs:complexType>
+																				<xs:sequence>
+																					<xs:element name="envio" >
+																						<xs:simpleType>
+																							<xs:restriction base="tpString">
+																								<xs:minLength value="3"/>
+																								<xs:maxLength value="255"/>
+																							</xs:restriction>
+																						</xs:simpleType>			
+																					</xs:element>
+
+																					<xs:element name="retorno" >
+																						<xs:simpleType>
+																							<xs:restriction base="tpString">
+																								<xs:minLength value="3"/>
+																								<xs:maxLength value="255"/>
+																							</xs:restriction>
+																						</xs:simpleType>			
+																					</xs:element>
+
+																					<xs:element name="parametrosPamcary" >
+																						<xs:simpleType>
+																							<xs:restriction base="tpString">
+																								<xs:minLength value="3"/>
+																								<xs:maxLength value="255"/>
+																							</xs:restriction>
+																						</xs:simpleType>			
+																					</xs:element>
+
+																				</xs:sequence>
+																			</xs:complexType>
+																		</xs:element>
+																		<xs:element name="nddcargo">
+																			<xs:complexType>
+																				<xs:sequence>
+																					<xs:element name="envio" >
+																						<xs:simpleType>
+																							<xs:restriction base="tpString">
+																								<xs:minLength value="3"/>
+																								<xs:maxLength value="255"/>
+																							</xs:restriction>
+																						</xs:simpleType>			
+																					</xs:element>
+
+																					<xs:element name="retorno" >
+																						<xs:simpleType>
+																							<xs:restriction base="tpString">
+																								<xs:minLength value="3"/>
+																								<xs:maxLength value="255"/>
+																							</xs:restriction>
+																						</xs:simpleType>			
+																					</xs:element>
+
+																					<xs:element name="parametrosNddCargo">
+																						<xs:complexType>
+																							<xs:sequence>
+																								<xs:element name="GerarMovimentacaoFinanceira" >
+																									<xs:simpleType>
+																										<xs:restriction base="tpString">
+																											<xs:minLength value="3"/>
+																											<xs:maxLength value="255"/>
+																										</xs:restriction>
+																									</xs:simpleType>			
+																								</xs:element>
+
+																								<xs:element name="ImpressaoAutomaticaDOT" >
+																									<xs:simpleType>
+																										<xs:restriction base="tpString">
+																											<xs:minLength value="3"/>
+																											<xs:maxLength value="255"/>
+																										</xs:restriction>
+																									</xs:simpleType>			
+																								</xs:element>
+
+																								<xs:element name="TipodeOperacaodeTransporte" >
+																									<xs:simpleType>
+																										<xs:restriction base="tpString">
+																											<xs:minLength value="3"/>
+																											<xs:maxLength value="255"/>
+																										</xs:restriction>
+																									</xs:simpleType>			
+																								</xs:element>
+
+																								<xs:element name="TipodaCarga" >
+																									<xs:simpleType>
+																										<xs:restriction base="tpString">
+																											<xs:minLength value="3"/>
+																											<xs:maxLength value="255"/>
+																										</xs:restriction>
+																									</xs:simpleType>			
+																								</xs:element>
+
+																								<xs:element name="ProprietariodaCarga" >
+																									<xs:simpleType>
+																										<xs:restriction base="tpString">
+																											<xs:minLength value="3"/>
+																											<xs:maxLength value="255"/>
+																										</xs:restriction>
+																									</xs:simpleType>			
+																								</xs:element>
+
+																								<xs:element name="TipodeRotaPadrao">
+																									<xs:simpleType>
+																										<xs:restriction base="tpString">
+																											<xs:minLength value="3"/>
+																											<xs:maxLength value="255"/>
+																										</xs:restriction>
+																									</xs:simpleType>			
+																								</xs:element>
+
+																								<xs:element name="UtilizaRoteirizador">
+																									<xs:simpleType>
+																										<xs:restriction base="tpString">
+																											<xs:minLength value="3"/>
+																											<xs:maxLength value="255"/>
+																										</xs:restriction>
+																									</xs:simpleType>			
+																								</xs:element>
+
+																								<xs:element name="NotificaRotaContratante">
+																									<xs:simpleType>
+																										<xs:restriction base="tpString">
+																											<xs:minLength value="3"/>
+																											<xs:maxLength value="255"/>
+																										</xs:restriction>
+																									</xs:simpleType>			
+																								</xs:element>
+
+																								<xs:element name="LocaldeEfetivacaodoPagamento">
+																									<xs:simpleType>
+																										<xs:restriction base="tpString">
+																											<xs:minLength value="3"/>
+																											<xs:maxLength value="255"/>
+																										</xs:restriction>
+																									</xs:simpleType>			
+																								</xs:element>
+
+																								<xs:element name="DocumentoParaEntregar">
+																									<xs:simpleType>
+																										<xs:restriction base="tpString">
+																											<xs:minLength value="3"/>
+																											<xs:maxLength value="255"/>
+																										</xs:restriction>
+																									</xs:simpleType>			
+																								</xs:element>
+
+																							</xs:sequence>
+																						</xs:complexType>
+																					</xs:element>
+																				</xs:sequence>
+																			</xs:complexType>
+																		</xs:element>
+																		<xs:element name="dbtrans">
+																			<xs:complexType>
+																				<xs:sequence>
+																					<xs:element name="webserver">
+																						<xs:simpleType>
+																							<xs:restriction base="tpString">
+																								<xs:minLength value="3"/>
+																								<xs:maxLength value="255"/>
+																							</xs:restriction>
+																						</xs:simpleType>			
+																					</xs:element>
+
+																					<xs:element name="usuario">
+																						<xs:simpleType>
+																							<xs:restriction base="tpString">
+																								<xs:minLength value="3"/>
+																								<xs:maxLength value="255"/>
+																							</xs:restriction>
+																						</xs:simpleType>			
+																					</xs:element>
+
+																					<xs:element name="senha">
+																						<xs:simpleType>
+																							<xs:restriction base="tpString">
+																								<xs:minLength value="3"/>
+																								<xs:maxLength value="255"/>
+																							</xs:restriction>
+																						</xs:simpleType>			
+																					</xs:element>
+
+																					<xs:element name="cliente">
+																						<xs:simpleType>
+																							<xs:restriction base="tpString">
+																								<xs:minLength value="3"/>
+																								<xs:maxLength value="255"/>
+																							</xs:restriction>
+																						</xs:simpleType>			
+																					</xs:element>
+
+																					<xs:element name="parametrosDBTrans">
+																						<xs:complexType>
+																							<xs:sequence>
+																								<xs:element name="CondicaoLiberacaoOperacao_Adt">
+																									<xs:simpleType>
+																										<xs:restriction base="tpString">
+																											<xs:minLength value="3"/>
+																											<xs:maxLength value="255"/>
+																										</xs:restriction>
+																									</xs:simpleType>			
+																								</xs:element>
+
+																								<xs:element name="LocalRealizacao_Adiantamento">
+																									<xs:simpleType>
+																										<xs:restriction base="tpString">
+																											<xs:minLength value="3"/>
+																											<xs:maxLength value="255"/>
+																										</xs:restriction>
+																									</xs:simpleType>			
+																								</xs:element>
+																								<xs:element name="CodigoOperacao_Saldo">
+																									<xs:simpleType>
+																										<xs:restriction base="tpString">
+																											<xs:minLength value="3"/>
+																											<xs:maxLength value="255"/>
+																										</xs:restriction>
+																									</xs:simpleType>			
+																								</xs:element>
+																								<xs:element name="CondicaoLiberacaoOperacao_Saldo">
+																									<xs:simpleType>
+																										<xs:restriction base="tpString">
+																											<xs:minLength value="3"/>
+																											<xs:maxLength value="255"/>
+																										</xs:restriction>
+																									</xs:simpleType>			
+																								</xs:element>
+																								<xs:element name="LocalRealizacao_Saldo">
+																									<xs:simpleType>
+																										<xs:restriction base="tpString">
+																											<xs:minLength value="3"/>
+																											<xs:maxLength value="255"/>
+																										</xs:restriction>
+																									</xs:simpleType>			
+																								</xs:element>
+																								<xs:element name="CodigoClausula">
+																									<xs:simpleType>
+																										<xs:restriction base="tpString">
+																											<xs:minLength value="3"/>
+																											<xs:maxLength value="255"/>
+																										</xs:restriction>
+																									</xs:simpleType>			
+																								</xs:element>
+																								<xs:element name="Documentos_Entrega">
+																									<xs:simpleType>
+																										<xs:restriction base="tpString">
+																											<xs:minLength value="3"/>
+																											<xs:maxLength value="255"/>
+																										</xs:restriction>
+																									</xs:simpleType>			
+																								</xs:element>
+																							</xs:sequence>
+																						</xs:complexType>
+																					</xs:element>
+																				</xs:sequence>
+																			</xs:complexType>
+																		</xs:element>
+																		<xs:element name="ticket">
+																			<xs:complexType>
+																				<xs:sequence>
+																					<xs:element name="webserver">
+																						<xs:simpleType>
+																							<xs:restriction base="tpString">
+																								<xs:minLength value="3"/>
+																								<xs:maxLength value="255"/>
+																							</xs:restriction>
+																						</xs:simpleType>			
+																					</xs:element>
+																					<xs:element name="usuario">
+																						<xs:simpleType>
+																							<xs:restriction base="tpString">
+																								<xs:minLength value="3"/>
+																								<xs:maxLength value="255"/>
+																							</xs:restriction>
+																						</xs:simpleType>			
+																					</xs:element>
+																					<xs:element name="senha">
+																						<xs:simpleType>
+																							<xs:restriction base="tpString">
+																								<xs:minLength value="3"/>
+																								<xs:maxLength value="255"/>
+																							</xs:restriction>
+																						</xs:simpleType>			
+																					</xs:element>
+																					<xs:element name="codigoBase">
+																						<xs:simpleType>
+																							<xs:restriction base="tpString">
+																								<xs:minLength value="3"/>
+																								<xs:maxLength value="255"/>
+																							</xs:restriction>
+																						</xs:simpleType>			
+																					</xs:element>
+																					<xs:element name="codigoCliente">
+																						<xs:simpleType>
+																							<xs:restriction base="tpString">
+																								<xs:minLength value="3"/>
+																								<xs:maxLength value="255"/>
+																							</xs:restriction>
+																						</xs:simpleType>			
+																					</xs:element>
+																					<xs:element name="parametrosTicket">
+																						<xs:complexType/>
+																					</xs:element>
+																				</xs:sequence>
+																			</xs:complexType>
+																		</xs:element>
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+														</xs:sequence>
+														<xs:attribute name="id" type="xs:decimal"/>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+								<xs:attribute name="id" type="xs:string"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

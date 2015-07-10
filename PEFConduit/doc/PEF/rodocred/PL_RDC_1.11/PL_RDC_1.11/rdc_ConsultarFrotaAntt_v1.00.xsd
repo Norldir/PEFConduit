@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<xs:schema xmlns:rdc="https://ws.rodocred.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ws.rodocred.com.br/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="rdc_TiposPadrao_v1.03.xsd"/>
+	<xs:element name="ConsultarFrotaAntt">
+		<xs:annotation>
+			<xs:documentation>Mensagem para Consultar Frota na ANTT</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:ConsultarFrotaAnttRequest">
+					<xs:annotation>
+						<xs:documentation>Mensagem de Requisição da Consulta de Boletos</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:ConsultarFrotaAnttResponse">
+					<xs:annotation>
+						<xs:documentation>Mensagem de Resposta da Consulta de boletos</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarFrotaAnttRequest">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Requisição da Consulta de Frota na ANTT</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:IdentificacaoIntegracao"/>
+				<xs:element ref="rdc:IdClienteResponsavel" minOccurs="0"/>
+				<xs:element ref="rdc:Transportador"/>
+				<xs:element ref="rdc:PlacaVeiculo" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarFrotaAnttResponse">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Resposta da Consulta de Frota na ANTT</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:RetornoMensagem"/>
+				<xs:element name="NomeTransportador" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Nome do transportador</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="SituacaoTransportadorANTT" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Situação do Transportador na ANTT</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="INATIVO"/>
+							<xs:enumeration value="ATIVO"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element ref="rdc:Veiculos" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

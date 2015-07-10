@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<xs:schema xmlns:rdc="https://ws.rodocred.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ws.rodocred.com.br/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="rdc_TiposPadrao_v1.04.xsd"/>
+	<xs:element name="ConsultarClassificacaoCombustivel">
+		<xs:annotation>
+			<xs:documentation>Permite Consultar as Classificações de Combustível</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:ConsultarClassificacaoCombustivelRequest"/>
+				<xs:element ref="rdc:ConsultarClassificacaoCombustivelResponse"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarClassificacaoCombustivelRequest">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Requisição consultar as Classificações de Combustível</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:IdentificacaoIntegracao"/>
+				<xs:element ref="rdc:IdClienteResponsavel" minOccurs="0"/>
+				<xs:element ref="rdc:CodigoClassificacaoCombustivel" minOccurs="0"/>
+				<xs:element ref="rdc:NomeClassificacaoCombustivel" minOccurs="0"/>
+				<xs:element ref="rdc:TipoCombustivelVeiculo" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarClassificacaoCombustivelResponse">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Retorno consultar as Classificações de Combustível</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:RetornoMensagem"/>
+				<xs:element ref="rdc:ListaClassificacaoCombustivel" minOccurs="0" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

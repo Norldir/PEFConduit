@@ -1,0 +1,2 @@
+mensagem.codigo=0
+mensagem.descricao=Alteração de valores realizada com sucesso

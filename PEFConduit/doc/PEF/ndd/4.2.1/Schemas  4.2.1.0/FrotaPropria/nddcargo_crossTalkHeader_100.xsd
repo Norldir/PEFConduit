@@ -1,0 +1,75 @@
+<!-- edited with XMLSpy v2006 U (http://www.altova.com) by eduardo.augusto (EMBRACE) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.nddigital.com.br/nddcargo" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" targetNamespace="http://www.nddigital.com.br/nddcargo" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:annotation>
+		<xs:documentation>Tipo data AAAA-MM-DD</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="CrossTalk_Header_Send_Type">
+		<xs:annotation>
+			<xs:documentation>Cabeçalho da mensagem</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ProcessCode" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>Código do processamento</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MessageType" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>Tipo de mensagem que será processada</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ExchangePattern" type="xs:byte" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Padrão de troca de mensagem</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SourceId" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Identifdicador do sistema que está ntegrando</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:byte">
+						<xs:pattern value="0|1|2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="GUID" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Identificador unico gerado pela aplicação para poder recuperar a mensagem </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DateTime" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Data e hora do envio da mensagem para processamento</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EnterpriseId" type="xs:long">
+				<xs:annotation>
+					<xs:documentation>Identificador da empresa</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Token" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Identificador exclusivo que contêm os vinculos de processamento necessários no ETransportBusiness</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContentType" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Tipo de conteudo da mensagem enviada</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContentEncoding" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Tipo de codificação dos caracteres passados na mensagem</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CrossTalk_Message_M100">
+		<xs:sequence>
+			<xs:element name="CrossTalk_Header" type="CrossTalk_Header_Send_Type"/>
+			<xs:element name="CrossTalk_Body" type="xs:anyType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="CrossTalk_Message" type="CrossTalk_Message_M100"/>
+</xs:schema>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<xs:schema xmlns:rdc="https://ws.rodocred.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ws.rodocred.com.br/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="rdc_TiposPadrao_v1.00.xsd"/>
+	<xs:element name="ManterViagem">
+		<xs:annotation>
+			<xs:documentation>Mensagem que Permite Incluir, Cancelar ou Alterar uma Deteminada Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:ManterViagemRequest"/>
+				<xs:element ref="rdc:ManterViagemResponse"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ManterViagemRequest">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Requisição que Permite Incluir, Cancelar ou Alterar uma Deteminada Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:IdentificacaoIntegracao"/>
+				<xs:element ref="rdc:IdClienteResponsavel" minOccurs="0"/>
+				<xs:element ref="rdc:Operacao">
+					<xs:annotation>
+						<xs:documentation>Tipo da Operação ser Realizada:
+INC - Inclusão
+ALT - Alteração
+EXC - Exclusão
+CAN - Cancelado</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:TipoViagem"/>
+				<xs:element ref="rdc:DadosViagem">
+					<xs:annotation>
+						<xs:documentation>Dados Principais da Viagem</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:Transportador" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Dados do Transportador na Viagem</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:RotaViagem" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Rota definida para a viagem.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:VeiculosViagem" maxOccurs="unbounded"/>
+				<xs:element ref="rdc:ValePedagioViagem" minOccurs="0"/>
+				<xs:element ref="rdc:MotoristaViagem" maxOccurs="unbounded"/>
+				<xs:element ref="rdc:EnvolvidosTransporteViagem" minOccurs="0"/>
+				<xs:element ref="rdc:ValoresViagem"/>
+				<xs:element ref="rdc:ImpostosViagem" minOccurs="0"/>
+				<xs:element ref="rdc:DadosBancarios" minOccurs="0"/>
+				<xs:element ref="rdc:DocumentosViagem" minOccurs="0"/>
+				<xs:element ref="rdc:ProgramacaoViagem" minOccurs="0"/>
+				<xs:element ref="rdc:ClausulasViagem" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ManterViagemResponse">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Retorno que Permite Incluir, Cancelar ou Alterar uma Deteminada Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:RetornoMensagem"/>
+				<xs:element ref="rdc:NumeroViagem"/>
+				<xs:element ref="rdc:CIOT" minOccurs="0"/>
+				<xs:element ref="rdc:PedidoValePedagio" minOccurs="0"/>
+				<xs:element ref="rdc:ResumoFinanceiro"/>
+				<xs:element ref="rdc:SituacaoViagem" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

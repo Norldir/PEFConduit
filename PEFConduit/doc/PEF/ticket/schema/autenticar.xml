@@ -1,0 +1,26 @@
+<xs:schema xmlns="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaRetorno_1.0.xsd" xmlns:mstns="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaRetorno_1.0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" id="SchemaRetorno" targetNamespace="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaRetorno_1.0.xsd" elementFormDefault="qualified">
+	<s:element name="Autenticar">
+		<s:complexType>
+			<s:sequence>
+				<s:element name="usuario" type="s:string"/>
+				<s:element name="senha" type="s:string"/>
+				<s:element name="codigoBase" type="s:unsignedInt"/>
+				<s:element name="codigoCliente" type="s:unsignedInt"/>
+			</s:sequence>
+		</s:complexType>
+	</s:element>
+	<s:element name="AutenticarResponse">
+		<s:complexType>
+			<s:sequence>
+				<s:element  name="AutenticarResult" type="tns:RetornoAutenticacao"/>
+			</s:sequence>
+		</s:complexType>
+	</s:element>
+	<s:complexType name="RetornoAutenticacao">
+		<s:sequence>
+			<s:element  name="Sucesso" type="s:boolean"/>
+			<s:element  name="Token" type="s:string"/>
+			<s:element  name="Mensagem" type="s:string"/>
+		</s:sequence>
+	</s:complexType>
+</xs:schema>

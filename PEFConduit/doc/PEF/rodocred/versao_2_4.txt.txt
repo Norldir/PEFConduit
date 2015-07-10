@@ -1,0 +1,29 @@
+Prezados Cliente e Integradores,
+ 
+                Informamos que o Manual Técnico de Integração foi atualizado para a versão 2.4 que contemplas as seguintes alterações:
+ 
+- Inclusão do serviço de Manter Contrato Agregado: Este serviço permitirá cadastrar, alterar e cancelar um contrato agregado que gerará o número do CIOT junto a ANTT. Este contrato poderá ter uma vigência máximo de 30 dias a partir da data da declaração do contrato. Ao longo desta vigência deverá ser adicionadas as viagens que serão realizadas por este contrato, para isto deverá ser utilizado o serviço de Manter Viagem informando a versão do serviço 1.02, tipo de viagem “AGR – Viagem Agregada” e o número de viagem de contração, informando o número do contrato gerado. O Contrato Agregado é permitido apenas para Contratantes (Clientes Rodocred) que sejam ETC ou CTC, ou seja que possuem RNTRC, e irão contratar TAC-Agregado para o serviço de transporte. Cabe ressaltar que uma vez contratado um TAC-Agregado o mesmo fica impossibilitado de gerar outro tipo de CIOT durante a vigência contratada.  
+ 
+- Inclusão do serviço de Encerrar Contrato Agregado: Todo contrato agregado deve ser encerrado pelo Contratante (Cliente Rodocred), seja antes da vigência contratada ou após a finalização da vigência. Basta utilizar este serviço para que o Rodocred efetue o encerramento do Contrato Agregado junto a ANTT. Notem que para acontecer o encerramento corretamente, todas as Viagens Agregadas devem estar encerradas para que o encerramento do contrato aconteça. O Conjunto de Contratado (Cliente Rodocred) e Contratante (TAC-Agregado) podem ter no máximo 2 (dois) contratos agregados não encerrados na ANTT, na tentativa de cadastrar um novo contrato a ANTT não permitirá tal ação, até que um dos contratos com vigência finalizadas seja encerrado.
+ 
+- Inclusão do serviço de Consultar Contrato Agregado: Serviço de consulta de Contrato Agregado previamente cadastrado no Rodocred.
+ 
+- Alteração da Versão do serviço de Manter Viagem para 1.02, para permitir a inclusão, alteração e cancelamento de Viagem Agregada.
+ 
+- Alteração da Versão do serviço de Detalhar Viagem para 1.01, para retornar uma lista de solicitação de Vale-Pedágio.
+ 
+- Alteração no serviço de Detalhar Viagem para a versão 1.01 para retornar uma lista de solicitação de Vale-Pedágio.
+ 
+- Ativação do tipo de viagem “AGR – Viagem Agregado” no serviço de Manter Viagem e inclusão das Regras de negócio RNG122 até RNG161: Além de todas as regras que já existem no serviço de Manter Viagem foram adicionadas regras específicas para a Viagem Agregado. A Viagem Agregado pode não conter todos os dados no seu cadastro, sendo que o mínimo necessário para efetuar o cadastro é a informação de Dados da Viagem, Veículos da Viagem, Motoristas da Viagem e Rota da Viagem (Código da Rota ou Código do IBGE da Origem/Destino) e posteriormente utilizar o serviço de Manter Operação Viagem para adicionar as operações da Viagem e os Documentos da Viagem.
+ 
+Solicitações atendidas:
+ 
+- Permitir cancelar viagens que contenham operações de “DES – Desconto de Frete” e não tenham efetuado nenhuma movimentação financeira;
+- Cadastrar uma viagem do tipo “FRE – Contrato de Frete” que não gere CIOT e não transporte carga (Viagem Vazia), mas que seja utilizado o Rodocred para o pagamento de Frete. Nestes casos não deverá ser enviado os “Envolvidos no Transporte” e “Documentos da Viagem”.
+ 
+Segue em anexo o manual técnico atualizado bem como o manual detalhado.
+ 
+Qualquer dúvida basta entrar em contato através do e-mail integracao@rodocred.com.br
+ 
+Atenciosamente,
+ 

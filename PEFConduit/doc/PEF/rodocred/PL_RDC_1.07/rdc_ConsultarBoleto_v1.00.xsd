@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<xs:schema xmlns:rdc="https://ws.rodocred.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ws.rodocred.com.br/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="rdc_TiposPadrao_v1.02.xsd"/>
+	<xs:element name="ConsultarBoleto">
+		<xs:annotation>
+			<xs:documentation>Mensagem Disponibilizada para Consulta de boletos</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:ConsultarBoletoRequest">
+					<xs:annotation>
+						<xs:documentation>Mensagem de Requisição da Consulta de Boletos</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:ConsultarBoletoResponse">
+					<xs:annotation>
+						<xs:documentation>Mensagem de Resposta da Consulta de boletos</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarBoletoRequest">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Requisição da Consulta de Boletos</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:IdentificacaoIntegracao"/>
+				<xs:element ref="rdc:IdClienteResponsavel" minOccurs="0"/>
+				<xs:element ref="rdc:TipoBoleto"/>
+				<xs:element ref="rdc:PeriodoEmissao"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarBoletoResponse">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Resposta da Consulta de Boletos</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:RetornoMensagem"/>
+				<xs:element name="ListaBoletos">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Boleto" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DataEmissao" type="xs:date">
+											<xs:annotation>
+												<xs:documentation>Data da emissão do boleto</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element ref="rdc:DataVencimento"/>
+										<xs:element name="DataPagamento" type="xs:date" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Data do pagamento do boleto</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element ref="rdc:NossoNumero"/>
+										<xs:element ref="rdc:ValorBoleto"/>
+										<xs:element ref="rdc:LinkBoleto"/>
+										<xs:element ref="rdc:CodigoBarra"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

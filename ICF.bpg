@@ -1,0 +1,86 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = X509Capicom.bpl X509OpenSSL.bpl janXML.bpl T5SOAP.bpl ICFBase.bpl \
+  IntegracaoContratoFreteBEAN.bpl IntegracaoContratoFreteNDD.bpl \
+  IntegracaoContratoFretePamcary.bpl IntegracaoContratoFreteRepom.bpl \
+  IntegracaoContratoFreteRodocred.bpl IntegracaoContratoFreteTicket.bpl \
+  IntegracaoContratoFreteTarget.bpl IntegracaoContratoFreteTXT.bpl \
+  IntegracaoContratoFrete.bpl PEFConduitLic.bpl PEFConduitDOT.bpl PEFConduit.bpl \
+  PEFConduitAPP.exe PEFConduitSrv.exe PEFConduitTeste.exe PEFConduitDOTTeste.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+PEFConduitTeste.exe: PEFConduit\PEFConduitTeste.dpr
+  $(DCC)
+
+PEFConduit.bpl: PEFConduit\PEFConduit.dpk
+  $(DCC)
+
+IntegracaoContratoFreteTXT.bpl: TXT\IntegracaoContratoFreteTXT.dpk
+  $(DCC)
+
+IntegracaoContratoFrete.bpl: IntegracaoContratoFrete.dpk
+  $(DCC)
+
+IntegracaoContratoFreteBEAN.bpl: IntegracaoContratoFreteBEAN.dpk
+  $(DCC)
+
+IntegracaoContratoFreteNDD.bpl: IntegracaoContratoFreteNDD.dpk
+  $(DCC)
+
+IntegracaoContratoFretePamcary.bpl: IntegracaoContratoFretePamcary.dpk
+  $(DCC)
+
+IntegracaoContratoFreteRepom.bpl: IntegracaoContratoFreteRepom.dpk
+  $(DCC)
+
+IntegracaoContratoFreteRodocred.bpl: IntegracaoContratoFreteRodocred.dpk
+  $(DCC)
+
+PEFConduitSrv.exe: PEFConduit\PEFConduitSrv.dpr
+  $(DCC)
+
+PEFConduitAPP.exe: PEFConduit\PEFConduitAPP.dpr
+  $(DCC)
+
+IntegracaoContratoFreteTicket.bpl: IntegracaoContratoFreteTicket.dpk
+  $(DCC)
+
+janXML.bpl: JanXML\janXML.dpk
+  $(DCC)
+
+ICFBase.bpl: API\ICFBase.dpk
+  $(DCC)
+
+PEFConduitLic.bpl: PEFConduit\PEFConduitLic.dpk
+  $(DCC)
+
+PEFConduitDOT.bpl: PEFConduit\PEFConduitDOT.dpk
+  $(DCC)
+
+PEFConduitDOTTeste.exe: PEFConduit\PEFConduitDOTTeste.dpr
+  $(DCC)
+
+X509Capicom.bpl: X509\Capicom\X509Capicom.dpk
+  $(DCC)
+
+X509OpenSSL.bpl: X509\openssl\X509OpenSSL.dpk
+  $(DCC)
+
+T5SOAP.bpl: SOAP\T5SOAP.dpk
+  $(DCC)
+
+IntegracaoContratoFreteTarget.bpl: IntegracaoContratoFreteTarget.dpk
+  $(DCC)
+
+

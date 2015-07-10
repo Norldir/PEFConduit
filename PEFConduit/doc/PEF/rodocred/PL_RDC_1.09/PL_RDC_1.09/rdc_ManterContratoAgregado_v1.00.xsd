@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<xs:schema xmlns:rdc="https://ws.rodocred.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ws.rodocred.com.br/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="rdc_TiposPadrao_v1.02.xsd"/>
+	<xs:element name="ManterContratoAgregado">
+		<xs:annotation>
+			<xs:documentation>Mensagem que Permite Incluir, Alterar e Cancelar os Contratos Agregados</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:ManterContratoAgregadoRequest"/>
+				<xs:element ref="rdc:ManterContratoAgregadoResponse"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ManterContratoAgregadoRequest">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Requisição que Permite Incluir, Alterar e Cancelar o Contrato Agregado</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:IdentificacaoIntegracao"/>
+				<xs:element ref="rdc:IdClienteResponsavel" minOccurs="0"/>
+				<xs:element ref="rdc:Operacao">
+					<xs:annotation>
+						<xs:documentation>Tipo da Operação ser Realizada:
+INC - Inclusão
+ALT - Alteração
+EXC - Exclusão
+CAN - Cancelado</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="DataVigencia" type="xs:dateTime"/>
+				<xs:element ref="rdc:Transportador">
+					<xs:annotation>
+						<xs:documentation>Período em que foi realizado o embarque da mercadoria.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:NumeroContrato" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Obrigatório para operação ALT, EXC e CAN.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:DocumentoRef" minOccurs="0"/>
+				<xs:element name="MotivoCancelamento" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation> Obrigatório para operação de cancelamento</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element ref="rdc:VeiculosViagem" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ManterContratoAgregadoResponse">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Retorno da Inclusão, Alteração e Cancelamento do Contrato Agregado</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:RetornoMensagem"/>
+				<xs:element ref="rdc:ContratoAgregado"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,2522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<xs:schema xmlns:rdc="https://ws.rodocred.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ws.rodocred.com.br/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:simpleType name="TipoPontoPassagemType">
+		<xs:annotation>
+			<xs:documentation> Tipo de Ponto de Passagem</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:pattern value="(1-9)"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CNPJCPFType">
+		<xs:annotation>
+			<xs:documentation> Tipo CNPJ/CPF</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="11"/>
+			<xs:maxLength value="14"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TipoOperacaoType">
+		<xs:annotation>
+			<xs:documentation> Tipos de Operações</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="INC"/>
+			<xs:enumeration value="ALT"/>
+			<xs:enumeration value="CAN"/>
+			<xs:enumeration value="EXC"/>
+			<xs:enumeration value="CON"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StatusRetornoType">
+		<xs:annotation>
+			<xs:documentation> Tipo de Situação de Retorno</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SUCESSO"/>
+			<xs:enumeration value="ERRO"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CPFType">
+		<xs:annotation>
+			<xs:documentation> Tipo CPF</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="11"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CNPJType">
+		<xs:annotation>
+			<xs:documentation> Tipo CNPJ</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="14"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PlacaVeiculoType">
+		<xs:annotation>
+			<xs:documentation> Tipo da Placa do Veículo</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="7"/>
+			<xs:pattern value="[a-zA-Z]{3}.?[0-9]{4}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TipoLogradouroType">
+		<xs:annotation>
+			<xs:documentation> Tipo do Tipo Logradouro</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Aeroporto"/>
+			<xs:enumeration value="Alameda"/>
+			<xs:enumeration value="Área"/>
+			<xs:enumeration value="Avenida"/>
+			<xs:enumeration value="Campo"/>
+			<xs:enumeration value="Chácara"/>
+			<xs:enumeration value="Colônia"/>
+			<xs:enumeration value="Condomínio"/>
+			<xs:enumeration value="Conjunto"/>
+			<xs:enumeration value="Distrito"/>
+			<xs:enumeration value="Esplanada"/>
+			<xs:enumeration value="Estação"/>
+			<xs:enumeration value="Estrada"/>
+			<xs:enumeration value="Favela"/>
+			<xs:enumeration value="Fazenda"/>
+			<xs:enumeration value="Feira"/>
+			<xs:enumeration value="Jardim"/>
+			<xs:enumeration value="Ladeira"/>
+			<xs:enumeration value="Lago"/>
+			<xs:enumeration value="Lagoa"/>
+			<xs:enumeration value="Largo"/>
+			<xs:enumeration value="Loteamento"/>
+			<xs:enumeration value="Morro"/>
+			<xs:enumeration value="Núcleo"/>
+			<xs:enumeration value="Parque"/>
+			<xs:enumeration value="Passarela"/>
+			<xs:enumeration value="Pátio"/>
+			<xs:enumeration value="Praça"/>
+			<xs:enumeration value="Quadra"/>
+			<xs:enumeration value="Recanto"/>
+			<xs:enumeration value="Residencial"/>
+			<xs:enumeration value="Rodovia"/>
+			<xs:enumeration value="Rua"/>
+			<xs:enumeration value="Setor"/>
+			<xs:enumeration value="Sítio"/>
+			<xs:enumeration value="Travessa"/>
+			<xs:enumeration value="Trecho"/>
+			<xs:enumeration value="Trevo"/>
+			<xs:enumeration value="Vale"/>
+			<xs:enumeration value="Vereda"/>
+			<xs:enumeration value="Via"/>
+			<xs:enumeration value="Viaduto"/>
+			<xs:enumeration value="Viela"/>
+			<xs:enumeration value="Vila"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SiglaUFType">
+		<xs:annotation>
+			<xs:documentation> Tipo da Sigla UF </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+			<xs:enumeration value="AC"/>
+			<xs:enumeration value="AL"/>
+			<xs:enumeration value="AM"/>
+			<xs:enumeration value="AP"/>
+			<xs:enumeration value="BA"/>
+			<xs:enumeration value="CE"/>
+			<xs:enumeration value="DF"/>
+			<xs:enumeration value="ES"/>
+			<xs:enumeration value="GO"/>
+			<xs:enumeration value="MA"/>
+			<xs:enumeration value="MG"/>
+			<xs:enumeration value="MS"/>
+			<xs:enumeration value="MT"/>
+			<xs:enumeration value="PA"/>
+			<xs:enumeration value="PB"/>
+			<xs:enumeration value="PE"/>
+			<xs:enumeration value="PI"/>
+			<xs:enumeration value="PR"/>
+			<xs:enumeration value="RJ"/>
+			<xs:enumeration value="RN"/>
+			<xs:enumeration value="RO"/>
+			<xs:enumeration value="RR"/>
+			<xs:enumeration value="RS"/>
+			<xs:enumeration value="SC"/>
+			<xs:enumeration value="SE"/>
+			<xs:enumeration value="SP"/>
+			<xs:enumeration value="TO"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RNTRCType">
+		<xs:annotation>
+			<xs:documentation>Tipo RNTRC</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="8"/>
+			<xs:pattern value="[0-9]{8}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TokenAutenticacaoType">
+		<xs:annotation>
+			<xs:documentation> Tipo Token</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="36"/>
+			<xs:pattern value="\w{8}-\w{4}-\w{4}-\w{4}-\w{12}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TipoOperacaoTransporteType">
+		<xs:annotation>
+			<xs:documentation> Tipo da Operação de Transporte</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="FRE"/>
+			<xs:enumeration value="FRO"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TipoModeloVeiculoType">
+		<xs:annotation>
+			<xs:documentation> Tipo do Modelo de Veículo</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="187"/>
+			<xs:enumeration value="188"/>
+			<xs:enumeration value="189"/>
+			<xs:enumeration value="190"/>
+			<xs:enumeration value="191"/>
+			<xs:enumeration value="192"/>
+			<xs:enumeration value="193"/>
+			<xs:enumeration value="194"/>
+			<xs:enumeration value="205"/>
+			<xs:enumeration value="206"/>
+			<xs:enumeration value="207"/>
+			<xs:enumeration value="208"/>
+			<xs:enumeration value="209"/>
+			<xs:enumeration value="210"/>
+			<xs:enumeration value="244"/>
+			<xs:enumeration value="245"/>
+			<xs:enumeration value="246"/>
+			<xs:enumeration value="247"/>
+			<xs:enumeration value="248"/>
+			<xs:enumeration value="249"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TipoTransportadorType">
+		<xs:annotation>
+			<xs:documentation> Tipo do Transportador</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="TAC"/>
+			<xs:enumeration value="ETC"/>
+			<xs:enumeration value="CTC"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TipoCartaoType">
+		<xs:annotation>
+			<xs:documentation> Tipo dos Cartões Rodocred</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CRF"/>
+			<xs:enumeration value="CRP"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NumeroCartaoType">
+		<xs:annotation>
+			<xs:documentation> Tipo dos Números dos Cartões Rodocred</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="16"/>
+			<xs:maxLength value="16"/>
+			<xs:pattern value="[0-9]+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TipoFreteType">
+		<xs:annotation>
+			<xs:documentation> Tipo de Frete CIF e FOB</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CIF"/>
+			<xs:enumeration value="FOB"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EixoType">
+		<xs:annotation>
+			<xs:documentation>Tipo de Eixo dos Veículos</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:pattern value="[2-9]+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LocalidadeType">
+		<xs:annotation>
+			<xs:documentation>Tipo da Localidade da Rota</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0"/>
+			<xs:maxLength value="60"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CodigoIBGEType">
+		<xs:annotation>
+			<xs:documentation>Códido do IBGE do Municipio da Rota</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0"/>
+			<xs:maxLength value="60"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TipoRodagemType">
+		<xs:annotation>
+			<xs:documentation> Tipo de Rodagem Type</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="S"/>
+			<xs:enumeration value="D"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TipoViagemType">
+		<xs:annotation>
+			<xs:documentation>
+FRE-Contrato de Frete, FRO-Viagem de Frota
+ , RDF-Registro Depósito de Frete
+,FRA-Viagem Fracionada
+ ,AGR-Viagem Agregado
+ ,VLP-Viagem Pedagio
+</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="FRE"/>
+			<xs:enumeration value="FRO"/>
+			<xs:enumeration value="RDF"/>
+			<xs:enumeration value="AGR"/>
+			<xs:enumeration value="FRA"/>
+			<xs:enumeration value="VLP"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ValorType">
+		<xs:annotation>
+			<xs:documentation> Tipo do Valor</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="12"/>
+			<xs:fractionDigits value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ModalidadeImpressaoType">
+		<xs:annotation>
+			<xs:documentation> Tipo de Modalidade de Impressão</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="LOC"/>
+			<xs:enumeration value="REM"/>
+			<xs:enumeration value="RRC"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DadosTransportadorType">
+		<xs:sequence>
+			<xs:element ref="rdc:Transportador">
+				<xs:annotation>
+					<xs:documentation>Dados do Transportador</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="rdc:TipoTransportador"/>
+			<xs:element ref="rdc:Contato" minOccurs="0"/>
+			<xs:element ref="rdc:Endereco" minOccurs="0"/>
+			<xs:element ref="rdc:Veiculo" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="rdc:Motorista" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="rdc:NumeroCartao" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="IdentificacaoIntegracaoType">
+		<xs:sequence>
+			<xs:element ref="rdc:IdClienteRodocred"/>
+			<xs:element ref="rdc:TokenAutenticacao"/>
+			<xs:element ref="rdc:NumeroTransacao" minOccurs="0"/>
+			<xs:element name="VersaoServico">
+				<xs:annotation>
+					<xs:documentation>Versão do Serviço</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="4"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EnderecoType">
+		<xs:annotation>
+			<xs:documentation> Tipo de Endereço</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="TipoEndereco">
+				<xs:annotation>
+					<xs:documentation>Tipos Esperados: 
+C-Comercial
+E-Entrega
+R-Residencial</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="C"/>
+						<xs:enumeration value="E"/>
+						<xs:enumeration value="R"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element ref="rdc:CEP"/>
+			<xs:element name="TipoLogradouro">
+				<xs:annotation>
+					<xs:documentation>Tipo do Logradouro do endereço</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="rdc:TipoLogradouroType">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="30"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Logradouro">
+				<xs:annotation>
+					<xs:documentation>Logradouro do endereço</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Numero">
+				<xs:annotation>
+					<xs:documentation>Número do logradouro do endereço</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Complemento" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Complemento do logradouro do endereço</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="30"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Bairro">
+				<xs:annotation>
+					<xs:documentation>Bairro do logradouro do endereço</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element ref="rdc:Cidade"/>
+			<xs:element ref="rdc:Estado"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ContatoType">
+		<xs:annotation>
+			<xs:documentation> Tipo de Contato</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="TipoContato">
+				<xs:annotation>
+					<xs:documentation>Tipos  do Contato
+C-Comercial
+E-Entrega
+R-Residencial</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="C"/>
+						<xs:enumeration value="E"/>
+						<xs:enumeration value="R"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Nome">
+				<xs:annotation>
+					<xs:documentation>Nome do Contato</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="40"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Telefone" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Telefone do Contato</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Celular" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Celular do Contato</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Email" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>E-mail do Contato</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="200"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="MeioComunicacaoPreferido" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Meio de Comunicação Preferido de Contato
+Correio
+Email
+Fax
+Telefone</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Correio"/>
+						<xs:enumeration value="Email"/>
+						<xs:enumeration value="Fax"/>
+						<xs:enumeration value="Telefone"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MotoristaType">
+		<xs:annotation>
+			<xs:documentation> Tipo de Motorista</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="NomeMotorista" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Nome do Motorista</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Relacao" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Relação comercial
+EMP - Empregado
+CON - Contratado
+AUT - Autônomo</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="EMP"/>
+						<xs:enumeration value="CON"/>
+						<xs:enumeration value="AUT"/>
+						<xs:enumeration value="AUX"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CPFMotorista" type="rdc:CPFType">
+				<xs:annotation>
+					<xs:documentation>CPF do Motorista</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CNHMotorista" type="rdc:CNHType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Dados do CNH do Motorista</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="rdc:Contato" minOccurs="0"/>
+			<xs:element ref="rdc:Endereco" minOccurs="0"/>
+			<xs:element name="DataNascimento" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Data de Nascimento do Motorista</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Identidade" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Número da carteira de Identidade do motorista</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OrgaoExpedidor" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Orgão Expedidor da carteira de identidade</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="rdc:Sexo" minOccurs="0"/>
+			<xs:element ref="rdc:NumeroCartao" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="VeiculoType">
+		<xs:annotation>
+			<xs:documentation> Tipo de Veículo</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="TipoTransporteVeiculo">
+				<xs:annotation>
+					<xs:documentation>Identificação do Tipo de Transporte de  Carga do Veículo.
+P - Transporte de Carga Própria
+T - Transporte de Carga de Terceiro</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="P"/>
+						<xs:enumeration value="T"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element ref="rdc:RNTRC" minOccurs="0"/>
+			<xs:element ref="rdc:CNPJCPF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>CNPJ/CPF do proprietário do veículo. Só deve ser enviado </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="rdc:TipoVeiculo"/>
+			<xs:element ref="rdc:QtdeEixos"/>
+			<xs:element ref="rdc:TipoRodagem"/>
+			<xs:element ref="rdc:PlacaVeiculo"/>
+			<xs:element name="UfPlacaVeiculo" type="rdc:SiglaUFType" nillable="true">
+				<xs:annotation>
+					<xs:documentation>UF da PLaca do Veículo</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NumeroFrotaVeiculo" type="xs:integer" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Número da Frota do Veículo</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TipoCombustivelVeiculo">
+				<xs:annotation>
+					<xs:documentation>Tipos de combustível esperados:  
+1-Diesel
+2-Gasolina
+3-Álcool
+4-GNV
+5-Flex
+</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:pattern value="[1-5]{1}"/>
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+						<xs:enumeration value="3"/>
+						<xs:enumeration value="4"/>
+						<xs:enumeration value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CapacidadeTanqueVeiculo" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Capacidade do Tanque do Veículo</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="9999.99"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="MediaConsumoVeiculo" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Média em KM/Litro do Consumo  do Veículo</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="9999.99"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CartaoType">
+		<xs:annotation>
+			<xs:documentation> Tipo Cartão</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="rdc:NumeroCartao"/>
+			<xs:element ref="rdc:TipoCartao"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ExcecaoType">
+		<xs:annotation>
+			<xs:documentation> Tipo Exceção</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="TipoExcecao">
+				<xs:annotation>
+					<xs:documentation>Tipo Exceção 
+AUTORIZACAO
+VALIDACAO
+NEGOCIO
+APLICACAO			</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="AUTORIZACAO"/>
+						<xs:enumeration value="VALIDACAO"/>
+						<xs:enumeration value="NEGOCIO"/>
+						<xs:enumeration value="APLICACAO"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CodigoExcecao" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Código da Exceção</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MensagemExcecao" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Mensagem da Exceção</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TransportadorType">
+		<xs:annotation>
+			<xs:documentation> Tipo Transportador</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RNTRCTransportador" type="rdc:RNTRCType">
+				<xs:annotation>
+					<xs:documentation>RNTRC do Transportador</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="rdc:CNPJCPF">
+				<xs:annotation>
+					<xs:documentation>CNPJ/CPF do transportador.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="rdc:TipoTransportador"/>
+			<xs:element name="NomeTransportador">
+				<xs:annotation>
+					<xs:documentation>Nome ou Razão Social do Transportador</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="40"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element ref="rdc:Endereco" maxOccurs="3">
+				<xs:annotation>
+					<xs:documentation>Dados do Endereço do Transportador</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="rdc:Contato" maxOccurs="2">
+				<xs:annotation>
+					<xs:documentation>Dados do Contrato do Transportador</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="rdc:Motorista" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Lista de Motoristas associados ao transportador</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="rdc:Veiculo" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Lista de Veículos associados ao transportador</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="rdc:Cartao" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Número do Cartão Provisório Fornecido para o Transportador</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ValePedagioViagemType">
+		<xs:annotation>
+			<xs:documentation> Tipo Vale Pedágio Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="OperadoraFinanceiraVP">
+				<xs:annotation>
+					<xs:documentation>Código da Operadora Financeira de Emissão de Vale Pedágio.
+DBT - DBTRANS
+OUT - Outras Operadoras</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="DBT"/>
+						<xs:enumeration value="OUT"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element ref="rdc:MeioPagamentoValePedagio">
+				<xs:annotation>
+					<xs:documentation>Lista de meios de pagamentos disponíveis para compra de Vale Pedágio: 
+1-Cupom
+3-Cartão VVP
+4-Vale Pedágio Auto Expresso
+5-Vale Pedágio Terceiro</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="rdc:ModalidadeLocalImpressao" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Opções de modalidade de impressão e entrega de Vale Pedágio Cupom:    
+LOC – Local no próprio BEL
+REM – Remota em Outro BEL
+RRC – Remota Rede Credenciada
+Obrigatório para meio de Pagamento Cupom</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="rdc:IDLocalImpressao" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Identificação do Local de Impressão. Quando a Modalidade for BEL enviar a Identificação da Empresa
+Obrigatório para meio de Pagamento Cupom</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="rdc:ValorPedagio" minOccurs="0"/>
+			<xs:element name="PracasTarifaDiferenciada" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Indicador de Compra de Vale Pedágio com Tarifa Diferenciada</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="IdPraca">
+							<xs:annotation>
+								<xs:documentation>Identificação da Praça que deve ser realizada compra de vale pedágio com valor de Tarifa Diferenciada</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="CondicaoCompraVP">
+							<xs:annotation>
+								<xs:documentation>Indicador de Compra de Vale Pedágio para Praças de Pedágio com Tarifas Diferenciadas
+NOP - Não Comprar Vale Pedágio para Praça
+TDF-Comprar com Valor da Tarifa Diferenciada
+TNO - Comprar com Valor da Tarifa Normal
+
+</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="NOP"/>
+									<xs:enumeration value="TDF"/>
+									<xs:enumeration value="TNO"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MotoristaViagemType">
+		<xs:annotation>
+			<xs:documentation> Tipo Motorista Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="CPFMotorista" type="rdc:CPFType">
+				<xs:annotation>
+					<xs:documentation>CPF do Motorista da Viagem</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NomeMotorista" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Nome do Motorista</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CNHType">
+		<xs:annotation>
+			<xs:documentation> Tipo CNH</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="NumeroCNH" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Carteira Nacional de Habilitação (CNH) </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="11"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CNHCategoria" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Categoria da Carteira Nacional de Habilitação (CNH). Ex A,B,C e etc.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="A"/>
+						<xs:enumeration value="B"/>
+						<xs:enumeration value="C"/>
+						<xs:enumeration value="D"/>
+						<xs:enumeration value="E"/>
+						<xs:enumeration value=""/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EnvolvidosTransporteViagemType">
+		<xs:annotation>
+			<xs:documentation>Envolvidos no Transporte: Remetente, Destinatário e Consignatário</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="rdc:TipoFrete"/>
+			<xs:element name="EnvolvidosTransporte" minOccurs="2" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Dados dos Envolvidos no Transporte</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="TipoEnvolvido">
+							<xs:annotation>
+								<xs:documentation>Tipos Esperados: 
+REM - Remetente
+DES - Destinatário
+CON - Consignatário</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="REM"/>
+									<xs:enumeration value="DES"/>
+									<xs:enumeration value="CON"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element ref="rdc:CNPJCPF"/>
+						<xs:element name="NomeEnvolvido" type="xs:string">
+							<xs:annotation>
+								<xs:documentation>Nome do envolvido do transporte.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Endereco" type="rdc:EnderecoType">
+							<xs:annotation>
+								<xs:documentation>Informações do Endereço  dos Envolvidos no Transporte</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TransportadorViagemType">
+		<xs:annotation>
+			<xs:documentation> Tipo Transportador Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="CNPJCPFTrasportador" type="rdc:CNPJCPFType"/>
+			<xs:element name="NomeTransportador">
+				<xs:annotation>
+					<xs:documentation>Nome do trasportador</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PracaType">
+		<xs:annotation>
+			<xs:documentation> Tipo Praça Pedágio</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="IdPraca" type="xs:integer">
+				<xs:annotation>
+					<xs:documentation>Identificação da Praça de Pedágio</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NomePraca">
+				<xs:annotation>
+					<xs:documentation>Nome da Praca Pedágio</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LocalPraca" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Local da Praça</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Concessionaria" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Nome da Concessionária</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Informativo" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Informatvos Referentes das Praças de Pedágio</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PossuiTarifaEspecial" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Identificador se Possui Tarifa Especial</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="IdClienteRodocred" type="xs:int">
+		<xs:annotation>
+			<xs:documentation>Identificação do Cliente Rodocred</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Transportador">
+		<xs:annotation>
+			<xs:documentation>Dados do transportador.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CNPJCPFTransportador" type="rdc:CNPJCPFType">
+					<xs:annotation>
+						<xs:documentation>CNPJ/CPF do Transportador da Viagem</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="RNTRC" type="rdc:RNTRCType">
+					<xs:annotation>
+						<xs:documentation>RNTRC (Registro Nacional de Transportadores Rodoviários de Carga) do transportador.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="NomeTransportador" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Nome do trasportador</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="100"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TransportadorViagem" type="rdc:TransportadorViagemType">
+		<xs:annotation>
+			<xs:documentation>Dados do transportador.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="RNTRC" type="rdc:RNTRCType">
+		<xs:annotation>
+			<xs:documentation>RNTRC do Proprietário do Veículo da Viagem</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Motorista" type="rdc:MotoristaType">
+		<xs:annotation>
+			<xs:documentation>Dados do Motorista</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="MotoristaViagem" type="rdc:MotoristaViagemType">
+		<xs:annotation>
+			<xs:documentation>Dados dos Motoristas na Viagem</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Estabelecimento">
+		<xs:annotation>
+			<xs:documentation>Dados do Estabelcimento</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="IDEstabelecimento" type="xs:int">
+					<xs:annotation>
+						<xs:documentation>Identificação do Estabelecimento no Rodocred</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="CNPJEstabelecimento" type="rdc:CNPJType">
+					<xs:annotation>
+						<xs:documentation>CNPJ do Estabelecimento</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="NomeEstabelecimento" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Estabelecimentos">
+		<xs:annotation>
+			<xs:documentation>Dados de retorno da Consulta de Estabelcimentos</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="IDEstabelecimento" type="xs:int">
+					<xs:annotation>
+						<xs:documentation>Identificação do Estabelecimento no Rodocred</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="CNPJEstabelecimento" type="rdc:CNPJType">
+					<xs:annotation>
+						<xs:documentation>CNPJ do Estabelecimento</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="NomeEstabelecimento" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Nome do Estabelecimento</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:Cidade"/>
+				<xs:element ref="rdc:UF"/>
+				<xs:element name="Bandeira" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Bandeira do Estabelecimento</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Veiculo" type="rdc:VeiculoType">
+		<xs:annotation>
+			<xs:documentation> Dados do Veículo</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="TipoVeiculo">
+		<xs:annotation>
+			<xs:documentation>Tipos de Veiculo esperados:  
+1-Automóvel, Pickup ou Utilitário Leve
+2-Ônibus
+3-Caminhão
+4-Caminhão-trator
+5-Semi-reboque
+6-Reboque
+7-Bitrem
+8-Genérico
+</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:int">
+				<xs:pattern value="[1-8]{1}"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="PlacaVeiculo" type="rdc:PlacaVeiculoType">
+		<xs:annotation>
+			<xs:documentation>Campo armazena a placa do veículo.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="EnvolvidosTransporteViagem" type="rdc:EnvolvidosTransporteViagemType">
+		<xs:annotation>
+			<xs:documentation>Dados dos envolvidos do Transporte na Viagem: Remetente, Destinatário e Consignatário.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Contato" type="rdc:ContatoType">
+		<xs:annotation>
+			<xs:documentation> Dados do Contato</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Endereco" type="rdc:EnderecoType">
+		<xs:annotation>
+			<xs:documentation> Dados do Endereço</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Cartao" type="rdc:CartaoType">
+		<xs:annotation>
+			<xs:documentation> Dados do Cartão</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="TipoLogradouro" type="rdc:TipoLogradouroType">
+		<xs:annotation>
+			<xs:documentation> Tipo do Logradouro do Endereço</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="CPFMotorista">
+		<xs:annotation>
+			<xs:documentation>Campo armazena o CPF </xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="rdc:CPFType"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="CNPJCPF" type="rdc:CNPJCPFType" nillable="true">
+		<xs:annotation>
+			<xs:documentation>Campo armazena o CNPJ ou CPF </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ModalidadeLocalImpressao" type="rdc:ModalidadeImpressaoType">
+		<xs:annotation>
+			<xs:documentation>Opções de modalidade de impressão e entrega de Vale Pedágio Cupom:     LOC – Local no próprio BEL
+REM – Remota em Outro BEL
+RRC – Remota Rede Credenciada</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="MeioPagamentoValePedagio" default="1">
+		<xs:annotation>
+			<xs:documentation>Lista de meios de pagamentos disponíveis para compra de Vale Pedágio: 1-Cupom
+3-Cartão VVP 4-ValePedágio AutoExpresso 5-ValePedágio Terceiro</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:int">
+				<xs:pattern value="[1-5]{1}"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="IDLocalImpressao" type="xs:int">
+		<xs:annotation>
+			<xs:documentation>Identificação do Local de Impressão. Quando a Modalidade for BEL enviar a Identificação da Empresa</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ValePedagioViagem" type="rdc:ValePedagioViagemType">
+		<xs:annotation>
+			<xs:documentation>Informações para Compra de Vale Pedágio</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="IDOperacaoViagem" type="xs:int">
+		<xs:annotation>
+			<xs:documentation>Identificação da Operação da Viagem</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ValorTaxaEventoOperacaoViagem" type="xs:decimal">
+		<xs:annotation>
+			<xs:documentation>Valor da Taxa da Operaçção da Viagem</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="SituacaoOperacaoViagem">
+		<xs:annotation>
+			<xs:documentation>Situacao da Operação de Transporte
+BLO-Bloqueado
+LIB-Liberado
+CAN-Cancelado
+REG-Registrado</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="BLO"/>
+				<xs:enumeration value="LIB"/>
+				<xs:enumeration value="CAN"/>
+				<xs:enumeration value="REG"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="SituacaoEventoOperacaoViagem">
+		<xs:annotation>
+			<xs:documentation>Situacao do Evento da Operação de Transporte
+BLO-Bloqueado
+LIB-Liberado
+CAN-Cancelado
+REG-Registrado</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="BLO"/>
+				<xs:enumeration value="LIB"/>
+				<xs:enumeration value="CAN"/>
+				<xs:enumeration value="REG"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="ProgramacaoViagem">
+		<xs:annotation>
+			<xs:documentation>Armazena as informações das operações da viagem.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:OperacaoViagem" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DetalheProgramacaoViagem">
+		<xs:annotation>
+			<xs:documentation>Armazena as informações das operações da viagem.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="OperacaoViagem" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="rdc:IDOperacaoViagem" minOccurs="0"/>
+							<xs:element name="CodigoOperacao">
+								<xs:annotation>
+									<xs:documentation>Código identificador do tipo de operação selecionado para a programação da viagem.
+ADF - Adiantamento de Frete
+EDL - Entrega de Documento 
+EDS - Entrega de Documento com Liberação de Saldo
+LSF - Libaração de Saldo de Frete
+MOV - Monitoramento Veículo
+DEP - Depósito do Frete Realizado pelo Cliente</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string"/>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="CondicaoLiberacaoOperacao">
+								<xs:annotation>
+									<xs:documentation>Condição de Liberação da Operação da Viahem
+DAD-Data Programada
+EST-No Estabelecimento
+FIL-Na Filial da Empresa
+LIB-Na Liberação Viagem</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:length value="3"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="DataOperacao" type="xs:date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Data e hora da realização do evento.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="LocalRealizacao" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Local da realização da Operação da Viagem
+QER - Qualquer Estabelecimento da Rota
+QFL - Qualquer Filial da Empresa
+RED - Qualquer Estabelecimento da Rede Credenciada
+FIL - Na Filial da Empresa
+EST - No Estabelecimento</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string"/>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element ref="rdc:Estabelecimento" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Dados do Estabelecimento para Execução da Operaçãoda Viagem</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="FilialEmpresa" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Dados da Filial da Empresa para Execução da Operação da Viagem</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="IDFilial" type="xs:integer" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Identificação da Empresa da Filial no Rodocred</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="CNPJFilial" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>CNPJ da Filial</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="rdc:CNPJType">
+													<xs:length value="14"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element ref="rdc:Cidade" minOccurs="0"/>
+							<xs:element ref="rdc:Estado" minOccurs="0"/>
+							<xs:element name="SituacaoOperacao" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Situação da operação da Viagem:
+LIB - Liberado
+REG - Registrado
+BLO - Bloqueado
+CAN- Cancelado</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="EventoOperacao" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Lista de Eventos das Operações de Transporte.
+Deverá ser enviado nos casos e operações valoradas</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="CodigoEventoOperacao">
+											<xs:annotation>
+												<xs:documentation>Código do Evento da Operação
+DEP-Registro de Depósito do Frete pelo Cliente                           PAR-Parcelas do Depósito do Frete
+RED-Registro de Entrega de Documento
+TAD-Transferência Adiantamento Despesas
+TRF-Transferência de Adiantamento de Frete
+TSF-Transferência de Saldo de Frete</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:length value="3"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ValorEvento" type="rdc:ValorType" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Valor programado em reais para o evento da operação.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="QuantidadeEvento" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Quantidade de Litros para Abastecimento</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:decimal">
+													<xs:totalDigits value="12"/>
+													<xs:fractionDigits value="2"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Combustivel" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Nome do Combustivel  para Abastecimento</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="GASOLINA"/>
+													<xs:enumeration value="DIESEL"/>
+													<xs:enumeration value="BIODIESEL"/>
+													<xs:enumeration value="ETANOL"/>
+													<xs:enumeration value="GNV"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="DataEvento" type="xs:date" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Data e hora da realização do evento.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TokenAutenticacao" type="rdc:TokenAutenticacaoType">
+		<xs:annotation>
+			<xs:documentation>Token de Autenticação no Sistema</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Excecao" type="rdc:ExcecaoType">
+		<xs:annotation>
+			<xs:documentation>Exceção encontrada durante a execução do serviço.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="StatusRetorno" type="rdc:StatusRetornoType">
+		<xs:annotation>
+			<xs:documentation>Situação do Retorno da Mensagem</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="RetornoMensagem">
+		<xs:annotation>
+			<xs:documentation>Informações Padrões das Mensagens dos Serviços Disponibilizados para Integração</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:IdentificacaoIntegracao">
+					<xs:annotation>
+						<xs:documentation>Identificação do Cliente para Utilização do Serviço de Integração</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="StatusRetorno">
+					<xs:annotation>
+						<xs:documentation>Situação de Retorno da Mensagem. SUCESSO ou ERRO</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="SUCESSO"/>
+							<xs:enumeration value="ERRO"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element ref="rdc:Excecao"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Estado">
+		<xs:annotation>
+			<xs:documentation>Estado do logradouro do endereço</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="rdc:SiglaUFType"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Cidade" type="rdc:LocalidadeType">
+		<xs:annotation>
+			<xs:documentation>Cidade do logradouro do endereço</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="CEP">
+		<xs:annotation>
+			<xs:documentation>CEP do Endereco</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:length value="8"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="CIOT">
+		<xs:annotation>
+			<xs:documentation>CIOT - Código identificador de Operação de Transporte.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CodigoOperacaoTransporte">
+					<xs:annotation>
+						<xs:documentation>Numero do Código Identificador de Operação de Transporte.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:length value="12"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CodigoOperacaoTransporteDV">
+					<xs:annotation>
+						<xs:documentation>Digito Verificador do Código Identificador de Operação de Transporte.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:length value="4"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NumeroViagem" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Identificação do Número da Viagem Rodocred (xxx.xxxx.xxx)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="DadosViagem">
+		<xs:annotation>
+			<xs:documentation>Dados do cabeçalho da viagem.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:NumeroViagem" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Número da Viagem
+Formato: x.xxxx.x
+Este campo será obrigatório para Operações de Alteração e Cancelamento </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Embarque" type="xs:dateTime">
+					<xs:annotation>
+						<xs:documentation>Data e hora da data de embarque da viagem.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PrevisaoEntrega" type="xs:dateTime">
+					<xs:annotation>
+						<xs:documentation>Data e hora da data de previsão de entrega da viagem.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Foro" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>UF do foro do contrato de frete.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="rdc:Estado"/>
+							<xs:element ref="rdc:Cidade"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="rdc:DocumentoRef" minOccurs="0"/>
+				<xs:element name="DataVigencia" type="xs:dateTime">
+					<xs:annotation>
+						<xs:documentation>Data e hora da vigência da viagem.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="NumeroViagemContratacao" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Nº da viagem que originou a viagem atual.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="CentrodeCusto" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Código do Centro de Custo da viagem.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Observacao" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Observação da viagem.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="GerarCIOT" type="xs:boolean" default="true" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Indicador para Geração de CIOT.
+Este campo deverá ser informado para Operação de Transporte de Contrato de Frete</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="SemTransporteCarga" type="xs:boolean" default="false" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Indicador de Viagens sem Transporte de Carga </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RotaViagem">
+		<xs:annotation>
+			<xs:documentation>Rota selecionada para a viagem.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:CodigoRota" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="OrigemDestinoRota" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Origem e Destino da Rota da Viagem</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="rdc:CodigoIBGEOrigem"/>
+							<xs:element ref="rdc:CodigoIBGEDestino"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="VeiculosViagem">
+		<xs:annotation>
+			<xs:documentation>Veiculos relacionados à viagem.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:annotation>
+				<xs:documentation>Veiculos envolvidos na viagem.</xs:documentation>
+			</xs:annotation>
+			<xs:sequence>
+				<xs:element ref="rdc:PlacaVeiculo"/>
+				<xs:element ref="rdc:TipoVeiculo"/>
+				<xs:element ref="rdc:QtdeEixos"/>
+				<xs:element ref="rdc:TipoRodagem"/>
+				<xs:element ref="rdc:RNTRC" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>RNTRC do Proprietário do Veículo da Viagem
+Obrigatorio para Operação de Transporte de Frete</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:CNPJCPF" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Campo armazena o CNPJ ou CPF 
+Obrigatorio para Operação de Transporte de Frete</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ValoresViagem">
+		<xs:annotation>
+			<xs:documentation>Valores financeiros relacionados à viagem.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:ValorDespesas"/>
+				<xs:element ref="rdc:ValorFrete"/>
+				<xs:element ref="rdc:ValorCombustivel"/>
+				<xs:element ref="rdc:PesoCarga" minOccurs="0"/>
+				<xs:element ref="rdc:UnidadeMedidaPeso" minOccurs="0"/>
+				<xs:element name="ValorFreteTonelada" type="xs:decimal" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Valor do Frete por Tonelada</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ValorCarga" type="xs:decimal" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Valor da Carga Transportada</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ClausulasViagem">
+		<xs:annotation>
+			<xs:documentation>Dados das clausulas envolvidas na viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:annotation>
+				<xs:documentation>Armazena as informações de penalidade da viagem. </xs:documentation>
+			</xs:annotation>
+			<xs:sequence>
+				<xs:element name="CodigoClausula">
+					<xs:annotation>
+						<xs:documentation>Código de Identificação da clausula.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="20"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="DescricaoClausula" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Descrição da clausula da viagem.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="20"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Clausulas">
+		<xs:annotation>
+			<xs:documentation>Dados das clausulas envolvidas na viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:annotation>
+				<xs:documentation>Armazena as informações de penalidade da viagem. </xs:documentation>
+			</xs:annotation>
+			<xs:sequence>
+				<xs:element ref="rdc:TipoViagem"/>
+				<xs:element name="CodigoClausula">
+					<xs:annotation>
+						<xs:documentation>Código de Identificação da clausula.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="20"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="DescricaoClausula">
+					<xs:annotation>
+						<xs:documentation>Descrição da clausula da viagem.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="20"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element ref="rdc:PossuiRegraCalculo"/>
+				<xs:element ref="rdc:CodigoRegraCalculo" minOccurs="0"/>
+				<xs:element ref="rdc:DescricaoRegraCalculo" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DadosBancarios">
+		<xs:annotation>
+			<xs:documentation>Dados bancarios do transportador</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CodigoBanco">
+					<xs:annotation>
+						<xs:documentation>Código do banco do transportador.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:length value="3"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="NumeroAgencia">
+					<xs:annotation>
+						<xs:documentation>Numero da agência.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:length value="4"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="DvAgencia" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Digito Verificador da Agência</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="5"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="NumeroConta">
+					<xs:annotation>
+						<xs:documentation>Numero da conta bancária.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="15"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="DVConta">
+					<xs:annotation>
+						<xs:documentation>Digito Verificador da Conta Bancária</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="5"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="InformacoesPagamento" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Informações extras sobre o pagamento</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="500"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PedidoValePedagio">
+		<xs:annotation>
+			<xs:documentation>Dados do pedido e resumo dos cupons de vale pedágio adquiridos para a viagem cadastrada.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="NumeroPedidoValePedagio" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Identificação do Pedido de Compra de Vale Pedágio</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="NumeroComprovante">
+					<xs:annotation>
+						<xs:documentation>Numero do comprovante do Vale Pedágio</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:length value="12"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="NumeroComprovanteFormatado">
+					<xs:annotation>
+						<xs:documentation>Numero do Comprovante Formatado do Vale Pedágio. Informação exibida no contrato de carga no formato: 99.999.999.99-99.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:length value="16"/>
+							<xs:pattern value="\d{2}.\d{3}.\d{3}.\d{2}-\d{2}"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="QuantidadeCupons" type="xs:int">
+					<xs:annotation>
+						<xs:documentation>Quantidade de cupons adquiridos na compra de vales pedágio.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Senha">
+					<xs:annotation>
+						<xs:documentation>Senha para Impressão em Posto</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element ref="rdc:IDLocalImpressao"/>
+				<xs:element name="LocalImpressao" type="xs:string">
+					<xs:annotation>
+						<xs:documentation> Local de Impresão</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:ModalidadeLocalImpressao"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ImpostosViagem">
+		<xs:annotation>
+			<xs:documentation>Valores financeiros de impostos relacionados a viagem.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:ValorTotalImpostos"/>
+				<xs:element name="Impostos" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Detalhamento dos Impostos</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CodigoImposto">
+								<xs:annotation>
+									<xs:documentation>Tipo de imposto: INSS,IRRF,PIS,SENAT</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="INSS"/>
+										<xs:enumeration value="IRRF"/>
+										<xs:enumeration value="SENAT"/>
+										<xs:enumeration value="PIS"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="BaseCalculoImposto" type="rdc:ValorType" default="0">
+								<xs:annotation>
+									<xs:documentation>Valor base para cálculo do imposto.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="PercentualImposto" default="0">
+								<xs:annotation>
+									<xs:documentation>Percentual do valor do imposto.</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:decimal">
+										<xs:totalDigits value="12"/>
+										<xs:fractionDigits value="2"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="ValorImposto" type="rdc:ValorType" default="0">
+								<xs:annotation>
+									<xs:documentation>Valor do imposto da viagem.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="RetencaoImposto" type="xs:boolean" default="0">
+								<xs:annotation>
+									<xs:documentation>Indicação de retenção de imposto.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DocumentosViagem">
+		<xs:annotation>
+			<xs:documentation>Lista de documentos relacionados a uma determinada viagem.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Documento" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Dados dos Documentos Associados a Viagem </xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CodigoDocumento">
+								<xs:annotation>
+									<xs:documentation>Código identificador do documento padrão utilizado na viagem.
+CTE-Conhecimento
+DAC-Doc. Auxiliar Conhecimento
+DES-Despacho de Transporte
+MAN-Manifesto
+NFF-Nota Fiscal
+TCK - Ticket da Balança</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:length value="3"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="NumeroDocumento" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Número do Documento da Viagem</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0"/>
+										<xs:maxLength value="30"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="CodigoAuxiliar" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Código auxiliar de identificação do número do documento.</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0"/>
+										<xs:maxLength value="30"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="DocumentoRequerido" default="N">
+								<xs:annotation>
+									<xs:documentation>Indicador de documento requerido na entrega (S/N)</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="S"/>
+										<xs:enumeration value="N"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="NaturezaCarga" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Código da Natuzera de carga da mercadoria transportada. Ex: (Animais vivos da espécie bovina, Peixes vivos, Queijos e requeijão e etc.)</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:length value="4"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="ObservacaoDocumento" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Observação referentes ao documento da viagem.</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0"/>
+										<xs:maxLength value="100"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResumoViagem">
+		<xs:annotation>
+			<xs:documentation>Resumo das Informações Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:NumeroViagem"/>
+				<xs:element ref="rdc:CIOT"/>
+				<xs:element ref="rdc:PedidoValePedagio" minOccurs="0"/>
+				<xs:element ref="rdc:ResumoFinanceiro"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SituacaoVeiculoANTT" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation> Situação do Veículo na ANTT</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ValidaFrotaANTT" type="xs:boolean" default="false">
+		<xs:annotation>
+			<xs:documentation>Indicador de Validação dos Veículos da Frota do Transportador na ANTT</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="MotivoCancelamento" type="xs:string">
+		<xs:annotation>
+			<xs:documentation> Motivo de Cancelamento e Retificação do CIOT</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ResumoFinanceiro">
+		<xs:annotation>
+			<xs:documentation>Resumo dos valores financeiros da viagem.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="TotalFrete" type="rdc:ValorType">
+					<xs:annotation>
+						<xs:documentation>Valor total do frete apurado na viagem.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="TotalFreteLiquido" type="rdc:ValorType">
+					<xs:annotation>
+						<xs:documentation>Valor total liquido do frete.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="TotalAbastecimento" type="rdc:ValorType">
+					<xs:annotation>
+						<xs:documentation>Valor total do abastecimento.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="TotalPedagio" type="rdc:ValorType">
+					<xs:annotation>
+						<xs:documentation>Valor total do pedágio.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="TotalImpostosRetidos" type="rdc:ValorType">
+					<xs:annotation>
+						<xs:documentation>Valor total de impostos retidos na viagem.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="TotalAdministrativas" type="rdc:ValorType">
+					<xs:annotation>
+						<xs:documentation>Total de despesas administrativas da viagem.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="TotalViagem" type="rdc:ValorType">
+					<xs:annotation>
+						<xs:documentation>Valor total de viagem.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="TotalCustosViagem" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:totalDigits value="12"/>
+							<xs:fractionDigits value="2"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NumeroTransacao" type="xs:string">
+		<xs:annotation>
+			<xs:documentation> Número de Controle da Transação do Sistema do Integrador</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="TipoViagem" type="rdc:TipoViagemType">
+		<xs:annotation>
+			<xs:documentation>Tipo da Viagem
+FRE-Contrato de Frete
+FRO-Viagem de Frota
+RDF-Registro Depósito de Frete
+FRA-Viagem Fracionada
+AGR-Viagem Agregado     
+VLP-Viagem Pedagio
+</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Veiculos">
+		<xs:annotation>
+			<xs:documentation>Lista de Veículos do Transportador</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:PlacaVeiculo"/>
+				<xs:element name="SituacaoFrotaANTT" type="xs:boolean" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Indicador de Situacao do Veículo na ANTT</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:StatusRetorno"/>
+				<xs:element ref="rdc:Excecao" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OrigemRota">
+		<xs:annotation>
+			<xs:documentation>Dados de Origem da Rota</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="UFOrigem" type="rdc:SiglaUFType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>UF da Origem da Rota</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="LocalidadeOrigem" type="rdc:LocalidadeType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Localidade da Origem da Rota</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:CodigoIBGEOrigem" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DestinoRota">
+		<xs:annotation>
+			<xs:documentation>Dados de Destino da Rota</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="UFDestino" type="rdc:SiglaUFType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>UF do Destino da Rota</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="LocalidadeDestino" type="rdc:LocalidadeType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Localidade do Destino da Rota</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:CodigoIBGEDestino" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="IdentificacaoIntegracao" type="rdc:IdentificacaoIntegracaoType">
+		<xs:annotation>
+			<xs:documentation>Identificação do Cliente para Utilização do Serviço de Integração</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="QtdeEixos" type="rdc:EixoType">
+		<xs:annotation>
+			<xs:documentation>Quantidade  de Eixos de 2 à 9.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="TipoRodagem" type="rdc:TipoRodagemType">
+		<xs:annotation>
+			<xs:documentation>S - simples
+D - dupla
+</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="CodigoRota" type="xs:int">
+		<xs:annotation>
+			<xs:documentation>Código Identificador da Rota na base de dados da DBTRANS. Quando existir compra de Vale Pedágio esta tag é obrigatória</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Operacao" type="rdc:TipoOperacaoType">
+		<xs:annotation>
+			<xs:documentation>Tipo de Operação do Serviço. 
+INC - Inclusão; 
+ALT - Alteração; 
+CAN - Cancelamento; 
+EXC - Exclusão</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="TipoOperacaoTransporte" type="rdc:TipoOperacaoTransporteType">
+		<xs:annotation>
+			<xs:documentation>Tipo de Operação de Transporte.
+FRE - Operação de Transporte com Contratação de Terceiros; 
+FRO - Operação de Transporte com utilização de Veículos de Frota Própria</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="SituacaoViagem" type="sx:string">
+		<xs:annotation>
+			<xs:documentation>Situação da Viagem
+ABE - Em Aberto
+AGE - Agendado
+AND - Em Andamento
+CAN - Cancelado
+ENC - Encerrado
+PRO - Programado</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="ABE"/>
+				<xs:enumeration value="AGE"/>
+				<xs:enumeration value="AND"/>
+				<xs:enumeration value="CAN"/>
+				<xs:enumeration value="ENC"/>
+				<xs:enumeration value="PRO"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="ValorTotalImpostos" type="rdc:ValorType" default="0">
+		<xs:annotation>
+			<xs:documentation>Valor Total dos Impostos</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ValorPedagio" type="xs:decimal" default="0">
+		<xs:annotation>
+			<xs:documentation>Valor do Pedágio.
+Deve ser informado caso a compra não seja realizada pela DBTRANS</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ValorDespesas" type="rdc:ValorType" default="0">
+		<xs:annotation>
+			<xs:documentation>Valor de Despesas de Viagem de Frota Própria</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ValorFrete" type="rdc:ValorType">
+		<xs:annotation>
+			<xs:documentation>Valor do frete informado na viagem.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ValorCombustivel" type="rdc:ValorType">
+		<xs:annotation>
+			<xs:documentation>Valor financeiro referente ao total de combustível consumido na viagem.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="PesoCarga">
+		<xs:annotation>
+			<xs:documentation>Peso total da carga.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal">
+				<xs:totalDigits value="12"/>
+				<xs:fractionDigits value="2"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="TipoFrete" type="rdc:TipoFreteType">
+		<xs:annotation>
+			<xs:documentation>Tipo da condição de pagamento do frete do transporte.
+CIF – O fornecedor é o responsável pelo seguro e pelo frete até ao local de destino, indicado pelo comprador.
+FOB – O comprador é o responsável por pagar todos os custos referentes ao frete e seguro.
+</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="IdClienteResponsavel" type="xs:int">
+		<xs:annotation>
+			<xs:documentation>Identificação do Cliente Responsável pela Operação.
+Só será obrigatório caso seja diferente do da Identificação do Cliente Rodocred</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Motoristas">
+		<xs:annotation>
+			<xs:documentation>Lista de Motoristas Cadastrados</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:CPFMotorista"/>
+				<xs:element ref="rdc:StatusRetorno"/>
+				<xs:element ref="rdc:Excecao" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NumeroCartao" type="rdc:NumeroCartaoType">
+		<xs:annotation>
+			<xs:documentation>Número da Cartão Rodocred</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="TipoCartao" type="rdc:TipoCartaoType">
+		<xs:annotation>
+			<xs:documentation>Tipo do Cartão
+CRF - Cartão Rodocred Frota (Para Empresas)
+CRP - Cartão Rodocred Frete (Para TAC e Equiparados)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Praca" type="rdc:PracaType">
+		<xs:annotation>
+			<xs:documentation>Praças de Pedágio</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="TipoTransportador" type="rdc:TipoTransportadorType">
+		<xs:annotation>
+			<xs:documentation>Tipo do Tranportador
+TAC - Caminhoneiro Autônomo
+ETC - Empresa de Transporte
+CTC - Cooperativa</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="UF" type="rdc:SiglaUFType">
+		<xs:annotation>
+			<xs:documentation> Tipo da UF</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="CodigoIBGEOrigem" type="rdc:CodigoIBGEType">
+		<xs:annotation>
+			<xs:documentation>Código do IBGE do Município  da Origem da Rota</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="CodigoIBGEDestino" type="rdc:CodigoIBGEType">
+		<xs:annotation>
+			<xs:documentation>Código do IBGE do Município  da Destino da Rota</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="EventoOperacao">
+		<xs:annotation>
+			<xs:documentation>Lista de Eventos das Operações de Transporte.
+Deverá ser enviado nos casos e operações valoradas</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CodigoEventoOperacao">
+					<xs:annotation>
+						<xs:documentation>Código do Evento da Operação
+DEP-Registro de Depósito do Frete pelo Cliente                           PAR-Parcelas do Depósito do Frete
+RED-Registro de Entrega de Documento
+TAD-Transferência Adiantamento Despesas
+TRF-Transferência de Adiantamento de Frete
+TSF-Transferência de Saldo de Frete
+RPE - Registro de Peso Final da Carga
+RVD - Registro de Valor de Diária
+OCV - Outros Custos Viagem</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:length value="3"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ValorEvento" type="rdc:ValorType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Valor programado em reais para o evento da operação.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="QuantidadeEvento" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Quantidade de Litros para Abastecimento</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:totalDigits value="12"/>
+							<xs:fractionDigits value="2"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="Combustivel" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Nome do Combustivel  para Abastecimento</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="GASOLINA"/>
+							<xs:enumeration value="DIESEL"/>
+							<xs:enumeration value="BIODIESEL"/>
+							<xs:enumeration value="ETANOL"/>
+							<xs:enumeration value="GNV"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="DataEvento" type="xs:date" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Data e hora da realização do evento.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ObservacaoEvento" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UnidadeMedidaPeso">
+		<xs:annotation>
+			<xs:documentation>Unidade de Medida do Peso da Carga</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="G"/>
+				<xs:enumeration value="KG"/>
+				<xs:enumeration value="TON"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="OperacaoViagem">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:IDOperacaoViagem" minOccurs="0"/>
+				<xs:element name="CodigoOperacao">
+					<xs:annotation>
+						<xs:documentation>Código identificador do tipo de operação selecionado para a programação da viagem.
+ADF - Adiantamento de Frete
+EDL - Entrega de Documento 
+EDS - Entrega de Documento com Liberação de Saldo
+EDP - Entrega de Documento com Pesagem
+ESP - Entrega de Doc. com Pesagem e Lib. de Saldo
+LSF - Libaração de Saldo de Frete
+MOV - Monitoramento Veículo
+DEP - Depósito do Frete Realizado pelo Cliente
+DIA - Diária
+CUS - Custos na Viagem
+PES - Peso Final da Carga</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CondicaoLiberacaoOperacao">
+					<xs:annotation>
+						<xs:documentation>Condição de Liberação da Operação da Viahem
+DAD-Data Programada
+EST-No Estabelecimento
+FIL-Na Filial da Empresa
+LIB-Na Liberação Viagem</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:length value="3"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="DataOperacao" type="xs:date" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Data e hora da realização do evento.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="LocalRealizacao" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Local da realização da Operação da Viagem
+QER - Qualquer Estabelecimento da Rota
+QFL - Qualquer Filial da Empresa
+RED - Qualquer Estabelecimento da Rede Credenciada
+FIL - Na Filial da Empresa
+EST - No Estabelecimento</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element ref="rdc:Estabelecimento" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Dados do Estabelecimento para Execução da Operaçãoda Viagem</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:FilialEmpresa" minOccurs="0"/>
+				<xs:element ref="rdc:EventoOperacao" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FilialEmpresa">
+		<xs:annotation>
+			<xs:documentation>Dados da Filial da Empresa para Execução da Operação da Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="IDFilial" type="xs:integer">
+					<xs:annotation>
+						<xs:documentation>Identificação da Empresa da Filial no Rodocred</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="CNPJFilial">
+					<xs:annotation>
+						<xs:documentation>CNPJ da Filial</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="rdc:CNPJType">
+							<xs:length value="14"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PossuiRegraCalculo">
+		<xs:annotation>
+			<xs:documentation>Consultar regras que contenham calculo:
+S - Sim
+N - Não</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="CodigoRegraCalculo">
+		<xs:annotation>
+			<xs:documentation>Código tipo regra de calculo da Clausula:
+DPR - Desconto Proporcional
+DQE - Desconto sobre quebra excedente
+DQI - Desconto de quebra integral
+PCT - Pagamento sobre caraga excedente com tolerância</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="DescricaoRegraCalculo" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Descrição da regra de cálculo da cláusula.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Sexo" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Sexo do Motorista:
+M - Masculino
+F - Feminino</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="M"/>
+				<xs:enumeration value="F"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="DocumentoRef" type="xs:string" nillable="true">
+		<xs:annotation>
+			<xs:documentation>Número do documento de identificação da viagem para o contratante.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

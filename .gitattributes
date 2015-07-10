@@ -3,6 +3,10 @@
 
 # Custom for Visual Studio
 *.cs     diff=csharp
+*.pas    diff=pascal
+*.dpk    diff=astextplain
+*.dpr    diff=astextplain
+*.res    diff=astextplain
 
 # Standard to msysgit
 *.doc	 diff=astextplain

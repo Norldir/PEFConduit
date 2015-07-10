@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rdc="https://ws.rodocred.com.br/" targetNamespace="https://ws.rodocred.com.br/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="rdc_TiposPadrao_v1.00.xsd"/>
+	<xs:element name="ConsultarTarifas">
+		<xs:annotation>
+			<xs:documentation>Permite consultar as Tarifas de Pedágio de uma determinada Rota.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:ConsultarTarifasRequest"/>
+				<xs:element ref="rdc:ConsultarTarifasResponse"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarTarifasRequest">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Requisição da consulta de Tarifas</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:IdentificacaoIntegracao"/>
+				<xs:element ref="rdc:IdClienteResponsavel" minOccurs="0"/>
+				<xs:element ref="rdc:CodigoRota"/>
+				<xs:element ref="rdc:QtdeEixos"/>
+				<xs:element ref="rdc:TipoRodagem"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarTarifasResponse">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Retorno com as Tarifas</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:RetornoMensagem"/>
+				<xs:element ref="rdc:ListaTarifas"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ListaTarifas">
+		<xs:annotation>
+			<xs:documentation>Dados referentes às tarifas encontradas de acordo com os parametros informados. </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="QtdeCupons">
+					<xs:annotation>
+						<xs:documentation>Quantidade de cupons corresponde ao numero de praças de pedágio existentes na rota desejada.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:totalDigits value="4"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ValorTarifaPedagio">
+					<xs:annotation>
+						<xs:documentation>Valor total das tarifas de pedágio.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:totalDigits value="12"/>
+							<xs:fractionDigits value="2"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+  <xs:schema id="SchemaFrete" targetNamespace="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaFrete_2.1.xsd" elementFormDefault="qualified" xmlns="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaFrete_2.1.xsd" xmlns:mstns="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaFrete_2.1.xsd" xmlns:c="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaComum_1.2.xsd" xmlns:v="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaViagem_1.1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="SchemaComum_1.2.xsd" namespace="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaComum_1.2.xsd" ></xs:import>
+  <xs:import schemaLocation="SchemaViagem_1.1.xsd" namespace="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaViagem_1.1.xsd" ></xs:import>
+  <xs:element name="LoteDeFretes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="50" name="Ciot" nillable="false" type="Ciot"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Ciot">
+    <xs:all>
+      <xs:element minOccurs="1" maxOccurs="1" name="TipoCiot">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Padrao" />
+            <xs:enumeration value="Agregado" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="Descricao" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DataInicio" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DataTermino" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ValorEstimado" type="c:DecimalValido" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DadosComplementares" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Autonomo" type="Autonomo" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Contratante" type="Contratante" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Destinatario" type="Destinatario" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Consignatario" type="Consignatario" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RegrasQuitacao" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Veiculos">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="5" name="Veiculo" nillable="false" type="c:Veiculo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="Viagem" nillable="true" type="v:Viagem" />
+    </xs:all>
+    <xs:attribute name="referencia" use="required" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType name="Autonomo">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Documento" type="c:Documento"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Contratante">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="TipoPessoa" type="c:TipoPessoa" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Documento" type="c:Documento" />
+      <xs:element minOccurs="1" maxOccurs="1" name="NomeRazaoSocial" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SobrenomeNomeFantasia" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Endereco" type="c:Endereco" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Subcontratante" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CiotPrincipal" type="c:NumeroCiot" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Destinatario">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="TipoPessoa" type="c:TipoPessoa" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Documento" type="c:Documento" />
+      <xs:element minOccurs="1" maxOccurs="1" name="NomeRazaoSocial" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SobrenomeNomeFantasia" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Endereco" type="c:Endereco" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Telefone" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Email" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Consignatario">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="TipoPessoa" type="c:TipoPessoa" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Documento" type="c:Documento" />
+      <xs:element minOccurs="1" maxOccurs="1" name="NomeRazaoSocial" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SobrenomeNomeFantasia" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Endereco" type="c:Endereco" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Email" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Telefone" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

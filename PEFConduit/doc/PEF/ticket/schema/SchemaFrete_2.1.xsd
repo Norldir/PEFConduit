@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+  <xs:schema id="SchemaFrete" targetNamespace="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaFrete_2.1.xsd" elementFormDefault="qualified" xmlns="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaFrete_2.1.xsd" xmlns:mstns="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaFrete_2.1.xsd" xmlns:c="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaComum_1.2.xsd" xmlns:v="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaViagem_1.1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Ciot">
+    <xs:all>
+      <xs:element minOccurs="1" maxOccurs="1" name="Descricao" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DataInicio" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DataTermino" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ValorEstimado" type="c:DecimalValido" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DadosComplementares" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Autonomo" type="Autonomo" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Contratante" type="Contratante" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Destinatario" type="Destinatario" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Consignatario" type="Consignatario" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RegrasQuitacao" type="xs:string" />
+    </xs:all>
+    <xs:attribute name="referencia" use="required" type="xs:string"/>
+  </xs:complexType>
+  
+</xs:schema>

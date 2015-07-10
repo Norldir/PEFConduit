@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SchemaFrete" targetNamespace="http://localhost/TicketFreteCDN/fretelote/schemas/SchemaFrete_1.1.xsd" elementFormDefault="qualified" xmlns="http://localhost/TicketFreteCDN/fretelote/schemas/SchemaFrete_1.1.xsd" xmlns:mstns="http://localhost/TicketFreteCDN/fretelote/schemas/SchemaFrete_1.1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="LoteDeFretes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Frete" nillable="false" type="Frete" maxOccurs="50" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Frete">
+    <xs:sequence>
+      <xs:element name="Descricao" type="xs:string" />
+      <xs:element name="CodigoCidadeOrigem" type="xs:int" />
+      <xs:element name="CodigoCidadeDestino" type="xs:int" />
+      <xs:element name="DataInicio" type="xs:dateTime" />
+      <xs:element name="DataTermino" type="xs:dateTime" />
+      <xs:element name="DadosComplementares" type="xs:string" />
+      <xs:element name="Mercadoria" type="Mercadoria" />
+      <xs:element name="Autonomo" type="Autonomo" />
+      <xs:element name="Veiculos">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Veiculo" nillable="false" type="Veiculo" maxOccurs="5" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Valores" type="Valores" />
+      <xs:element name="Pagamento" type="Pagamento" />
+      <xs:element name="Contratante" type="Contratante" />
+      <xs:element name="Destinatario" type="Destinatario" />
+      <xs:element name="Consignatario" type="Consignatario" />
+      <xs:element name="RegrasQuitacao" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="referencia" use="required" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType name="Mercadoria">
+    <xs:sequence>
+      <xs:element name="CodigoSubNatureza">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{2}\.[0-9]{2}"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Peso">
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="7" fixed="false"/>
+            <xs:fractionDigits value="2"/>
+            <xs:pattern value="^\d{1,5}(\.\d{1,2})?$"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Autonomo">
+    <xs:sequence>
+      <xs:element name="Documento" type="Documento"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Endereco">
+    <xs:sequence>
+      <xs:element name="CEP">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{5}-?[0-9]{3}"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CodigoCidade" type="xs:int" />
+      <xs:element name="Logradouro" type="xs:string" />
+      <xs:element name="Numero" type="xs:string" />
+      <xs:element name="Complemento" type="xs:string" />
+      <xs:element name="Bairro" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Veiculo">
+    <xs:sequence>
+      <xs:element name="Placa" type="xs:string" />
+      <xs:element name="Rntrc" type="xs:string" />
+      <xs:element name="Documento" type="Documento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Valores">
+    <xs:sequence>
+      <xs:element name="TipoValePedagio">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Cartao"/>
+            <xs:enumeration value="Vale"/>
+            <xs:enumeration value="TAG"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Pedagio" type="xs:decimal" />
+      <xs:element name="Frete" type="xs:decimal" />
+      <xs:element name="Combustivel" type="xs:decimal" />
+      <xs:element name="Despesas" type="xs:decimal" />
+      <xs:element name="Impostos" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Pagamento">
+    <xs:sequence>
+      <xs:element name="FormaDePagamento">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="TransferenciaBancaria" />
+            <xs:enumeration value="CartaoAVista" />
+            <xs:enumeration value="CartaoParcelado" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Parcelas">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Parcela" maxOccurs="10" >
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Vencimento" type="xs:dateTime" />
+                  <xs:element name="ValorParcela" type="xs:decimal" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Contratante">
+    <xs:sequence>
+      <xs:element name="TipoPessoa" type="TipoPessoa" />
+      <xs:element name="Documento" type="Documento" />
+      <xs:element name="NomeRazaoSocial" type="xs:string" />
+      <xs:element name="SobrenomeNomeFantasia" type="xs:string" />
+      <xs:element name="Endereco" type="Endereco" />
+      <xs:element name="Subcontratante" type="xs:boolean" />
+      <xs:element name="CiotPrincipal" type="Ciot" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Destinatario">
+    <xs:sequence>
+      <xs:element name="TipoPessoa" type="TipoPessoa" />
+      <xs:element name="Documento" type="Documento" />
+      <xs:element name="NomeRazaoSocial" type="xs:string" />
+      <xs:element name="SobrenomeNomeFantasia" type="xs:string" />
+      <xs:element name="Endereco" type="Endereco" />
+      <xs:element name="Telefone" type="xs:string" />
+      <xs:element name="Email" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Consignatario">
+    <xs:sequence>
+      <xs:element name="TipoPessoa" type="TipoPessoa" />
+      <xs:element name="Documento" type="Documento" />
+      <xs:element name="NomeRazaoSocial" type="xs:string" />
+      <xs:element name="SobrenomeNomeFantasia" type="xs:string" />
+      <xs:element name="Endereco" type="Endereco" />
+      <xs:element name="Email" type="xs:string" />
+      <xs:element name="Telefone" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TipoPessoa">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Juridica"/>
+      <xs:enumeration value="Fisica"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Ciot">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{12}/([0-9]{4}|[Xx]{4}|)"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Documento">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([0-9]{11}|[0-9]{14})"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

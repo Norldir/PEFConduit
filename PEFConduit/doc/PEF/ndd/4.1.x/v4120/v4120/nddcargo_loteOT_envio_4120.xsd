@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 U (http://www.altova.com) by leonardo.xafranski (EMBRACE) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.nddigital.com.br/nddcargo" targetNamespace="http://www.nddigital.com.br/nddcargo" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="nddcargo_layout_4120.xsd"/>
+	<xs:element name="loteOT_envio" type="tpLoteOT">
+		<xs:annotation>
+			<xs:documentation>Envio de lote das operações de transporte.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

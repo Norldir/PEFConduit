@@ -14,6 +14,12 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
+#Delphi lixo
+*.~*
+*.dcp
+*.dcu
+*.exe
+
 # Windows shortcuts
 *.lnk
 

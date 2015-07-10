@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 U (http://www.altova.com) by eduardo.augusto (EMBRACE) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns="http://www.nddigital.com.br/nddcargo" targetNamespace="http://www.nddigital.com.br/nddcargo" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="xmldsig-core-schema_v1.00.xsd"/>
+	<xs:complexType name="tpOT">
+		<xs:annotation>
+			<xs:documentation>Operação de transporte.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="infOT">
+				<xs:annotation>
+					<xs:documentation>Informações sobre a operação de transporte.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ide">
+							<xs:annotation>
+								<xs:documentation>Dados de identificação da operação de transporte.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="cnpj" type="tpCnpj">
+										<xs:annotation>
+											<xs:documentation>Cnpj da contratante responsável pela operação de transporte.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="numero" type="tpNumeroOT">
+										<xs:annotation>
+											<xs:documentation>Número para a operação de transporte.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="serie" type="tpSerieOT">
+										<xs:annotation>
+											<xs:documentation>Série da operação de transporte.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="ptEmissor">
+										<xs:annotation>
+											<xs:documentation>Ponto emissor responsável pela operação de transporte.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="tpString">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="30"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="dtInicio" type="tpData" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Data de inicio da viagem. Não deve ser informada pra OT com TAC_agregado. Padrão: AAAA-MM-DD</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="dtFim" type="tpData" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Data de término da viagem. Se não for informada, será definido a data final como 30 dias após a data de início. Padrão: AAAA-MM-DD</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="contrato" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Informar o número do contrato entre o transportador e a contratante.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="tpString">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="50"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="carga" type="tpCarga">
+							<xs:annotation>
+								<xs:documentation>Dados da carga que indica o tipo da viagem, podendo ser lotação ou fracionada.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="contatos" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Contatos a serem adicionados a operação de transporte.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="contato" type="tpContato" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="transp">
+							<xs:annotation>
+								<xs:documentation>Definições de elementos ligados ao transporte </xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="rntrc" type="tpRntrc">
+										<xs:annotation>
+											<xs:documentation>Contratado responsável pela prestação de serviço e que receberá os valores do frete.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="infTransportador" type="tpTransportador" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Informações do transportador.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="gestoraCartao" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Código de identificação da gestora de cartão que será usada para o pagamento desta. Este campo é opcional porque não precisa ser informado quando a operação for sem movimentação financeira para parcelas e pedágio.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="tpGestoraCartao">
+												<xs:minLength value="3"/>
+												<xs:maxLength value="3"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="subcontratado" type="tpSubcontratado" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Informações referentes ao subcontratado, se existirem.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="rota" type="tpRota" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Define a rora da operação de transporte.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="condutores" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Dados dos condutores</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="condutor" maxOccurs="unbounded">
+													<xs:annotation>
+														<xs:documentation>Dados do condutor</xs:documentation>
+													</xs:annotation>
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="cpf" type="tpCpf">
+																<xs:annotation>
+																	<xs:documentation>Número do CPF do condutor.</xs:documentation>
+																</xs:annotation>
+															</xs:element>
+															<xs:element name="informacoes" type="tpCondutor" minOccurs="0">
+																<xs:annotation>
+																	<xs:documentation>Informações do condutor.</xs:documentation>
+																</xs:annotation>
+															</xs:element>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="veiculos">
+										<xs:annotation>
+											<xs:documentation>Veículos responsáveis pelo transporte.</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="veiculo" maxOccurs="5">
+													<xs:annotation>
+														<xs:documentation>Dados do veículo</xs:documentation>
+													</xs:annotation>
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="placa">
+																<xs:annotation>
+																	<xs:documentation>Placa do veículo</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:minLength value="1"/>
+																		<xs:maxLength value="7"/>
+																		<xs:pattern value="[a-zA-Z0-9]+"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:element>
+															<xs:element name="informacoes" type="tpVeiculo" minOccurs="0">
+																<xs:annotation>
+																	<xs:documentation>Informações do veículo.</xs:documentation>
+																</xs:annotation>
+															</xs:element>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="valores" type="tpValores">
+										<xs:annotation>
+											<xs:documentation>Valores do controle de viagem. Para operações de transporte sem movimentação financeira o desconto será considerado como um desconto de frete e esta valor não alterará o valor informado no frete.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="categoriaPedagio" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Se a rota estiver utilizando o  roteirizador é necessário informar qual a categoria para calculo de pedágio. Valor padrão é 0 = Isento</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="tpCategoriaPedagio">
+												<xs:minInclusive value="0"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="quitacao" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Coleção de documentos que deram origem a operação de transporte. Os documentos serão inseridos na parcela de saldo.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="documentos">
+										<xs:annotation>
+											<xs:documentation>Documentos da quitação.</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="documento" type="tpDocumento" maxOccurs="unbounded"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="entrega" type="tpCnpj" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>CNPJ de entrega dos documentos de quitação. Por padrão os docmentos são enviados ao endereço do ponto emissor (emitente).</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="adicionais" type="tpAdicionalImpressao" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Dados adicionais para uso na impressão</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="confirmador" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Informa o confirmador de recebimento da(s) carga(s).</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="cnpj" type="tpCnpj">
+										<xs:annotation>
+											<xs:documentation>Número do CNPJ.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="cpf" type="tpCpf">
+										<xs:annotation>
+											<xs:documentation>Número do CPF.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="ID" type="tpGUID" use="optional">
+						<xs:annotation>
+							<xs:documentation>Identificador único para a operação de transporte que deve se usado para a assinatura digital.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="Id" type="tpGUID" use="optional">
+						<xs:annotation>
+							<xs:documentation>Identificador único para a operação de transporte que deve se usado para a assinatura digital.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="gerPgtoFin" type="tpSimNao" use="optional">
+						<xs:annotation>
+							<xs:documentation>Determina se os valores da operação de transporte terão a movimentação financeira ou não. 1 = Sim e 2 = Não. Por padrão existe a movimentação.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="gerPgtoPedagio" type="tpSimNao">
+						<xs:annotation>
+							<xs:documentation>Determina se o valor de pedágio terá a movimentação financeira ou não. 1 = Sim e 2 = Não. Por padrão existe a movimentação.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="impAuto" type="tpSimNao" use="optional">
+						<xs:annotation>
+							<xs:documentation>Determina se deverá ser impressa automaticamente a operação de transporte ou não. 1 = Sim e 2 = Não. Por padrão será impressa automaticamente.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="tipoOp">
+						<xs:annotation>
+							<xs:documentation>Determina o tipo da operação de transporte. Poderão haver operações para várias finalidades como por exemplo: frota própria. Por padrão será assumido que as operações são de frete contratado (1).</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:byte">
+								<xs:pattern value="1"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="utilizaDirecionamentoPedagio" type="tpSimNao">
+						<xs:annotation>
+							<xs:documentation>Determina se a operação de transporte utilizará direcionamento de pedágio por condutor.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="ds:Signature"/>
+		</xs:sequence>
+	</xs:complexType>
+/xs:schema>

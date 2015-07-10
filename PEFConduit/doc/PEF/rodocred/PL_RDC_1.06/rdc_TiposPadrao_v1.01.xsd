@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<xs:schema xmlns:rdc="https://ws.rodocred.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ws.rodocred.com.br/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="rdc_TiposPadrao_v1.00.xsd"/>
+	<xs:simpleType name="LocalImpressaoType">
+		<xs:annotation>
+			<xs:documentation> Tipos dos locais de impressão, PIP-Ponto de Impressao, POS-Posto, BEL-Impressora Local ou Remota</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PIP"/>
+			<xs:enumeration value="POS"/>
+			<xs:enumeration value="BEL"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="TipoLocalImpressao" type="rdc:LocalImpressaoType">
+		<xs:annotation>
+			<xs:documentation> Tipo do Local de impressão</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="EventoOperacaoRetorno">
+		<xs:annotation>
+			<xs:documentation>Lista de Eventos das Operações de Transporte.
+Deverá ser enviado nos casos e operações valoradas</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:IDEventoOperacaoViagem"/>
+				<xs:element name="CodigoEventoOperacao">
+					<xs:annotation>
+						<xs:documentation>Código do Evento da Operação
+DEP-Registro de Depósito do Frete pelo Cliente                           PAR-Parcelas do Depósito do Frete
+RED-Registro de Entrega de Documento
+TAD-Transferência Adiantamento Despesas
+TRF-Transferência de Adiantamento de Frete
+TSF-Transferência de Saldo de Frete</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:length value="3"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ValorEvento" type="rdc:ValorType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Valor programado em reais para o evento da operação.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="QuantidadeEvento" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Quantidade de Litros para Abastecimento</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:totalDigits value="12"/>
+							<xs:fractionDigits value="2"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="Combustivel" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Nome do Combustivel  para Abastecimento</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="GASOLINA"/>
+							<xs:enumeration value="DIESEL"/>
+							<xs:enumeration value="BIODIESEL"/>
+							<xs:enumeration value="ETANOL"/>
+							<xs:enumeration value="GNV"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="DataEvento" type="xs:date" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Data e hora da realização do evento.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:ValorTaxaEventoOperacaoViagem"/>
+				<xs:element ref="rdc:SituacaoEventoOperacaoViagem"/>
+				<xs:element name="ObservacaoEvento" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Observação do Evento da Operação</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="IDEventoOperacaoViagem" type="xs:int">
+		<xs:annotation>
+			<xs:documentation>Identificação da Operação do Evento da Viagem</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ObservacaoEvento" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Observação do Evento da Operação</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="CodigoEventoOperacao">
+		<xs:annotation>
+			<xs:documentation>Código do Evento da Operação
+DEP-Registro de Depósito do Frete pelo Cliente                           PAR-Parcelas do Depósito do Frete
+RED-Registro de Entrega de Documento
+TAD-Transferência Adiantamento Despesas
+TRF-Transferência de Adiantamento de Frete
+TSF-Transferência de Saldo de Frete</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:length value="3"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="RegistroOperacaoViagem">
+		<xs:annotation>
+			<xs:documentation> Registro da Operação da Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:IDOperacaoViagem"/>
+				<xs:element name="CodigoOperacao">
+					<xs:annotation>
+						<xs:documentation>Código identificador do tipo de operação selecionado para a programação da viagem.
+ADF - Adiantamento de Frete
+EDL - Entrega de Documento 
+EDS - Entrega de Documento com Liberação de Saldo
+LSF - Libaração de Saldo de Frete
+MOV - Monitoramento Veículo
+DEP - Depósito do Frete Realizado pelo Cliente</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element ref="rdc:EventoOperacao"/>
+				<xs:element ref="rdc:NumeroCartao" minOccurs="0"/>
+				<xs:element ref="rdc:CPFMotorista"/>
+				<xs:element name="IDEstabelecimento" type="xs:int" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Identificação do Estabelecimento no Rodocred</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="IDFilial" type="xs:integer" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Identificação da Empresa da Filial no Rodocred</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:DocumentosRequeridos" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="rdc:PesoCarga" minOccurs="0"/>
+				<xs:element ref="rdc:UnidadeMedidaPeso" minOccurs="0"/>
+				<xs:element name="Odometro" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Odômetro do Veículo</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:totalDigits value="12"/>
+							<xs:fractionDigits value="2"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ObservacaoRegistro" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Observações Referente ao Registro de Evento</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="1000"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DocumentosRequeridos">
+		<xs:annotation>
+			<xs:documentation>Lista de documentos requeridos na entrega</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CodigoDocumento">
+					<xs:annotation>
+						<xs:documentation>Código identificador do documento padrão utilizado na viagem.
+CTE-Conhecimento
+DAC-Doc. Auxiliar Conhecimento
+DES-Despacho de Transporte
+MAN-Manifesto
+NFF-Nota Fiscal</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:length value="3"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="NumeroDocumento">
+					<xs:annotation>
+						<xs:documentation>Número do Documento da Viagem</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="30"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CodigoAuxiliar" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Código auxiliar de identificação do número do documento.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="30"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RequeridoEntrega" type="xs:boolean" default="true">
+					<xs:annotation>
+						<xs:documentation>Indicador de Documento Requerido na Entrega</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ExtraviadoEntrega" type="xs:boolean" default="false">
+					<xs:annotation>
+						<xs:documentation>Indicador de Documento Extraviado na Entrega</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RegistroOperacaoRetorno">
+		<xs:annotation>
+			<xs:documentation> Informações de Retorno de Registro de Operação da Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:IDOperacaoViagem"/>
+				<xs:element name="CodigoOperacao">
+					<xs:annotation>
+						<xs:documentation>Código identificador do tipo de operação selecionado para a programação da viagem.
+ADF - Adiantamento de Frete
+EDL - Entrega de Documento 
+EDS - Entrega de Documento com Liberação de Saldo
+LSF - Libaração de Saldo de Frete
+MOV - Monitoramento Veículo
+DEP - Depósito do Frete Realizado pelo Cliente</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element ref="rdc:EventoOperacao"/>
+				<xs:element name="CodigoAutorizacao" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Código de Autorização do Registro de Operação</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:totalDigits value="18"/>
+							<xs:fractionDigits value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element ref="rdc:StatusRetorno"/>
+				<xs:element ref="rdc:Excecao"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OperacaoViagemRetorno">
+		<xs:annotation>
+			<xs:documentation> Informações de Operação da Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:IDOperacaoViagem"/>
+				<xs:element name="CodigoOperacao">
+					<xs:annotation>
+						<xs:documentation>Código identificador do tipo de operação selecionado para a programação da viagem.
+ADF - Adiantamento de Frete
+EDL - Entrega de Documento 
+EDS - Entrega de Documento com Liberação de Saldo
+LSF - Libaração de Saldo de Frete
+MOV - Monitoramento Veículo
+DEP - Depósito do Frete Realizado pelo Cliente</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CondicaoLiberacaoOperacao">
+					<xs:annotation>
+						<xs:documentation>Condição de Liberação da Operação da Viahem
+DAD-Data Programada
+EST-No Estabelecimento
+FIL-Na Filial da Empresa
+LIB-Na Liberação Viagem</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:length value="3"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="DataOperacao" type="xs:date" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Data e hora da realização do evento.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="LocalRealizacao" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Local da realização da Operação da Viagem
+QER - Qualquer Estabelecimento da Rota
+QFL - Qualquer Filial da Empresa
+RED - Qualquer Estabelecimento da Rede Credenciada
+FIL - Na Filial da Empresa
+EST - No Estabelecimento</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element ref="rdc:Estabelecimento" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Dados do Estabelecimento para Execução da Operaçãoda Viagem</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:FilialEmpresa" minOccurs="0"/>
+				<xs:element ref="rdc:EventoOperacaoRetorno" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="rdc:SituacaoOperacaoViagem"/>
+				<xs:element ref="rdc:StatusRetorno" minOccurs="0"/>
+				<xs:element ref="rdc:Excecao" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

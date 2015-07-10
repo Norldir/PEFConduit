@@ -1,0 +1,33 @@
+---------- Mensagem encaminhada ----------
+De: Cadastro@IPC.Adm.BR <cadastro@ipc.adm.br>
+Data: 4 de fevereiro de 2013 17:15
+Assunto: Informações para integração ao Sistema e-FRETE
+Para: norldir@tecinco.com.br
+Cc: Rodrigo Russi Félix de Lima <rodrigo@ipc.adm.br>, Ivan Gilberto Ponciano <ivan@ipc.adm.br>
+
+
+MENSAGEM AUTOMÁTICA, POR FAVOR NÃO RESPONDER.
+
+Prezado Senhor(a),
+
+Seu cadastro de desenvolvedor/integrador foi finalizado com sucesso. Você está recebendo nesta mensagem:
+- Manual dos WebServices do Sistema e-FRETE;
+- senha de acesso ao Manual: Tecinco-46A8FC7
+- dados para acesso ao serviço de homologação do Sistema e-FRETE: usuário (usuario@tecinco), senha (usuario#tecinco) hash (7c8287d0-9c44-425e-9e41-2e00109bcd74)
+- nome, e-mail e telefone de contato de um responsável pelo seu atendimento dentro da IPC para quaisquer problemas ou dificuldades encontradas no processo de integração: Rodrigo Félix, rodrigo@ipc.adm.br; (47) 3349-4300 / (48) 8406-0050
+- lista de URLs dos WebServices:
+https://sistema.efrete.com:6061/Services/LogonService.svc
+https://sistema.efrete.com:6061/Services/MotoristasService.svc
+https://sistema.efrete.com:6061/Services/ProprietariosService.svc
+https://sistema.efrete.com:6061/Services/VeiculosService.svc
+https://sistema.efrete.com:6061/Services/PefService.svc
+
+Por favor, confira seus dados abaixo e caso haja alguma divergência entre em contato conosco através do e-mail contato@ipc.adm.br
+
+- Nome/Razão Social: TECINCO INFORMATICA LTDA.
+- CNPJ: 74.092.487/0001-16
+
+
+Sistema e-FRETE.
+www.efrete.com
+Empresa gestora: IPC Administração Ltda.

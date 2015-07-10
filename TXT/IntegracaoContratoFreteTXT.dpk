@@ -1,0 +1,44 @@
+package IntegracaoContratoFreteTXT;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  xmlrtl,
+  soaprtl,
+  ICFBase;
+
+contains
+  utxt_base in 'utxt_base.pas',
+  utxt_pef_v1_0 in 'utxt_pef_v1_0.pas',
+  utxt_pef_env_ret_v1_0 in 'utxt_pef_env_ret_v1_0.pas',
+  utxt_pef_can_v1_0 in 'utxt_pef_can_v1_0.pas',
+  utxt_pef_can_ret_v1_0 in 'utxt_pef_can_ret_v1_0.pas',
+  utxt_pef_con_v1_0 in 'utxt_pef_con_v1_0.pas',
+  utxt_pef_ext_v1_0 in 'utxt_pef_ext_v1_0.pas',
+  utxt_pef_pag_v1_0 in 'utxt_pef_pag_v1_0.pas',
+  utxt_pef_alt_v1_0 in 'utxt_pef_alt_v1_0.pas';
+
+end.

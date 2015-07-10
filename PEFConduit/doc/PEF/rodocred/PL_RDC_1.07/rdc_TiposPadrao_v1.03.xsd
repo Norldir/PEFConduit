@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<xs:schema xmlns:rdc="https://ws.rodocred.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ws.rodocred.com.br/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="rdc_TiposPadrao_v1.02.xsd"/>
+	<xs:simpleType name="TipoOperacaoPedagioType">
+		<xs:annotation>
+			<xs:documentation> Tipos de Operações</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="COM"/>
+			<xs:enumeration value="PRO"/>
+			<xs:enumeration value="FIN"/>
+			<xs:enumeration value="ALT"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="GerarComprovanteType">
+		<xs:annotation>
+			<xs:documentation> Tipos Indicador de Geração de Comprovante</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="S"/>
+			<xs:enumeration value="N"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SituacaoPracaType">
+		<xs:annotation>
+			<xs:documentation> Tipo de Situação da Praça de Pedágio</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ATI"/>
+			<xs:enumeration value="INA"/>
+			<xs:enumeration value="FSI"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PermiteRodocredChipType">
+		<xs:annotation>
+			<xs:documentation> Permite Rodocred Chip</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="S"/>
+			<xs:enumeration value="N"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ContaType">
+		<xs:annotation>
+			<xs:documentation> Tipo de Conta Financeira</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="6"/>
+			<xs:enumeration value="7"/>
+			<xs:enumeration value="8"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TipoAgendamentoFinanceiroType">
+		<xs:annotation>
+			<xs:documentation> Tipo Agendamento Financeiro</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="COB"/>
+			<xs:enumeration value="CRD"/>
+			<xs:enumeration value="DEB"/>
+			<xs:enumeration value="REP"/>
+			<xs:enumeration value="RPS"/>
+			<xs:enumeration value="TRB"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SituacaoAgendamentoType">
+		<xs:annotation>
+			<xs:documentation> Tipo de Situação de Agendamento Financeiro</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CAN"/>
+			<xs:enumeration value="LIB"/>
+			<xs:enumeration value="NPS"/>
+			<xs:enumeration value="PEN"/>
+			<xs:enumeration value="PRO"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TipoOperacaoFinanceiraType">
+		<xs:annotation>
+			<xs:documentation> Tipo de Operação Financeira</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="D"/>
+			<xs:enumeration value="C"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TipoConsultaAgendaFinanceiraType">
+		<xs:annotation>
+			<xs:documentation> Tipo da Consulta da Agenda Financeira</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="D"/>
+			<xs:enumeration value="C"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DadosViagemPedagioType">
+		<xs:annotation>
+			<xs:documentation> Tipo de Dados da Viagem de Pedágio</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="rdc:NumeroViagem" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Número da Viagem
+Formato: x.xxxx.x
+Este campo será obrigatório para Operações de Finalizar Compra de Pedágio </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Embarque" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Data e hora da data de embarque da viagem.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PrevisaoEntrega" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Data e hora da data de previsão de entrega da viagem.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="rdc:DocumentoRef" minOccurs="0"/>
+			<xs:element name="CentrodeCusto" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Código do Centro de Custo da viagem.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Observacao" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Observação da viagem.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ListaPracaType">
+		<xs:annotation>
+			<xs:documentation> Tipo de Lista de Praças de Pedágio</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="rdc:IDConcessionaria"/>
+			<xs:element ref="rdc:Concessionaria"/>
+			<xs:element ref="rdc:IdPraca"/>
+			<xs:element ref="rdc:NomePraca"/>
+			<xs:element ref="rdc:Rodovia"/>
+			<xs:element ref="rdc:KmRodovia"/>
+			<xs:element ref="rdc:Estado"/>
+			<xs:element ref="rdc:LocalidadeOrigem"/>
+			<xs:element ref="rdc:LocalidadeDestino"/>
+			<xs:element ref="rdc:SituacaoPracaPedagio"/>
+			<xs:element ref="rdc:OrdenacaoPraca"/>
+			<xs:element ref="rdc:Informativo" minOccurs="0"/>
+			<xs:element ref="rdc:PermiteChipRodocred">
+				<xs:annotation>
+					<xs:documentation> Indicador de Aceitação Rodocred Chip</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="rdc:SentidoCobranca"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PeriodoDataType">
+		<xs:annotation>
+			<xs:documentation>Tipo de Período de Data</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="rdc:DataInicio"/>
+			<xs:element ref="rdc:DataFinal"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DadosAgendamentoDetalhadoType">
+		<xs:annotation>
+			<xs:documentation>Tipo Dados Detalhado do Agendamento</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="rdc:IDAgendamentoFinanceiro"/>
+			<xs:element ref="rdc:Conta"/>
+			<xs:element ref="rdc:TipoOperacaoFinanceira"/>
+			<xs:element ref="rdc:ValorTransacaoFinanceira"/>
+			<xs:element ref="rdc:ValorServico" minOccurs="0"/>
+			<xs:element ref="rdc:DataAgendamento"/>
+			<xs:element ref="rdc:DataProcessamento" minOccurs="0"/>
+			<xs:element ref="rdc:NumeroViagem" minOccurs="0"/>
+			<xs:element ref="rdc:IDItemAgendamentoFinanceiro" minOccurs="0"/>
+			<xs:element ref="rdc:SituacaoAgendamentoFinanceiro"/>
+			<xs:element ref="rdc:OperacaoFinanceira">
+				<xs:annotation>
+					<xs:documentation>Descrição da Operação Financeira</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DadosAgendamentoConsolidadoType">
+		<xs:annotation>
+			<xs:documentation>Tipo Dados Consolidado do Agendamento</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="rdc:Conta"/>
+			<xs:element ref="rdc:TipoOperacaoFinanceira"/>
+			<xs:element ref="rdc:DataAgendamento"/>
+			<xs:element ref="rdc:DataProcessamento" minOccurs="0"/>
+			<xs:element ref="rdc:ValoresAgendados">
+				<xs:annotation>
+					<xs:documentation>Valores de Transação e Serviços Agendados Consolidados</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="rdc:ValoresRealizados">
+				<xs:annotation>
+					<xs:documentation>Valores de Transação e Serviços Realizados Consolidados</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="rdc:SituacaoAgendamentoFinanceiro"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ValoresAgendadosType">
+		<xs:annotation>
+			<xs:documentation>Tipo de Valores Agendados</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="rdc:ValorTransacaoFinanceira"/>
+			<xs:element ref="rdc:ValorServico"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ValoresRealizadosType">
+		<xs:annotation>
+			<xs:documentation> Tipo de Valores Realizados</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="rdc:ValorTransacaoFinanceira"/>
+			<xs:element ref="rdc:ValorServico"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ListaCupomValePedagioType">
+		<xs:annotation>
+			<xs:documentation> Tipo de Lista de Cupons (Papel ou Virtual) </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Cupom" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Informações do Cupom e Vale Pedágio (Papel ou Chip)</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="rdc:NumeroCupom"/>
+						<xs:element ref="rdc:NumeroFormulario" minOccurs="0"/>
+						<xs:element ref="rdc:PlacaVeiculo" minOccurs="0"/>
+						<xs:element ref="rdc:MeioPagamentoValePedagio"/>
+						<xs:element ref="rdc:ValorUnitarioPedagio"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="OperacaoPedagio" type="rdc:TipoOperacaoPedagioType">
+		<xs:annotation>
+			<xs:documentation>COM - Comprar Pedágio
+PRO - Programar Compra Pedágio
+FIN - Finalizar Compra de Pedágio
+ALT - Alteração no Pedido de Compra</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GerarComprovante" type="rdc:GerarComprovanteType" default="S">
+		<xs:annotation>
+			<xs:documentation>Indicador para Gerar Comprovante de Pedágio</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="DadosViagemPedagio" type="rdc:DadosViagemPedagioType">
+		<xs:annotation>
+			<xs:documentation>Dados do cabeçalho da viagem de vale pedágio</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ValorTotalTaxas" type="rdc:ValorType">
+		<xs:annotation>
+			<xs:documentation>Valor Total de Taxas</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="IDConcessionaria" type="xs:int">
+		<xs:annotation>
+			<xs:documentation>Identificação da Concessionária da Praça de Pedágio</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="SituacaoPracaPedagio" type="rdc:SituacaoPracaType">
+		<xs:annotation>
+			<xs:documentation>Situação da Praça de Pedágio
+ATI - Ativo
+INA - Inativo
+FSI - Não Conveniada</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ListaPraca" type="rdc:ListaPracaType">
+		<xs:annotation>
+			<xs:documentation> Lista de Praça</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KmRodovia" type="xs:string">
+		<xs:annotation>
+			<xs:documentation> Km da Rodovia</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Rodovia" type="xs:string">
+		<xs:annotation>
+			<xs:documentation> Nome da Rodovia</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="OrdenacaoPraca" type="xs:int">
+		<xs:annotation>
+			<xs:documentation>Ordenação da Praça na Rodovia para Concessionária</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="PermiteChipRodocred" type="rdc:PermiteRodocredChipType" default="N">
+		<xs:annotation>
+			<xs:documentation> Indicador Permite Rodocred Chip</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="PeriodoDataProcessamentoVP" type="rdc:PeriodoDataType">
+		<xs:annotation>
+			<xs:documentation>Período de Data de Processamento de Vale Pedágio</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="DataProcessamentoVP" type="xs:dateTime">
+		<xs:annotation>
+			<xs:documentation>Data de Processamento do Vale Pedágio</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Conta" type="rdc:ContaType">
+		<xs:annotation>
+			<xs:documentation>Conta Financeira Rodocred
+6-Rodocred
+7-Posto - Repasse
+8-Conta Frete</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="TipoAgendamentoFinanceiro" type="rdc:TipoAgendamentoFinanceiroType">
+		<xs:annotation>
+			<xs:documentation>Tipo Agendamento Financeiro 
+COB-Cobrança
+CRD-Créditos
+DEB-Débitos
+REP-Repasse
+RPS-Repasse saque
+TRB-Transferência</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="PeriodoDataAgendamento" type="rdc:PeriodoDataType">
+		<xs:annotation>
+			<xs:documentation>Período de Data de Agendamento</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="PeriodoDataProcessamento" type="rdc:PeriodoDataType">
+		<xs:annotation>
+			<xs:documentation>Período de Data de Processamento</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="SituacaoAgendamentoFinanceiro" type="rdc:SituacaoAgendamentoType">
+		<xs:annotation>
+			<xs:documentation>Situação do Agendamento Financeiro
+CAN - Cancelado
+LIB - Liberado
+NPS - Não Liberado por Saldo
+PEN - Pendente
+PRO - Processado</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="DataAgendamento" type="xs:dateTime">
+		<xs:annotation>
+			<xs:documentation>Data do Agendamento Financeiro</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="DataProcessamento" type="xs:dateTime">
+		<xs:annotation>
+			<xs:documentation>Data do Processamento Financeiro</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="IDAgendamentoFinanceiro" type="xs:long">
+		<xs:annotation>
+			<xs:documentation>Identificação do Agendamento Financeiro</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="TipoOperacaoFinanceira" type="rdc:TipoOperacaoFinanceiraType">
+		<xs:annotation>
+			<xs:documentation>Tipo de Operação Financeira
+D - Débito
+C - Crédito</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ValorTransacaoFinanceira">
+		<xs:annotation>
+			<xs:documentation>Valor de Transação Financeira</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal">
+				<xs:totalDigits value="12"/>
+				<xs:fractionDigits value="2"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="ValorServico">
+		<xs:annotation>
+			<xs:documentation>Valor do Serviço</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal">
+				<xs:totalDigits value="12"/>
+				<xs:fractionDigits value="2"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="IDItemAgendamentoFinanceiro" type="xs:long">
+		<xs:annotation>
+			<xs:documentation>Identificação do Item Agendamento Financeiro</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="DadosAgendamentoFinanceiroDetalhado" type="rdc:DadosAgendamentoDetalhadoType">
+		<xs:annotation>
+			<xs:documentation>Informações Detalhadas do Agendamento Financeiro</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="TipoConsultaAgendamento" type="rdc:TipoConsultaAgendaFinanceiraType">
+		<xs:annotation>
+			<xs:documentation> Tipo da Consulta Agendamento Financeiro
+C - Consolidado
+D - Não Consolidado (Detalhado)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ValoresAgendados" type="rdc:ValoresAgendadosType">
+		<xs:annotation>
+			<xs:documentation> Valores de Transação e Serviço Agendados Consolidado</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ValoresRealizados" type="rdc:ValoresRealizadosType">
+		<xs:annotation>
+			<xs:documentation> Valores de Transação e Serviço Realizados Consolidado</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="DadosAgendamentoFinanceiroConsolidado" type="rdc:DadosAgendamentoConsolidadoType">
+		<xs:annotation>
+			<xs:documentation>Informações Consolidadas do Agendamento Financeiro</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="DataInicio">
+		<xs:annotation>
+			<xs:documentation>Data Inicial do Período</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="DataFinal">
+		<xs:annotation>
+			<xs:documentation>Data Final do Período</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="LinkCertificado" type="xs:anyURI">
+		<xs:annotation>
+			<xs:documentation> Link do Certificado do Vale Pedágio</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="NumeroFormulario" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Número do Formulário Assocaido ao Vale Pedágio Papel</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="NumeroCupom" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Número do Cupom Vale Pedágio (Virtual ou Papel)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ListaCupomValePedagio" type="rdc:ListaCupomValePedagioType">
+		<xs:annotation>
+			<xs:documentation>Lista de Cupons (Papel ou Virtual) associado ao pedido vale pedágio</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="OperacaoFinanceira"/>
+	<xs:element name="ValorUnitarioPedagio">
+		<xs:annotation>
+			<xs:documentation>Valor Unitário do Pedágio</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

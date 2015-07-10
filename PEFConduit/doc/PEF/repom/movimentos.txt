@@ -1,0 +1,79 @@
+CodigoRepom	Descricao	PassivelIRRF	DeParaCodigoCliente
+0	Atraso Quitacao	0	0
+1	IRRF	0	1
+2	SEST	0	2
+3	SENAT	0	3
+4	Avarias	0	998
+5	Premio	0	997
+6	Desconto	0	6
+7	Taxa Servico	0	7
+8	Taxa Liberacao	0	8
+9	Vale Pedagio	0	9
+10	Falha Rastr.	0	10
+11	Reemb. ICMS	0	11
+12	Prazo Entrega	0	12
+13	Coleta	0	13
+14	Pernoite	0	14
+15	Reembolso Multas	0	15
+16	Extravio Documentos	0	16
+17	Estadia	0	17
+18	Desconto Contratual	0	18
+19	Seguro de Carga	0	19
+20	Saque	0	9997
+21	Consumo	0	9998
+22	Pagamento Carreteiro	0	9999
+23	Quebra Peso ADM	0	9996
+24	Reemb. Ajuste Pagamento	0	24
+25	Reemb. Ajuste de Frete	0	25
+26	Reemb. Quebra de Peso	0	26
+40	INSS	0	5
+90	Valor do Frete	0	90
+91	Provisao INSS Patronal	0	91
+92	INSS Patronal	0	92
+93	AdV + GR + CA	0	93
+94	Consumo na Rede	0	94
+95	Prov. INSS Patronal Coop	0	95
+96	INSS Patronal Coop	0	96
+100	INSS	0	100
+101	Quebra de Peso	0	101
+102	Reemb. Taxa Servico	0	102
+103	Provisao IRRF	0	103
+104	Falha Rastreamento	0	104
+105	Performance Cumprida	0	105
+106	Atraso Entrega	0	106
+107	Ajuste de Frete	0	107
+108	Provisao SEST	0	108
+109	Provisao SENAT	0	109
+110	Coleta/Entrega	0	110
+111	Retencao ICMS	0	111
+112	Retencao ISS	0	112
+113	VPR - Vale Pedagio	0	113
+114	Vale Combustivel	0	114
+115	Ajuste Vale Combustivel	0	115
+116	Provisao de INSS	0	116
+117	Vale Combustivel	0	117
+118	Tx.Ativ.Cartao VISA	0	118
+119	Provisao IRRF - PJ	0	119
+120	IRRF - PJ	0	120
+121	Provisao CSLL	0	121
+122	CSLL	0	122
+123	Provisao PIS	0	123
+124	PIS	0	124
+125	Provisao COFINS	0	125
+126	COFINS	0	126
+127	Ajuste Pagamento	0	127
+128	Ajuste Sinistro	0	128
+129	Descarga Vale Pedagio	0	129
+130	INSS Patronal	0	130
+131	Frete	0	131
+132	Frete	0	132
+133	Estorno Frete	0	133
+134	Estorno Frete	0	134
+135	Frete	1	135
+136	Frete	1	136
+137	Recompensa Abastecimento	0	137
+138	Provisão IRRF Cooperativa	0	138
+139	IRRF Cooperativa	0	139
+140	Estadia	0	140
+141	Tranferência de Crédito	0	141
+142	Tranferência de Crédito	0	142

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SchemaAutonomo" targetNamespace="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaAutonomo_1.0.xsd" elementFormDefault="qualified" xmlns="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaAutonomo_1.0.xsd" xmlns:mstns="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaAutonomo_1.0.xsd" xmlns:c="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaComum_1.1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="SchemaComum_1.1.xsd" namespace="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaComum_1.1.xsd" ></xs:import>
+  <xs:element name="LoteDeAutonomos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="50" name="Autonomo" nillable="false" type="Autonomo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Autonomo" abstract="true">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="TipoPessoa" type="c:TipoPessoa" />
+      <xs:element minOccurs="1" maxOccurs="1" name="TipoAutonomo" type="c:TipoAutonomo" />
+      <xs:element minOccurs="1" maxOccurs="1" name="RNTRC" type="c:RNTRC" />
+      <xs:element minOccurs="1" maxOccurs="1" nillable="false" name="Veiculos">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="unbounded" name="Veiculo" nillable="false" type="Veiculo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DadosBancarios" type="DadosBancarios" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Email" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Cartao" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Endereco" type="c:Endereco" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Dependentes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="Dependente" nillable="false" type="c:PessoaFisica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AutonomoPJ">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Autonomo">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="CNPJ" type="c:CNPJ" />
+          <xs:element minOccurs="0" maxOccurs="1" name="RazaoSocial" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NomeFantasia" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Representante" type="c:PessoaFisica" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AutonomoPF">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Autonomo">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="CPF" type="c:CPF" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Nome" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Sobrenome" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Veiculo">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" nillable="false" name="Placa" type="c:Placa" />
+      <xs:element minOccurs="1" maxOccurs="1" nillable="false" name="Renavam" type="c:Renavam" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DadosBancarios">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Banco" type="xs:long" />
+      <xs:element minOccurs="1" maxOccurs="1" name="TipoConta" type="c:TipoContaBancaria" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Agencia" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AgenciaDigito" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Conta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ContaDigito" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

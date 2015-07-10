@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<xs:schema xmlns:rdc="https://ws.rodocred.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ws.rodocred.com.br/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="rdc_TiposPadrao_v1.00.xsd"/>
+	<xs:element name="ConsultarEstabelecimentos">
+		<xs:annotation>
+			<xs:documentation>Permite Consultar as Clausulas cadastradas para o Cliente</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:ConsultarEstabelecimentosRequest"/>
+				<xs:element ref="rdc:ConsultarEstabelecimentosResponse"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarEstabelecimentosRequest">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Requisição consultar as Clausulas cadastradas para o Cliente</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:IdentificacaoIntegracao"/>
+				<xs:element ref="rdc:IdClienteResponsavel" minOccurs="0"/>
+				<xs:element ref="rdc:CodigoRota"/>
+				<xs:element name="CNPJEstabelecimento" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>CNPJ do Estabelecimento no Rodocred.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="NomeEstabelecimento" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Nome do Estabelecimento no Rodocred.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:Cidade" minOccurs="0"/>
+				<xs:element ref="rdc:UF" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarEstabelecimentosResponse">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Retorno consultar as Clausulas cadastradas para o Cliente</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:RetornoMensagem"/>
+				<xs:element name="ListaEstabelecimentos">
+					<xs:annotation>
+						<xs:documentation>Lista de Estabelecimentos retornados na consulta.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="rdc:Estabelecimentos" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

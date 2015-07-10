@@ -1,0 +1,13 @@
+transacional.operacao=27
+
+viagem.contratante.documento.numero=00001001000312
+
+viagem.id=1049603
+
+viagem.pedagio.obter.praca=s
+viagem.pedagio.obter.rota=s
+viagem.obter.favorecido=s
+viagem.obter.documento=s
+viagem.obter.valores=s
+viagem.obter.veiculo=s
+viagem.obter.quitacao=n

@@ -1,0 +1,71 @@
+tcicno
+numero de eixos = 2 até 9
+rodagem = simples / dupla
+tipo = 
+
+
+NDD
+
+0 = Isento (não calcula pedágio) 
+1 = Motocicletas, motonetas e bicicletas a motor 
+2 = Automóvel, caminhoneta e furgão (dois eixos simples) 
+3 = Automóvel, caminhoneta com semirreboque (três eixos simples) 
+4 = Automóvel, caminhoneta com reboque (quatro eixos simples) 
+5 = Ônibus (dois eixos duplos) 
+6 = Ônibus com reboque (três eixos duplos)
+7 = Caminhão leve, furgão e cavalo mecânico (dois eixos duplos) 
+8 = Caminhão, caminhão trator e cavalo mecânico com semirreboque (três eixos duplos) 
+9 = Caminhão com reboque e cavalo mecânico com semirreboque (quatro eixos duplos) 
+10 = Caminhão com reboque e cavalo mecânico com semirreboque (cinco eixos duplos)
+11 = Caminhão com reboque e cavalo mecânico com semirreboque (seis eixos duplos)
+12 = Caminhão com reboque e cavalo mecânico com semirreboque (sete eixos duplos)
+13 = Caminhão com reboque e cavalo mecânico com semirreboque (oito eixos duplos)
+14 = Caminhão com reboque e cavalo mecânico com semirreboque (nove eixos duplos)
+
+
+
+REPOM
+
+0 - INDEFINIDO
+1 - TRACTOR
+2 - REMOLQUE
+3 - CARRETA 5 EIXOS
+4 - CARRETA 4 EIXOS
+5 - TRUCK
+6 - TOCO
+7 - 3/4
+8 - VAN
+9 - UTILITARIO
+10 - VUC
+
+
+DBTrans
+
+1-Automóvel, Pickup ou utilitário leve 
+2-Ônibus 
+3-Caminhão
+4-Caminhão-trator 
+5-Semi-reboque 
+6-Reboque 
+7-Bitrem 
+8-Genérico 
+
+
+PAMCARY
+
+1-AUTOMOVEL, CAMINHONETE, CAMIONETA, FURGAO ( 2 EIXOS - ROD. SIMPLES )               
+2-CAMINHAO LEVE, CAMINHAO-TRATOR, FURGAO ( 2 EIXOS - ROD. DUPLA )                    
+3-ONIBUS ( 2 EIXOS - ROD. DUPLA )                                                    
+4-AUTOMOVEL, CAMIONETA OU CAMINHONETE COM SEMI-REBOQUE ( 3 EIXOS - ROD. SIMPLES )    
+5-CAMINHAO, CAMINHAO-TRATOR, CAMINHAO-TRATOR C/ SEMI-REBOQUE ( 3 EIXOS - ROD. DUPLA )
+6-ONIBUS ( 3 EIXOS - ROD. DUPLA )                                                    
+7-AUTOMOVEL, CAMIONETA OU CAMINHONETE COM REBOQUE ( 4 EIXOS - ROD. SIMPLES)          
+8-CAMINHAO E/OU CAMINHAO-TRATOR, C/ SEMI-REBOQUE ( 4 EIXOS - ROD. DUPLA)             
+9-CAMINHAO C/ REBOQUE, CAMINHAO-TRATOR ( 5 EIXOS - ROD. DUPLA )                      
+10-CAMINHAO C/ REBOQUE, CAMINHAO-TRATOR C/ SEMI-REBOQUE ( 6 EIXOS - ROD. DUPLA )      
+11-MOTOCICLETA, MOTONETA, BICICLETAS A MOTOR ( 2 EIXOS - ROD. SIMPLES)                
+12-CAMINHAO C/ REBOQUE, CAMINHAO-TRATOR C/ SEMI-REBOQUE ( 7 EIXOS - ROD. DUPLA )      
+13-CAMINHAO C/ REBOQUE, CAMINHAO-TRATOR C/ SEMI-REBOQUE ( 8 EIXOS - ROD. DUPLA )      
+14-CAMINHAO C/ REBOQUE, CAMINHAO-TRATOR C/ SEMI-REBOQUE ( 9 EIXOS - ROD. DUPLA )      
+15-CAMINHAO C/ REBOQUE, CAMINHAO-TRATOR C/ SEMI-REBOQUE ( 10 EIXOS - ROD. DUPLA ) 
+

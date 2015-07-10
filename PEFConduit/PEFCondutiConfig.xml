@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<configuracao>
+	<diretorioBase>c:\pdfconduit\</diretorioBase>
+    <grupos>
+        <grupo id="geral">
+        	<cnpjs>
+                <cnpj id="12123123123412">
+                    <administradoras>
+                        <repom>
+                            <webserver>http://201.85.98.18/repomws/expedicao.asmx</webserver>
+                            <usuario>0433</usuario>
+                            <senha>RODOMAXHOMOLOG</senha>
+                            <parametrosRepom>
+                                <OPERACAO_CODIGO>1</OPERACAO_CODIGO>
+                                <ROTEIRO_IDA_VOLTA>0</ROTEIRO_IDA_VOLTA>
+                            </parametrosRepom>
+                        </repom>
+                        <pancary>
+                            <envio>c:\tecinco</envio>
+                            <retorno>c:\tecinco</retorno>
+                            <parametrosPancary>
+                            </parametrosPancary>
+                        </pancary>
+                        <nddcargo>
+                            <envio>c:\tecinco</envio>
+                            <retorno>c:\tecinco</retorno>
+                            <parametrosNddCargo>
+                                <GerarMovimentacaoFinanceira>1</GerarMovimentacaoFinanceira>
+                                <ImpressãoAutomaticaDOT>1</ImpressãoAutomaticaDOT>
+                                <TipodeOperacaodeTransporte>1</TipodeOperacaodeTransporte>
+                                <TipodaCarga>1</TipodaCarga>
+                                <ProprietariodaCarga>1</ProprietariodaCarga>
+                                <TipodeRotaPadrao>2</TipodeRotaPadrao>
+                                <UtilizaRoteirizador>2</UtilizaRoteirizador>
+                                <NotificaRotaContratante>2</NotificaRotaContratante>
+                                <LocaldeEfetivacaodoPagamento>3</LocaldeEfetivacaodoPagamento>
+                                <DocumentoParaEntregar>Seguda via CTRC;Ticket da balança;Canhoto nota fiscal</DocumentoParaEntregar>
+                            </parametrosNddCargo>
+                        </nddcargo>
+                        <dbtrans>
+                            <webserver>http://homologacao.ws.rodocred.com.br/rodocred.asmx</webserver>
+                            <usuario>integra-tecinco</usuario>
+                            <senha>123456</senha>
+                            <cliente>429</cliente>
+                            <parametrosDBTrans>
+                                <CondicaoLiberacaoOperacao_Adiantamento>EST</CondicaoLiberacaoOperacao_Adiantamento>
+                                <LocalRealizacao_Adiantamento>QER</LocalRealizacao_Adiantamento>
+                                <CodigoOperacao_Saldo>EDS</CodigoOperacao_Saldo>
+                                <CondicaoLiberacaoOperacao_Saldo>EST</CondicaoLiberacaoOperacao_Saldo>
+                                <LocalRealizacao_Saldo>QER</LocalRealizacao_Saldo>
+                                <CodigoClausula>OBS</CodigoClausula>
+                                <Documentos_Entrega>CTE;TCK;NFF</Documentos_Entrega>
+                            </parametrosDBTrans>
+                        </dbtrans>
+                    </administradoras>
+                </cnpj>
+            </cnpjs>
+        </grupo>
+    </grupos>
+</configuracao>

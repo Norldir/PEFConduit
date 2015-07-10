@@ -1,0 +1,16 @@
+﻿<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <Action s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none">http://tempuri.org/IOperacaoTransporteExternal/CadastrarOperacaoDescritivaResponse</Action>
+    <ActivityId CorrelationId="00866389-a2b0-466e-b3a8-594ab399f723" xmlns="http://schemas.microsoft.com/2004/09/ServiceModel/Diagnostics">9e86f7ef-91d6-4238-98b4-525ca226d695</ActivityId>
+  </s:Header>
+  <s:Body>
+    <CadastrarOperacaoDescritivaResponse xmlns="http://tempuri.org/">
+      <CadastrarOperacaoDescritivaResult xmlns:a="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+        <a:MensagemRetorno>Operação de Transporte cadastrada com sucesso!</a:MensagemRetorno>
+        <a:Sucesso>true</a:Sucesso>
+        <a:DataHoraCadastro>2014-09-24T12:01:36</a:DataHoraCadastro>
+        <a:IdOperacaoTransporte>93</a:IdOperacaoTransporte>
+      </CadastrarOperacaoDescritivaResult>
+    </CadastrarOperacaoDescritivaResponse>
+  </s:Body>
+</s:Envelope>

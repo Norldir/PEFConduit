@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<xs:schema xmlns:rdc="https://ws.rodocred.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ws.rodocred.com.br/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="rdc_TiposPadrao_v1.02.xsd"/>
+	<xs:element name="ConsultarRegistroOperacao">
+		<xs:annotation>
+			<xs:documentation>Mensagem que Permite Consultar os Registros das Operações das Viagens</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:ConsultarRegistroOperacaoRequest"/>
+				<xs:element ref="rdc:ConsultarRegistroOperacaoResponse"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarRegistroOperacaoRequest">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Requisição que Permite Consultar os Registro das Operações das Viagens</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:IdentificacaoIntegracao"/>
+				<xs:element ref="rdc:IdClienteResponsavel" minOccurs="0"/>
+				<xs:element name="DataRegistroOperacao" type="xs:date">
+					<xs:annotation>
+						<xs:documentation>Data de consulta do Registro das Operaçõs das Viagens.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="InicioRegistros" type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarRegistroOperacaoResponse">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Retorno com o Registro das Operações das Viagens</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:RetornoMensagem"/>
+				<xs:element name="QtdeTotalRegistros" type="xs:int">
+					<xs:annotation>
+						<xs:documentation>Quantidade Total dos registros para a data</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="QtdeRegistros" type="xs:int">
+					<xs:annotation>
+						<xs:documentation>Quantidade de registros retornado na consulta</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ListaRegistroOperacao">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="rdc:RegistroViagemRetorno" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

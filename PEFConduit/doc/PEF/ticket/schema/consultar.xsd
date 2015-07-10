@@ -1,0 +1,53 @@
+<xs:schema xmlns="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaRetorno_1.0.xsd" xmlns:mstns="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaRetorno_1.0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" id="SchemaRetorno" targetNamespace="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaRetorno_1.0.xsd" elementFormDefault="qualified">
+	<s:element name="Consultar">
+		<s:complexType>
+			<s:sequence>
+				<s:element  name="token" type="s:string"/>
+				<s:element  name="protocolo" type="s:string"/>
+			</s:sequence>
+		</s:complexType>
+	</s:element>
+	<s:element name="ConsultarResponse">
+		<s:complexType>
+			<s:sequence>
+				<s:element  ref="s:ConsultarResult"/>
+			</s:sequence>
+		</s:complexType>
+	</s:element>
+	<s:element name="ConsultarResult">
+		<s:complexType>
+			<s:sequence>
+				<s:element name="Retorno" type="s:Retorno" maxOccurs="unbounded" />
+				<s:element name="Status" type="s:TipoStatus"/>
+				<s:element name="Operacao" type="s:TipoOperacao"/>
+				<s:element name="Protocolo" type="s:string"/>
+			</s:sequence>
+		</s:complexType>
+	</s:element>
+	<s:complexType name="Retorno">
+		<s:sequence>
+			<s:element name="Motivos" type="s:ArrayOfString"/>
+			<s:element name="Referencia" type="s:string"/>
+			<s:element name="Ciot" type="s:string"/>
+			<s:element name="Sucesso" type="s:boolean"/>
+		</s:sequence>
+	</s:complexType>
+	<s:complexType name="ArrayOfString">
+		<s:sequence>
+			<s:element  name="Motivo" type="s:string" maxOccurs="unbounded"/>
+		</s:sequence>
+	</s:complexType>
+	<s:simpleType name="TipoStatus">
+		<s:restriction base="s:string">
+			<s:enumeration value="Pendente"/>
+			<s:enumeration value="Processado"/>
+		</s:restriction>
+	</s:simpleType>
+	<s:simpleType name="TipoOperacao">
+		<s:restriction base="s:string">
+			<s:enumeration value="Criacao"/>
+			<s:enumeration value="Cancelamento"/>
+		</s:restriction>
+	</s:simpleType>
+
+</xs:schema>

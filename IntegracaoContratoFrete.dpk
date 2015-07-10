@@ -1,0 +1,74 @@
+package IntegracaoContratoFrete;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  vcljpg,
+  vcldb,
+  xmlrtl,
+  inet,
+  soaprtl,
+  dbrtl,
+  dsnap,
+  janXML,
+  ICFBase,
+  IntegracaoContratoFreteTXT,
+  IntegracaoContratoFreteRodocred,
+  IntegracaoContratoFreteRepom,
+  IntegracaoContratoFreteNDD,
+  IntegracaoContratoFretePamcary,
+  IntegracaoContratoFreteBEAN,
+  IntegracaoContratoFreteTicket,
+  X509Capicom,
+  X509OpenSSL,
+  IntegracaoContratoFreteTarget;
+
+contains
+  uAdministradoraAbstract in 'Abstract\uAdministradoraAbstract.pas',
+  uAdministradoraFactory in 'Factory\uAdministradoraFactory.pas',
+  uAdministradoraPamcardFactory in 'Factory\uAdministradoraPamcardFactory.pas',
+  uAdministradoraRodocredFactory in 'Factory\uAdministradoraRodocredFactory.pas',
+  uAdministradoraPamcardVersao001 in 'Pancard\uAdministradoraPamcardVersao001.pas',
+  uAdministradoraRodocredVersao001 in 'RodoCred\uAdministradoraRodocredVersao001.pas',
+  uAdministradoraRepomVersao001 in 'Repom\uAdministradoraRepomVersao001.pas',
+  T5XmlSerializa in 'Serializador\T5XmlSerializa.pas',
+  uAdministradoraRepomFactory in 'Factory\uAdministradoraRepomFactory.pas',
+  libeay32 in 'SSL\libeay32.pas',
+  OpenSSL in 'SSL\OpenSSL.pas',
+  OpenSSLUtils in 'SSL\OpenSSLUtils.pas',
+  uAdministradoraNDDFactory in 'Factory\uAdministradoraNDDFactory.pas',
+  uAdministradoraNDDVersao001 in 'NDD\uAdministradoraNDDVersao001.pas',
+  uAdministradoraTicketFactory in 'Factory\uAdministradoraTicketFactory.pas',
+  uAdministradoraTicketVersao001 in 'Ticket\uAdministradoraTicketVersao001.pas',
+  uAdministradoraNDDVersao002 in 'NDD\uAdministradoraNDDVersao002.pas',
+  uAdministradoraTicketVersao003 in 'Ticket\uAdministradoraTicketVersao003.pas',
+  uAdministradoraTicketVersao002 in 'Ticket\uAdministradoraTicketVersao002.pas',
+  uAdministradoraNDDVersao003ws in 'NDD\uAdministradoraNDDVersao003ws.pas',
+  uAdministradoraTargetFactory in 'Factory\uAdministradoraTargetFactory.pas',
+  uAdministradoraTargetVersao001 in 'Target\uAdministradoraTargetVersao001.pas';
+
+end.

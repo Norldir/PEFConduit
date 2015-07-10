@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ws="https://ws.rodocred.com.br/">
+   <soap:Header/>
+   <soap:Body>
+      <ws:RegistrarOperacaoViagemRequest>
+         <ws:IdentificacaoIntegracao>
+            <ws:IdClienteRodocred>437</ws:IdClienteRodocred>
+            <ws:TokenAutenticacao>4d51a1b1-1212-47e5-b832-1bfae4b7983f</ws:TokenAutenticacao>
+            <ws:NumeroTransacao>23423</ws:NumeroTransacao>
+            <ws:VersaoServico>1.00</ws:VersaoServico>
+         </ws:IdentificacaoIntegracao>
+         <ws:NumeroViagem>437.2013.121</ws:NumeroViagem>
+         <ws:RegistroOperacaoViagem>
+            <ws:IDOperacaoViagem>1</ws:IDOperacaoViagem>
+            <ws:CodigoOperacao>ADF</ws:CodigoOperacao>
+            <ws:EventoOperacao>
+               <ws:CodigoEventoOperacao>TRF</ws:CodigoEventoOperacao>
+               <ws:ValorEvento>20.00</ws:ValorEvento>
+            </ws:EventoOperacao>
+            <ws:CPFMotorista>08572398805</ws:CPFMotorista>
+            <ws:IDFilial>437</ws:IDFilial>
+         </ws:RegistroOperacaoViagem>
+      </ws:RegistrarOperacaoViagemRequest>
+   </soap:Body>
+</soap:Envelope>

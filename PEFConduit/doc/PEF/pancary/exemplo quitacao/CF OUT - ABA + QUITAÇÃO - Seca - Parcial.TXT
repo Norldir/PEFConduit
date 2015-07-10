@@ -1,0 +1,6 @@
+mensagem.codigo=0
+mensagem.descricao=Operação realizada com sucesso
+viagem.antt.ciot.numero=021001017526
+viagem.antt.ciot.protocolo=8266
+viagem.digito=2
+viagem.id=1102640

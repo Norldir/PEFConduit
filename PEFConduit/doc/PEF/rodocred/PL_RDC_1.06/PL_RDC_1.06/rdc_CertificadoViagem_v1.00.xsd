@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<xs:schema xmlns:rdc="https://ws.rodocred.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ws.rodocred.com.br/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="rdc_TiposPadrao_v1.00.xsd"/>
+	<xs:element name="CertificadoViagem">
+		<xs:annotation>
+			<xs:documentation>Mensagem Disponibilizada para gerar o Certificado de uma Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:CertificadoViagemRequest"/>
+				<xs:element ref="rdc:CertificadoViagemResponse"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CertificadoViagemRequest">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Requisição do Certificado da Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:IdentificacaoIntegracao"/>
+				<xs:element ref="rdc:IdClienteResponsavel" minOccurs="0"/>
+				<xs:element ref="rdc:NumeroViagem"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CertificadoViagemResponse">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Retorno do Certificado da Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:RetornoMensagem"/>
+				<xs:element name="LinkCertificado" type="xs:anyURI"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

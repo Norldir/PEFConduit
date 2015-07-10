@@ -1,0 +1,58 @@
+package IntegracaoContratoFreteRodocred;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  xmlrtl,                          
+  inet,
+  soaprtl,
+  janxml,
+  T5SOAP;
+
+contains
+  urdc_AutenticarCliente_v1_00 in 'RodoCred\urdc_AutenticarCliente_v1_00.pas',
+  urdc_ConsultarViagens_v1_00 in 'RodoCred\urdc_ConsultarViagens_v1_00.pas',
+  urdc_ManterMotorista_v1_00 in 'RodoCred\urdc_ManterMotorista_v1_00.pas',
+  urdc_ManterTransportador_v1_00 in 'RodoCred\urdc_ManterTransportador_v1_00.pas',
+  urdc_ManterVeiculo_v1_00 in 'RodoCred\urdc_ManterVeiculo_v1_00.pas',
+  urdc_ManterViagem_v1_00 in 'RodoCred\urdc_ManterViagem_v1_00.pas',
+  urdc_TiposPadrao_v1_00 in 'RodoCred\urdc_TiposPadrao_v1_00.pas',
+  urdc_soap_v1_00 in 'RodoCred\urdc_soap_v1_00.pas',
+  urdc_ConsultarRota_v1_00 in 'RodoCred\urdc_ConsultarRota_v1_00.pas',
+  urdc_TiposPadrao_v1_01 in 'RodoCred\urdc_TiposPadrao_v1_01.pas',
+  urdc_ManterViagem_v1_01 in 'RodoCred\urdc_ManterViagem_v1_01.pas',
+  urdc_TiposPadrao_v1_01b in 'RodoCred\urdc_TiposPadrao_v1_01b.pas',
+  urdc_CertificadoViagem_v1_00 in 'RodoCred\urdc_CertificadoViagem_v1_00.pas',
+  urdc_jxml_DetalharViagem_v1_01 in 'RodoCred\urdc_jxml_DetalharViagem_v1_01.pas',
+  urdc_jxml_TiposPadrao_v1_00 in 'RodoCred\urdc_jxml_TiposPadrao_v1_00.pas',
+  urdc_jxml_TiposPadrao_v1_01 in 'RodoCred\urdc_jxml_TiposPadrao_v1_01.pas',
+  urdc_jxml_TiposPadrao_v1_02 in 'RodoCred\urdc_jxml_TiposPadrao_v1_02.pas',
+  urdc_jxml_TiposPadrao_v1_03 in 'RodoCred\urdc_jxml_TiposPadrao_v1_03.pas',
+  urdc_jxml_ConsultarExtratoDetalhado_v1_00 in 'RodoCred\urdc_jxml_ConsultarExtratoDetalhado_v1_00.pas',
+  urdc_jxml_ManterViagem_v1_03 in 'RodoCred\urdc_jxml_ManterViagem_v1_03.pas';
+
+end.

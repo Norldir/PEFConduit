@@ -1,0 +1,53 @@
+package IntegracaoContratoFreteNDD;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,                                                    
+  xmlrtl,
+  soaprtl,
+  ICFBase,
+  janXML,
+  T5SOAP;
+
+contains
+  undd_ide_v1_00 in 'NDD\undd_ide_v1_00.pas',
+  undd_base in 'NDD\undd_base.pas',
+  undd_ide_ret_v1_00 in 'NDD\undd_ide_ret_v1_00.pas',
+  undd_ide_v2_00 in 'NDD\undd_ide_v2_00.pas',
+  undd_ide_ret_v2_00 in 'NDD\undd_ide_ret_v2_00.pas',
+  undd_can_v2_00 in 'NDD\undd_can_v2_00.pas',
+  undd_can_ret_v2_00 in 'NDD\undd_can_ret_v2_00.pas',
+  undd_err_ret_v2_00 in 'NDD\undd_err_ret_v2_00.pas',
+  undd_ws_layout_4140 in 'NDD\undd_ws_layout_4140.pas',
+  undd_ws_loteOT_envio_4140 in 'NDD\undd_ws_loteOT_envio_4140.pas',
+  undd_ws_loteOT_resposta_4140 in 'NDD\undd_ws_loteOT_resposta_4140.pas',
+  undd_ext_v1_00 in 'NDD\undd_ext_v1_00.pas',
+  undd_ext_ret_v1_00 in 'NDD\undd_ext_ret_v1_00.pas',
+  uxmldsig_core_schema_v1_00 in 'API\uxmldsig_core_schema_v1_00.pas',
+  undd_ws_layout_4210 in 'NDD\undd_ws_layout_4210.pas',
+  undd_soap_v1_00 in 'NDD\undd_soap_v1_00.pas';
+
+end.

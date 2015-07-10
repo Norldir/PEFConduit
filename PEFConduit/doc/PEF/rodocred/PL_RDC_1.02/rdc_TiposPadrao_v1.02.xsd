@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<xs:schema xmlns:rdc="https://ws.rodocred.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ws.rodocred.com.br/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="rdc_TiposPadrao_v1.01.xsd"/>
+	<xs:complexType name="VigenciaContratoType">
+		<xs:sequence>
+			<xs:element name="DataInicial" type="xs:dateTime"/>
+			<xs:element name="DataFinal" type="xs:dateTime"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PeriodoDeclaracaoType">
+		<xs:sequence>
+			<xs:element name="DataInicial" type="xs:dateTime"/>
+			<xs:element name="DataFinal" type="xs:dateTime"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ContratoAgregadoType">
+		<xs:sequence>
+			<xs:element ref="rdc:NumeroContrato"/>
+			<xs:element ref="rdc:CIOT" minOccurs="0"/>
+			<xs:element ref="rdc:Transportador" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Dados do Transportador na Viagem</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="rdc:DocumentoRef" minOccurs="0"/>
+			<xs:element name="DataVigencia" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Data e hora da vigência da viagem.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="rdc:SituacaoContrato"/>
+			<xs:element ref="rdc:VeiculosViagem" maxOccurs="unbounded"/>
+			<xs:element name="ViagemAgregada" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="rdc:NumeroViagem" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Número da Viagem
+Formato: x.xxxx.x
+Este campo será obrigatório para Operações de Alteração e Cancelamento </xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="rdc:DocumentoRef" minOccurs="0"/>
+						<xs:element ref="rdc:RotaViagem" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Rota definida para a viagem.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="rdc:SituacaoViagem" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="VigenciaContrato" type="rdc:VigenciaContratoType">
+		<xs:annotation>
+			<xs:documentation>Período de Datas de Vigencia do contrato</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="PeriodoDeclaracao" type="rdc:PeriodoDeclaracaoType">
+		<xs:annotation>
+			<xs:documentation>Período de Datas de Declaração do contrato agregado</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="SituacaoContrato">
+		<xs:annotation>
+			<xs:documentation>Situação da Viagem
+AND - Em Andamento
+CAN - Cancelado
+ENC - Encerrado
+PRO - Programado</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="ABE"/>
+				<xs:enumeration value="AGE"/>
+				<xs:enumeration value="AND"/>
+				<xs:enumeration value="CAN"/>
+				<xs:enumeration value="ENC"/>
+				<xs:enumeration value="PRO"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="NumeroContrato" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Numero do Contrado agregado xxx.xxx.xxx</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ContratoAgregado" type="rdc:ContratoAgregadoType"/>
+	<xs:element name="ListaPedidosValePedagio">
+		<xs:annotation>
+			<xs:documentation>Lista de Pedidos de Vale-pedágio informado quando e solicitado a compra de mais de uma vez para a mesma rota.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:PedidoValePedagio" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

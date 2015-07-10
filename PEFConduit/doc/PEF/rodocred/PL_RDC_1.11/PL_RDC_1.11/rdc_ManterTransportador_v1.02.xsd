@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<xs:schema xmlns:rdc="https://ws.rodocred.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ws.rodocred.com.br/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="rdc_TiposPadrao_v1.02.xsd"/>
+	<xs:element name="ManterTransportador">
+		<xs:annotation>
+			<xs:documentation> Permite Inclusão, Alteração e Exclusão de Transportores Associados aos Clientes</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:ManterTransportadorRequest"/>
+				<xs:element ref="rdc:ManterTransportadorResponse"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ManterTransportadorRequest">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Requisição para Cadastrar Transportador</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:IdentificacaoIntegracao"/>
+				<xs:element ref="rdc:Operacao"/>
+				<xs:element ref="rdc:IdClienteResponsavel" minOccurs="0"/>
+				<xs:element name="ListaTransportador">
+					<xs:annotation>
+						<xs:documentation>Lista de transportadores do contratante</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DadosTransportador" type="rdc:DadosTransportadorType" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Dados Cadastrais do Transportador</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ValidaTransportadorANTT" type="xs:boolean">
+								<xs:annotation>
+									<xs:documentation>Indicador de Validação do RNTRC do Transportador na ANTT</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ValidaFrotaANTT" type="xs:boolean">
+								<xs:annotation>
+									<xs:documentation>Indicador de Validação da Frota do Transportador na ANTT</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ManterTransportadorResponse">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Retorno para Cadastrar Transportador   </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:RetornoMensagem"/>
+				<xs:element name="TranportadorRetorno" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Lista de Transportadores Cadastrados</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="RNTRCTransportador" type="rdc:RNTRCType">
+								<xs:annotation>
+									<xs:documentation>RNTRC do Transportador</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element ref="rdc:CNPJCPF">
+								<xs:annotation>
+									<xs:documentation>CNPJ/CPF do transportador.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="SitucaoTransportadorANTT" type="xs:boolean" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Indicador de Situação RNTRC na ANTT</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element ref="rdc:StatusRetorno"/>
+							<xs:element ref="rdc:Excecao" minOccurs="0"/>
+							<xs:element ref="rdc:Veiculos" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="rdc:Motoristas" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="Cartao" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="rdc:NumeroCartao"/>
+										<xs:element ref="rdc:StatusRetorno"/>
+										<xs:element ref="rdc:Excecao" minOccurs="0"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

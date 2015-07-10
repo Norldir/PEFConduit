@@ -1,0 +1,843 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" />
+  <xs:element name="CadastrarCentroDeCusto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="centroDeCusto" nillable="true" type="q1:BaseCentroDeCustoRequestResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarCentroDeCustoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="CadastrarCentroDeCustoResult" nillable="true" type="q2:BaseResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterCentroDeCustoPorId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idCentroDeCusto" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterCentroDeCustoPorIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="ObterCentroDeCustoPorIdResult" nillable="true" type="q3:ObterCentroDeCustoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterCentroDeCusto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterCentroDeCustoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="ObterCentroDeCustoResult" nillable="true" type="q4:ObterCentroDeCustoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarCentroDeCusto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="centroDeCusto" nillable="true" type="q5:BaseCentroDeCustoRequestResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarCentroDeCustoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="AtualizarCentroDeCustoResult" nillable="true" type="q6:BaseResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarCentrosDeCustosAtivos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarCentrosDeCustosAtivosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="BuscarCentrosDeCustosAtivosResult" nillable="true" type="q7:BuscaCentrosDeCustosResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarParticipante">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="participante" nillable="true" type="q8:BaseParticipanteRequestResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarParticipanteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="CadastrarParticipanteResult" nillable="true" type="q9:BaseResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterParticipantePorId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idParticipante" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterParticipantePorIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="ObterParticipantePorIdResult" nillable="true" type="q10:ObterParticipanteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterParticipante">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CPFCNPJ" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TipoParticipante" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterParticipanteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="ObterParticipanteResult" nillable="true" type="q11:ObterParticipanteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarParticipante">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="participante" nillable="true" type="q12:BaseParticipanteRequestResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarParticipanteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="AtualizarParticipanteResult" nillable="true" type="q13:BaseResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarParticipantesAtivos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarParticipantesAtivosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="BuscarParticipantesAtivosResult" nillable="true" type="q14:BuscaParticipantesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarAutonomo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="cadastroAutonomoRequest" nillable="true" type="q15:CadastroAutonomoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarAutonomoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="CadastrarAutonomoResult" nillable="true" type="q16:CadastroAutonomoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarEquiparado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="cadastroEquiparadoRequest" nillable="true" type="q17:CadastroEquiparadoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarEquiparadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="CadastrarEquiparadoResult" nillable="true" type="q18:CadastroEquiparadoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarSituacaoTransportadorAntt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CPFCNPJ" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarSituacaoTransportadorAnttResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="ConsultarSituacaoTransportadorAnttResult" nillable="true" type="q19:SituacaoCadastroTransportadorAnttResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarOperacao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="operacaoRequest" nillable="true" type="q20:AtualizarOperacaoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarOperacaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="AtualizarOperacaoResult" nillable="true" type="q21:AtualizarOperacaoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AnularOperacao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="anulacaoRequest" nillable="true" type="q22:AnulacaoOperacaoTransporteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AnularOperacaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="AnularOperacaoResult" nillable="true" type="q23:AnulacaoOperacaoTransporteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarOperacaoDescritiva">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="operacaoRequest" nillable="true" type="q24:OperacaoTransporteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarOperacaoDescritivaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="CadastrarOperacaoDescritivaResult" nillable="true" type="q25:CadastroOperacaoTransporteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarOperacao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idOperacao" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarOperacaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="RegistrarOperacaoResult" nillable="true" type="q26:RegistroOperacaoTransporteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelarOperacao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idOperacao" type="xs:int" />
+        <xs:element minOccurs="0" name="motivoCancelamento" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelarOperacaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="CancelarOperacaoResult" nillable="true" type="q27:CancelamentoOperacaoTransporteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetificarOperacao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="retificacaoRequest" nillable="true" type="q28:RetificacaoOperacaoTransporteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetificarOperacaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="RetificarOperacaoResult" nillable="true" type="q29:RetificacaoOperacaoTransporteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetificarPlacasOperacao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="retificacaoPlacasRequest" nillable="true" type="q30:RetificacaoPlacasOperacaoTransporteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetificarPlacasOperacaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="RetificarPlacasOperacaoResult" nillable="true" type="q31:RetificacaoOperacaoTransporteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EncerrarOperacao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="encerramentoRequest" nillable="true" type="q32:EncerramentoOperacaoTransporteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EncerrarOperacaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="EncerrarOperacaoResult" nillable="true" type="q33:EncerramentoOperacaoTransporteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FinalizarOperacao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idOperacao" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FinalizarOperacaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="FinalizarOperacaoResult" nillable="true" type="q34:FinalizacaoOperacaoTransporteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterContratado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CPF" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterContratadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObterContratadoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterMunicipio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nomeMunicipio" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UF" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterMunicipioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObterMunicipioResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterMunicipioPorCodigoIBGE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codigoIBGE" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterMunicipioPorCodigoIBGEResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObterMunicipioPorCodigoIBGEResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterNaturezaCarga">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NCM" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterNaturezaCargaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObterNaturezaCargaResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarOperacaoTranporteParcelasPorPeriodo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dataInicio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dataFim" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="statusParcela" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarOperacaoTranporteParcelasPorPeriodoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="BuscarOperacaoTranporteParcelasPorPeriodoResult" nillable="true" type="q35:BuscaOperacaoTransporteParcelasResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarOperacaoTranporteParcelas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idOperacaoTransporte" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarOperacaoTranporteParcelasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="BuscarOperacaoTranporteParcelasResult" nillable="true" type="q36:BuscaOperacaoTransporteParcelasResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterOperacaoPorId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idOperacaoTransporte" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterOperacaoPorIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="ObterOperacaoPorIdResult" nillable="true" type="q37:ObterOperacaoTransporteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterOperacaoPorCIOT">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CIOT" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterOperacaoPorCIOTResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="ObterOperacaoPorCIOTResult" nillable="true" type="q38:ObterOperacaoTransporteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConferirDocumentacaoOperacaoTransporteTriagem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CIOT" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConferirDocumentacaoOperacaoTransporteTriagemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="ConferirDocumentacaoOperacaoTransporteTriagemResult" nillable="true" type="q39:ConferirDocumentacaoTriagemResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssociarCartaoAutonomo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cpfAutonomo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numeroCartao" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssociarCartaoAutonomoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="AssociarCartaoAutonomoResult" nillable="true" type="q40:BaseResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssociarCartaoEquiparado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="dadosAssociacao" nillable="true" type="q41:AssociacaoCartaoTransportadorRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssociarCartaoEquiparadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="AssociarCartaoEquiparadoResult" nillable="true" type="q42:BaseResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssociarCartaoNaoEquiparado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="dadosAssociacao" nillable="true" type="q43:AssociacaoCartaoTransportadorRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssociarCartaoNaoEquiparadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="AssociarCartaoNaoEquiparadoResult" nillable="true" type="q44:BaseResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssociarCartaoMotorista">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cpfCnpjTransportador" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cpfMotorista" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numeroCartao" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssociarCartaoMotoristaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="AssociarCartaoMotoristaResult" nillable="true" type="q45:BaseResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DesbloquearCartao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroCartao" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DesbloquearCartaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="DesbloquearCartaoResult" nillable="true" type="q46:BaseResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessarCargaFreteAvulsa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="dadosParaCarga" nillable="true" type="q47:ProcessarCargaFreteAvulsaRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessarCargaFreteAvulsaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="ProcessarCargaFreteAvulsaResult" nillable="true" type="q48:ProcessarCargaFreteAvulsaResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubstituirCartaoDoPortador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="dadosParaSubstituicao" nillable="true" type="q49:SubstituirCartaoDoPortadorRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubstituirCartaoDoPortadorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="SubstituirCartaoDoPortadorResult" nillable="true" type="q50:BaseResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssociarCartaoEmpresa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cnpjEtc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numeroCartao" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssociarCartaoEmpresaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="AssociarCartaoEmpresaResult" nillable="true" type="q51:BaseResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarParametrosComerciais">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarParametrosComerciaisResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="BuscarParametrosComerciaisResult" nillable="true" type="q52:BuscarParametrosComerciaisResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarSaldoContaPrePagaVectio">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarSaldoContaPrePagaVectioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConsultarSaldoContaPrePagaVectioResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarExtratoContaPrePagaVectio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dataInicioBusca" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dataFimBusca" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarExtratoContaPrePagaVectioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="ConsultarExtratoContaPrePagaVectioResult" nillable="true" type="q53:ExtratoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarCobrancasGestora">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="origemCobranca" type="xs:int" />
+        <xs:element minOccurs="0" name="tipoCobranca" type="xs:int" />
+        <xs:element minOccurs="0" name="dataHoraEmissao" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarCobrancasGestoraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="BuscarCobrancasGestoraResult" nillable="true" type="q54:BuscarCobrancaGestoraResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EmitirReciboValePedagioVectio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idOperacaoTransporte" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EmitirReciboValePedagioVectioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="EmitirReciboValePedagioVectioResult" nillable="true" type="q55:EmitirReciboValePedagioVectioResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EmitirReciboValePedagioViaFacil">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idOperacaoTransporte" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EmitirReciboValePedagioViaFacilResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="EmitirReciboValePedagioViaFacilResult" nillable="true" type="q56:EmitirReciboValePedagioViaFacilResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EmitirDeclaracaoOperacaoTransporte">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idOperacaoTransporte" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EmitirDeclaracaoOperacaoTransporteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="EmitirDeclaracaoOperacaoTransporteResult" nillable="true" type="q57:EmitirDeclaracaoOperacaoTransporteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EmitirContratoOperacaoTransporte">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idOperacaoTransporte" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EmitirContratoOperacaoTransporteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="EmitirContratoOperacaoTransporteResult" nillable="true" type="q58:EmitirContratoOperacaoTransporteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarTriagemDocumentoObjeto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="triagemDocumentoObjeto" nillable="true" type="q59:BaseTriagemDocumentoObjetoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarTriagemDocumentoObjetoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="CadastrarTriagemDocumentoObjetoResult" nillable="true" type="q60:BaseResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterTriagemDocumentoObjeto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTriagemDocumentoObjeto" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterTriagemDocumentoObjetoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="ObterTriagemDocumentoObjetoResult" nillable="true" type="q61:ObterTriagemDocumentoObjetoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarTriagemDocumentoObjeto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="triagemDocumentoObjeto" nillable="true" type="q62:BaseTriagemDocumentoObjetoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarTriagemDocumentoObjetoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="AtualizarTriagemDocumentoObjetoResult" nillable="true" type="q63:BaseResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarTriagemDocumentoObjetoAtivos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarTriagemDocumentoObjetoAtivosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="BuscarTriagemDocumentoObjetoAtivosResult" nillable="true" type="q64:BuscarTriagemDocumentoObjetoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarMotorista">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="cadastroMotoristaRequest" nillable="true" type="q65:CadastroMotoristaRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarMotoristaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="CadastrarMotoristaResult" nillable="true" type="q66:CadastroMotoristaResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterMotorista">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idMotorista" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterMotoristaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="ObterMotoristaResult" nillable="true" type="q67:ObterMotoristaResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarMotorista">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="motorista" nillable="true" type="q68:BaseMotoristaRequestResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarMotoristaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="AtualizarMotoristaResult" nillable="true" type="q69:BaseResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarMotoristasAtivos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarMotoristasAtivosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="BuscarMotoristasAtivosResult" nillable="true" type="q70:BuscarMotoristaResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterMotoristaPorCPF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cpf" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterMotoristaPorCPFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="ObterMotoristaPorCPFResult" nillable="true" type="q71:ObterMotoristaResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterMotoristaPorCPFTerceiros">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cpfCnpjContratado" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cpf" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterMotoristaPorCPFTerceirosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="ObterMotoristaPorCPFTerceirosResult" nillable="true" type="q72:ObterMotoristaResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ComprarValePedagioAvulso">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="dadosParaCarga" nillable="true" type="q73:ComprarValePedagioAvulsoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ComprarValePedagioAvulsoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="ComprarValePedagioAvulsoResult" nillable="true" type="q74:ComprarValePedagioAvulsoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterLogRequisicoes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterLogRequisicoesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="ObterLogRequisicoesResult" nillable="true" type="q75:ObterLogRequisicoesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterCustoRota">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="dadosParaOtencaoDeCusto" nillable="true" type="q76:ObterCustoRotaRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterCustoRotaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External" minOccurs="0" name="ObterCustoRotaResult" nillable="true" type="q77:ObterCustoRotaResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

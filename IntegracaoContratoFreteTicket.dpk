@@ -1,0 +1,66 @@
+package IntegracaoContratoFreteTicket;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  janXML,
+  xmlrtl,
+  inet,
+  dbrtl,
+  soaprtl;
+
+contains
+  utck_AberturaContrato_v1_00 in 'Ticket\utck_AberturaContrato_v1_00.pas',
+  utck_CancelaContrato_v1_00 in 'Ticket\utck_CancelaContrato_v1_00.pas',
+  utck_soap_v1_00 in 'Ticket\utck_soap_v1_00.pas',
+  utck_ConsultaProtocolo_v2_10 in 'Ticket\utck_ConsultaProtocolo_v2_10.pas',
+  utck_Autenticar_v1_00 in 'Ticket\utck_Autenticar_v1_00.pas',
+  utck_AberturaContrato_result_v1_10 in 'Ticket\utck_AberturaContrato_result_v1_10.pas',
+  utck_AberturaContrato_v2_10 in 'Ticket\utck_AberturaContrato_v2_10.pas',
+  utck_SchemaViagem_1_1 in 'Ticket\utck_SchemaViagem_1_1.pas',
+  utck_SchemaComum_1_1 in 'Ticket\utck_SchemaComum_1_1.pas',
+  utck_SchemaComum_1_2 in 'Ticket\utck_SchemaComum_1_2.pas',
+  utck_SchemaRetorno_1_2 in 'Ticket\utck_SchemaRetorno_1_2.pas',
+  utck_SchemaRotasSemParar_1_0 in 'Ticket\utck_SchemaRotasSemParar_1_0.pas',
+  utck_Criar_v2_00 in 'Ticket\utck_Criar_v2_00.pas',
+  utck_SchemaComum_1_0 in 'Ticket\utck_SchemaComum_1_0.pas',
+  utck_SchemaFrete_2_0 in 'Ticket\utck_SchemaFrete_2_0.pas',
+  utck_SchemaViagem_1_0 in 'Ticket\utck_SchemaViagem_1_0.pas',
+  utck_Criar_v2_10 in 'Ticket\utck_Criar_v2_10.pas',
+  utck_ConsultaProtocolo_v1_10 in 'Ticket\utck_ConsultaProtocolo_v1_10.pas',
+  utck_SchemaRetorno_1_1 in 'ticket\utck_SchemaRetorno_1_1.pas',
+  utck_AberturaContrato_result_v1_00 in 'Ticket\utck_AberturaContrato_result_v1_00.pas',
+  utck_SchemaAutonomo_1_0 in 'Ticket\utck_SchemaAutonomo_1_0.pas',
+  utck_CriarAutonomo_v1_00 in 'Ticket\utck_CriarAutonomo_v1_00.pas',
+  utck_CriarAutonomo_result_v1_00 in 'Ticket\utck_CriarAutonomo_result_v1_00.pas',
+  utck_ConsultaProtocolo_v1_00 in 'Ticket\utck_ConsultaProtocolo_v1_00.pas',
+  utck_SchemaCancelamento_1_0 in 'Ticket\utck_SchemaCancelamento_1_0.pas',
+  utck_Cancelar_v1_00 in 'Ticket\utck_Cancelar_v1_00.pas',
+  utck_Cancelar_result_v1_00 in 'Ticket\utck_Cancelar_result_v1_00.pas',
+  utck_AberturaContrato_result_v2_10 in 'Ticket\utck_AberturaContrato_result_v2_10.pas',
+  utck_CriarAutonomo_result_v2_10 in 'Ticket\utck_CriarAutonomo_result_v2_10.pas';
+
+end.

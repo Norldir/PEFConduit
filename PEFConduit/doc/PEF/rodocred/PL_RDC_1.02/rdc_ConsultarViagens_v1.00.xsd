@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<xs:schema xmlns:rdc="https://ws.rodocred.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ws.rodocred.com.br/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="rdc_TiposPadrao_v1.00.xsd"/>
+	<xs:element name="ConsultarViagens">
+		<xs:annotation>
+			<xs:documentation>Mensagem Disponibilizada para Consulta das Viagens Cadastradas</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:ConsultarViagensRequest"/>
+				<xs:element ref="rdc:ConsultarViagensResponse"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarViagensRequest">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Requisição da Consulta das Viagens</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:IdentificacaoIntegracao"/>
+				<xs:element ref="rdc:IdClienteResponsavel" minOccurs="0"/>
+				<xs:element ref="rdc:PeriodoEmbarque">
+					<xs:annotation>
+						<xs:documentation>Período em que foi realizado o embarque da mercadoria.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:PeriodoEntrega" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Período em que foi realizada a entrega da mercadoria.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:RNTRC" minOccurs="0"/>
+				<xs:element ref="rdc:NumeroViagem" minOccurs="0"/>
+				<xs:element ref="rdc:CPFMotorista" minOccurs="0"/>
+				<xs:element ref="rdc:PlacaVeiculo" minOccurs="0"/>
+				<xs:element ref="rdc:OrigemRota" minOccurs="0"/>
+				<xs:element ref="rdc:DestinoRota" minOccurs="0"/>
+				<xs:element name="SituacaoViagem" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Situação da viagem que se deseja pesquisar.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="EmAberto" type="xs:boolean" default="true" minOccurs="0"/>
+							<xs:element name="Agendada" type="xs:boolean" default="true" minOccurs="0"/>
+							<xs:element name="Programada" type="xs:boolean" default="true" minOccurs="0"/>
+							<xs:element name="EmAndamento" type="xs:boolean" default="true" minOccurs="0"/>
+							<xs:element name="Cancelada" type="xs:boolean" default="true" minOccurs="0"/>
+							<xs:element name="Encerrada" type="xs:boolean" default="true" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="rdc:DocumentoRef" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarViagensResponse">
+		<xs:annotation>
+			<xs:documentation>Período de Data de Embarque da Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:RetornoMensagem"/>
+				<xs:element ref="rdc:ListaViagens"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PeriodoEntrega">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Retorno da Consulta de Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DataInicialEntrega" type="xs:dateTime"/>
+				<xs:element name="DataFinalEntrega" type="xs:dateTime"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PeriodoEmbarque">
+		<xs:annotation>
+			<xs:documentation>Período de Datas de Entrega da Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DataInicialEmbarque" type="xs:dateTime"/>
+				<xs:element name="DataFinalEmbarque " type="xs:dateTime"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ListaViagens">
+		<xs:annotation>
+			<xs:documentation>Lista de Viagens  </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Viagem" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Dados  da Viagem</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="rdc:TipoViagem"/>
+							<xs:element ref="rdc:NumeroViagem"/>
+							<xs:element ref="rdc:CIOT" minOccurs="0"/>
+							<xs:element ref="rdc:PlacaVeiculo"/>
+							<xs:element name="ListaNomeMotoristas" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Lista de Nomes de Motoristas</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="1"/>
+										<xs:maxLength value="60"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element ref="rdc:Transportador" minOccurs="0"/>
+							<xs:element ref="rdc:OrigemRota"/>
+							<xs:element ref="rdc:DestinoRota"/>
+							<xs:element name="DataSituacaoViagem" type="xs:dateTime">
+								<xs:annotation>
+									<xs:documentation>Data da Situação da Viagem</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element ref="rdc:SituacaoViagem"/>
+							<xs:element ref="rdc:PesoCarga"/>
+							<xs:element ref="rdc:ValorFrete"/>
+							<xs:element ref="rdc:ValorDespesas"/>
+							<xs:element ref="rdc:ValorCombustivel"/>
+							<xs:element ref="rdc:ValorPedagio"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EventosViagem">
+		<xs:annotation>
+			<xs:documentation>Armazena a composição das operações para uma detreminada viagem.
+Ex.:  (Registro,Entrega de Documento,Abastecimento por Litro,Abastecimento por Valor,questionário,Adiantamento, Saldo e Parada de Descanso.)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="IDEvento" type="xs:int">
+					<xs:annotation>
+						<xs:documentation>Código identificador do item do evento viagem.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="CombustivelEvento" type="xs:int" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Código identificador do  combustível utilizado do evento de abastecimento.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:choice>
+					<xs:element name="ValorEvento" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>Valor programado em reais para o evento da operação.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="QuantidadeEvento">
+						<xs:annotation>
+							<xs:documentation>Quantidade de litros para o evento da operação. </xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:double"/>
+						</xs:simpleType>
+					</xs:element>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

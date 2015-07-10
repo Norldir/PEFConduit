@@ -1,0 +1,69 @@
+﻿<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Header>
+    <Identification>teste.tms</Identification>
+    <Token>wXtCueTSjCcPOs=</Token>
+    <To soap:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none">https://vmdevweb01/targetservices/target/tms/TMSService.svc/soap</To>
+    <Action soap:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none">http://tempuri.org/IOperacaoTransporteExternal/CadastrarOperacaoDescritiva</Action>
+  </soap:Header>
+  <soap:Body>
+    <CadastrarOperacaoDescritiva xmlns="http://tempuri.org/">
+      <operacaoRequest>
+        <NCM xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">2800</NCM>
+        <ProprietarioCarga xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">R</ProprietarioCarga>
+        <PesoCarga xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">25000.00000000</PesoCarga>
+        <TipoOperacao xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">3</TipoOperacao>
+        <MunicipioOrigemCodigoIBGE xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">3106200</MunicipioOrigemCodigoIBGE>
+        <MunicipioDestinoCodigoIBGE xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">3550308</MunicipioDestinoCodigoIBGE>
+        <DataHoraInicio xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">2014-09-15T15:26:00</DataHoraInicio>
+        <DataHoraTermino xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">2014-09-15T23:06:00</DataHoraTermino>
+        <DataHoraInicioCadastro xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">2014-09-15T15:28:00</DataHoraInicioCadastro>
+        <DataHoraFimCadastro xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">2014-09-24T12:01:36</DataHoraFimCadastro>
+        <CPFCNPJContratado xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">01165696894</CPFCNPJContratado>
+        <ValorFrete xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">0.00000000</ValorFrete>
+        <ValorCombustivel xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">0.00000000</ValorCombustivel>
+        <ValorPedagio xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">102.00000000</ValorPedagio>
+        <ValorDespesas xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">0.00000000</ValorDespesas>
+        <ValorImpostoSestSenat xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">0.00000000</ValorImpostoSestSenat>
+        <ValorImpostoIRRF xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">0.00000000</ValorImpostoIRRF>
+        <ValorImpostoINSS xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">0.00000000</ValorImpostoINSS>
+        <ValorImpostoIcmsIssqn xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">0.00000000</ValorImpostoIcmsIssqn>
+        <ParcelaUnica xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">true</ParcelaUnica>
+        <ModoCompraValePedagio xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">4</ModoCompraValePedagio>
+        <CategoriaVeiculo xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">9</CategoriaVeiculo>
+        <NomeMotorista xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">ORIDES JOSE CANO</NomeMotorista>
+        <CPFMotorista xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">1165696894</CPFMotorista>
+        <RNTRCMotorista xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">01017132</RNTRCMotorista>
+        <Quitacao xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">false</Quitacao>
+        <Triada xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">false</Triada>
+        <ItemFinanceiro xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">01-000005</ItemFinanceiro>
+        <Parcelas xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">
+          <OperacaoTransporteParcelaRequest>
+            <DescricaoParcela>PARCELA UNICA</DescricaoParcela>
+            <Valor>0.00000000</Valor>
+            <NumeroParcela>1</NumeroParcela>
+            <DataVencimento>2014-10-26T12:01:36</DataVencimento>
+            <TipoDaParcela>3</TipoDaParcela>
+            <FormaPagamento>2</FormaPagamento>
+            <CartaoPagamento></CartaoPagamento>
+            <CodigoBanco>104</CodigoBanco>
+            <AgenciaDeposito>2979</AgenciaDeposito>
+            <ContaDeposito>3758</ContaDeposito>
+            <DigitoContaDeposito>3</DigitoContaDeposito>
+          </OperacaoTransporteParcelaRequest>
+        </Parcelas>
+        <Veiculos xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">
+          <OperacaoTransporteVeiculoRequest>
+            <Placa>BWE8555</Placa>
+            <RNTRC>01017132</RNTRC>
+          </OperacaoTransporteVeiculoRequest>
+        </Veiculos>
+        <Participantes xmlns="http://schemas.datacontract.org/2004/07/TARGET.VectioFrete.Application.WCF.Contracts.External">
+          <OperacaoTransporteParticipanteRequest>
+            <CPFCNPJParticipante>00000000000000</CPFCNPJParticipante>
+            <TipoParticipante>2</TipoParticipante>
+          </OperacaoTransporteParticipanteRequest>
+        </Participantes>
+      </operacaoRequest>
+    </CadastrarOperacaoDescritiva>
+  </soap:Body>
+</soap:Envelope>

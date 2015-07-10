@@ -1,0 +1,5 @@
+webserver: http://lote.homologacaoticketfrete.com.br/Servicos/Lote.asmx
+usuario: 19442
+senha: 1
+base: 35174
+cliente: 21883

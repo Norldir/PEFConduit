@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<xs:schema xmlns:rdc="https://ws.rodocred.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ws.rodocred.com.br/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="rdc_TiposPadrao_v1.00.xsd"/>
+	<xs:element name="AutenticarCliente">
+		<xs:annotation>
+			<xs:documentation>Mensagens para Autenticação do Cliente</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:AutenticarClienteRequest">
+					<xs:annotation>
+						<xs:documentation> Mensagem de Requisição para Autenticar Cliente</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:AutenticarClienteResponse">
+					<xs:annotation>
+						<xs:documentation> Mensagem de Requisição para Autenticar Cliente</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AutenticarClienteRequest">
+		<xs:annotation>
+			<xs:documentation> Mensagem de Requisição para Cancelar Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:IdClienteRodocred"/>
+				<xs:element ref="rdc:LoginIntegracao"/>
+				<xs:element name="ChaveAutenticacao" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Senha de Autenticação </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AutenticarClienteResponse">
+		<xs:annotation>
+			<xs:documentation> Mensagem de Retorno para Cancelar Transportador</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:RetornoMensagem"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LoginIntegracao" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Login do Usuário de Integração</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

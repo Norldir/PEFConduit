@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<xs:schema xmlns:rdc="https://ws.rodocred.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ws.rodocred.com.br/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="rdc_TiposPadrao_v1.02.xsd"/>
+	<xs:element name="ConsultarExtratoConsolidado">
+		<xs:annotation>
+			<xs:documentation>Mensagem que Permite Consultar o Extrato Consolidado da conta do cliente.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:ConsultarExtratoConsolidadoRequest"/>
+				<xs:element ref="rdc:ConsultarExtratoConsolidadoResponse"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarExtratoConsolidadoRequest">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Requisição que Permite Consultar o Extrato Consolidado.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:IdentificacaoIntegracao"/>
+				<xs:element ref="rdc:IdClienteResponsavel" minOccurs="0"/>
+				<xs:element ref="rdc:PeriodoExtrato"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarExtratoConsolidadoResponse">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Retorno com Extrato Consolidado do Cliente</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:RetornoMensagem"/>
+				<xs:element name="SaldoAtual">
+					<xs:annotation>
+						<xs:documentation>Saldo na conta do Cliente no momento da consulta.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:totalDigits value="12"/>
+							<xs:fractionDigits value="2"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element ref="rdc:Comprometimento" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="ListaExtrato">
+					<xs:annotation>
+						<xs:documentation>Lista contendo os lançamento no Extrato Rodocred.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="rdc:Extrato" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="rdc:DataSituacaoExtrato"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

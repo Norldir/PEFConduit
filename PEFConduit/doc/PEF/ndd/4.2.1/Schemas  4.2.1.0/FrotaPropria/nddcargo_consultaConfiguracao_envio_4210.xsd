@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 U (http://www.altova.com) by leonardo.xafranski (EMBRACE) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.nddigital.com.br/nddcargo" targetNamespace="http://www.nddigital.com.br/nddcargo" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="nddcargo_layout_4210.xsd"/>
+	<xs:element name="consultaConfiguracao_envio">
+		<xs:annotation>
+			<xs:documentation>Envio de uma consulta de configuracao para o agente.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tpConfiguracao"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

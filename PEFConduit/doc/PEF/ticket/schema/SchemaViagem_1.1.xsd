@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SchemaViagem" targetNamespace="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaViagem_1.1.xsd" elementFormDefault="qualified" xmlns="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaViagem_1.1.xsd" xmlns:mstns="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaViagem_1.1.xsd" xmlns:c="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaComum_1.2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="SchemaComum_1.2.xsd" namespace="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaComum_1.2.xsd" ></xs:import>
+  <xs:complexType name="Viagem">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoCidadeOrigem" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoCidadeDestino" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Mercadoria" type="Mercadoria" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Veiculos">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="5" name="Veiculo" nillable="false" type="c:Veiculo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="Valores" type="Valores" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Pagamento" type="Pagamento" />
+    </xs:sequence>
+    <xs:attribute name="referencia" use="optional" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType name="Mercadoria">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CodigoSubNatureza">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{2}\.[0-9]{2}"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="Peso">
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="7" fixed="false"/>
+            <xs:fractionDigits value="2"/>
+            <xs:pattern value="^\d{1,5}(\.\d{1,2})?$"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Valores">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Pedagio" type="c:DecimalValido" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Frete" type="c:DecimalValido" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Combustivel" type="c:DecimalValido" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Despesas" type="c:DecimalValido" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ValoresImpostos" type="ValoresImpostos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ValoresImpostos">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IR" type="c:DecimalValido" />
+      <xs:element minOccurs="1" maxOccurs="1" name="INSS" type="c:DecimalValido" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ICMS" type="c:DecimalValido" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ISSQN" type="c:DecimalValido" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SESTSENAT" type="c:DecimalValido" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Pagamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Parcelas">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="10" name="Parcela">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="1" maxOccurs="1" name="FormaDePagamento">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="TransferenciaBancaria" />
+                        <xs:enumeration value="Cartao" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element minOccurs="1" maxOccurs="1" name="Vencimento" type="xs:dateTime" />
+                  <xs:element minOccurs="1" maxOccurs="1" name="ValorParcela" type="c:DecimalValido" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<xs:schema xmlns:rdc="https://ws.rodocred.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ws.rodocred.com.br/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="rdc_TiposPadrao_v1.00.xsd"/>
+	<xs:element name="CancelarViagem">
+		<xs:annotation>
+			<xs:documentation>Mensagem que permite Cancelar uma Deteminada Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:CancelarViagemRequest"/>
+				<xs:element ref="rdc:CancelarViagemResponse"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CancelarViagemRequest">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Requisição que permite Cancelar uma Deteminada Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:IdentificacaoIntegracao"/>
+				<xs:element ref="rdc:IdClienteResponsavel" minOccurs="0"/>
+				<xs:element ref="rdc:NumeroViagem">
+					<xs:annotation>
+						<xs:documentation>Número da Viagem
+Formato: x.xxxx.x
+Este campo será obrigatório para Operações de Alteração e Cancelamento </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:MotivoCancelamento" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CancelarViagemResponse">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Retorno do Cancelamento de uma Deteminada Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:RetornoMensagem"/>
+				<xs:element ref="rdc:NumeroViagem"/>
+				<xs:element ref="rdc:SituacaoViagem" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

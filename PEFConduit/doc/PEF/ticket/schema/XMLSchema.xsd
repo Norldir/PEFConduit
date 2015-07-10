@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema"
+xmlns:s3="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/Sch
+emaRetorno_1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+xmlns:tns="http://www.ticketfrete.com.br/servicos/"
+xmlns:s1="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/Sch
+emaFrete_1.1.xsd"
+xmlns:s2="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/Sch
+emaCancelamento_1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
+xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+targetNamespace="http://www.ticketfrete.com.br/servicos/"
+xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+	<wsdl:types>
+		<s:schema elementFormDefault="qualified" targetNamespace="http://www.ticketfrete.com.br/servicos/">
+			<s:import namespace="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaFrete_1.1.xsd"/>
+			<s:import namespace="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaCancelamento_1.0.xsd"/>
+			<s:import namespace="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/schemas/SchemaRetorno_1.0.xsd"/>
+			<s:element name="Autenticar">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="usuario"
+type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1" name="senha"
+type="s:string"/>
+						<s:element minOccurs="1" maxOccurs="1" name="codigoBase"
+type="s:unsignedInt"/>
+						<s:element minOccurs="1" maxOccurs="1" name="codigoCliente"
+type="s:unsignedInt"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="AutenticarResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="AutenticarResult"
+type="tns:RetornoAutenticacao"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="RetornoAutenticacao">
+				<s:sequence>
+					<s:element minOccurs="1" maxOccurs="1" name="Sucesso"
+type="s:boolean"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Token"
+type="s:string"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Mensagem"
+type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="Criar">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="token"
+type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1" ref="s1:lote"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="CriarResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="CriarResult" type="tns:RetornoLote"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="RetornoLote">
+				<s:sequence>
+					<s:element minOccurs="1" maxOccurs="1" name="Sucesso"
+type="s:boolean"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Protocolo"
+type="s:string"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Erros"
+type="tns:ArrayOfString"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ArrayOfString">
+				<s:sequence>
+					<s:element minOccurs="0" maxOccurs="unbounded" name="string"
+nillable="true" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="Cancelar">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="token"
+type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1" ref="s2:lote"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="CancelarResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="CancelarResult"
+type="tns:RetornoLote"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="Consultar">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="token"
+type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1" name="protocolo"
+type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ConsultarResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" ref="s3:ConsultarResult"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+		</s:schema>
+		<s:schema elementFormDefault="qualified"
+targetNamespace="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/sche
+mas/SchemaFrete_1.1.xsd">
+			<s:element name="lote">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="unbounded" name="Frete"
+type="s1:Frete"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="Frete">
+				<s:sequence>
+					<s:element minOccurs="0" maxOccurs="1" name="Descricao"
+type="s:string"/>
+					<s:element minOccurs="1" maxOccurs="1" name="CodigoCidadeOrigem"
+type="s:int"/>
+					<s:element minOccurs="1" maxOccurs="1" name="CodigoCidadeDestino"
+type="s:int"/>
+					<s:element minOccurs="1" maxOccurs="1" name="DataInicio"
+type="s:dateTime"/>
+					<s:element minOccurs="1" maxOccurs="1" name="DataTermino"
+type="s:dateTime"/>
+					<s:element minOccurs="0" maxOccurs="1" name="DadosComplementares"
+type="s:string"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Mercadoria"
+type="s1:Mercadoria"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Autonomo"
+type="s1:Autonomo"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Veiculos"
+type="s1:ArrayOfVeiculo"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Valores"
+type="s1:Valores"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Pagamento"
+type="s1:Pagamento"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Contratante"
+type="s1:Contratante"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Destinatario"
+type="s1:Destinatario"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Consignatario"
+type="s1:Consignatario"/>
+					<s:element minOccurs="0" maxOccurs="1" name="RegrasQuitacao"
+type="s:string" />
+				</s:sequence>
+				<s:attribute name="referencia" type="s:string"/>
+			</s:complexType>
+			<s:complexType name="Mercadoria">
+				<s:sequence>
+					<s:element minOccurs="0" maxOccurs="1" name="CodigoSubNatureza"
+type="s:string"/>
+					<s:element minOccurs="1" maxOccurs="1" name="Peso"
+type="s:decimal"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Autonomo">
+				<s:sequence>
+					<s:element minOccurs="0" maxOccurs="1" name="Documento"
+type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ArrayOfVeiculo">
+				<s:sequence>
+					<s:element minOccurs="0" maxOccurs="unbounded" name="Veiculo"
+type="s1:Veiculo"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Veiculo">
+				<s:sequence>
+					<s:element minOccurs="0" maxOccurs="1" name="Placa"
+type="s:string"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Rntrc"
+type="s:string"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Documento"
+type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Valores">
+				<s:sequence>
+					<s:element minOccurs="0" maxOccurs="1" name="TipoValePedagio"
+type="s1:ValoresTipoValePedagio"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Pedagio"
+type="s:decimal"/>
+					<s:element minOccurs="1" maxOccurs="1" name="Frete"
+type="s:decimal"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Combustivel"
+type="s:decimal"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Despesas"
+type="s:decimal"/>
+					<s:element minOccurs="1" maxOccurs="1" name="Impostos"
+type="s:decimal"/>
+				</s:sequence>
+			</s:complexType>
+			<s:simpleType name="ValoresTipoValePedagio">
+				<s:restriction base="s:string">
+					<s:enumeration value="Cartao"/>
+					<s:enumeration value="Vale"/>
+					<s:enumeration value="TAG"/>
+				</s:restriction>
+			</s:simpleType>
+			<s:complexType name="Pagamento">
+				<s:sequence>
+					<s:element minOccurs="1" maxOccurs="1" name="FormaDePagamento"
+type="s1:PagamentoFormaDePagamento"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Parcelas"
+type="s1:ArrayOfPagamentoParcela"/>
+				</s:sequence>
+			</s:complexType>
+			<s:simpleType name="PagamentoFormaDePagamento">
+				<s:restriction base="s:string">
+					<s:enumeration value="TransferenciaBancaria"/>
+					<s:enumeration value="CartaoAVista"/>
+					<s:enumeration value="CartaoParcelado"/>
+				</s:restriction>
+			</s:simpleType>
+			<s:complexType name="ArrayOfPagamentoParcela">
+				<s:sequence>
+					<s:element minOccurs="0" maxOccurs="unbounded" name="Parcela"
+type="s1:PagamentoParcela"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="PagamentoParcela">
+				<s:sequence>
+					<s:element minOccurs="0" maxOccurs="1" name="Vencimento"
+type="s:string"/>
+					<s:element minOccurs="0" maxOccurs="1" name="ValorParcela"
+type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Contratante">
+				<s:sequence>
+					<s:element minOccurs="1" maxOccurs="1" name="TipoPessoa"
+type="s1:TipoPessoa"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Documento"
+type="s:string"/>
+					<s:element minOccurs="0" maxOccurs="1" name="NomeRazaoSocial"
+type="s:string"/>
+					<s:element minOccurs="0" maxOccurs="1" name="SobrenomeNomeFantasia"
+type="s:string"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Endereco"
+type="s1:Endereco"/>
+					<s:element minOccurs="1" maxOccurs="1" name="Subcontratante"
+type="s:boolean"/>
+					<s:element minOccurs="0" maxOccurs="1" name="CiotPrincipal"
+type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:simpleType name="TipoPessoa">
+				<s:restriction base="s:string">
+					<s:enumeration value="Juridica"/>
+					<s:enumeration value="Fisica"/>
+				</s:restriction>
+			</s:simpleType>
+			<s:complexType name="Endereco">
+				<s:sequence>
+					<s:element minOccurs="0" maxOccurs="1" name="CEP" type="s:string"/>
+					<s:element minOccurs="1" maxOccurs="1" name="CodigoCidade"
+type="s:int"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Logradouro"
+type="s:string"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Numero"
+type="s:string"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Complemento"
+type="s:string"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Bairro"
+type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Destinatario">
+				<s:sequence>
+					<s:element minOccurs="1" maxOccurs="1" name="TipoPessoa"
+type="s1:TipoPessoa"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Documento"
+type="s:string"/>
+					<s:element minOccurs="0" maxOccurs="1" name="NomeRazaoSocial"
+type="s:string"/>
+					<s:element minOccurs="0" maxOccurs="1" name="SobrenomeNomeFantasia"
+type="s:string"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Endereco"
+type="s1:Endereco"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Telefone"
+type="s:string"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Email"
+type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Consignatario">
+				<s:sequence>
+					<s:element minOccurs="1" maxOccurs="1" name="TipoPessoa"
+type="s1:TipoPessoa"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Documento"
+type="s:string"/>
+					<s:element minOccurs="0" maxOccurs="1" name="NomeRazaoSocial"
+type="s:string"/>
+					<s:element minOccurs="0" maxOccurs="1" name="SobrenomeNomeFantasia"
+type="s:string"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Endereco"
+type="s1:Endereco"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Email"
+type="s:string"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Telefone"
+type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+		</s:schema>
+		<s:schema elementFormDefault="qualified"
+targetNamespace="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/sche
+mas/SchemaCancelamento_1.0.xsd">
+			<s:element name="lote">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="unbounded" name="Ciot"
+type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+		</s:schema>
+		<s:schema elementFormDefault="qualified"
+targetNamespace="http://lote.homologacaoticketfrete.com.br/CDN/fretelote/sche
+mas/SchemaRetorno_1.0.xsd">
+			<s:element name="ConsultarResult">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="unbounded" name="Retorno"
+type="s3:Retorno"/>
+						<s:element minOccurs="1" maxOccurs="1" name="Status"
+type="s3:TipoStatus"/>
+						<s:element minOccurs="1" maxOccurs="1" name="Operacao"
+type="s3:TipoOperacao"/>
+						<s:element minOccurs="0" maxOccurs="1" name="Protocolo"
+type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="Retorno">
+				<s:sequence>
+					<s:element minOccurs="0" maxOccurs="1" name="Motivos"
+type="s3:ArrayOfString"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Referencia"
+type="s:string"/>
+					<s:element minOccurs="0" maxOccurs="1" name="Ciot"
+type="s:string"/>
+					<s:element minOccurs="1" maxOccurs="1" name="Sucesso"
+type="s:boolean"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ArrayOfString">
+				<s:sequence>
+					<s:element minOccurs="0" maxOccurs="unbounded" name="Motivo"
+type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:simpleType name="TipoStatus">
+				<s:restriction base="s:string">
+					<s:enumeration value="Pendente"/>
+					<s:enumeration value="Processado"/>
+				</s:restriction>
+			</s:simpleType>
+			<s:simpleType name="TipoOperacao">
+				<s:restriction base="s:string">
+					<s:enumeration value="Criacao"/>
+					<s:enumeration value="Cancelamento"/>
+				</s:restriction>
+			</s:simpleType>
+		</s:schema>
+	</wsdl:types>
+	<wsdl:message name="AutenticarSoapIn">
+		<wsdl:part name="parameters" element="tns:Autenticar"/>
+	</wsdl:message>
+	<wsdl:message name="AutenticarSoapOut">
+		<wsdl:part name="parameters" element="tns:AutenticarResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CriarSoapIn">
+		<wsdl:part name="parameters" element="tns:Criar"/>
+	</wsdl:message>
+	<wsdl:message name="CriarSoapOut">
+		<wsdl:part name="parameters" element="tns:CriarResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CancelarSoapIn">
+		<wsdl:part name="parameters" element="tns:Cancelar"/>
+	</wsdl:message>
+	<wsdl:message name="CancelarSoapOut">
+		<wsdl:part name="parameters" element="tns:CancelarResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ConsultarSoapIn">
+		<wsdl:part name="parameters" element="tns:Consultar"/>
+	</wsdl:message>
+	<wsdl:message name="ConsultarSoapOut">
+		<wsdl:part name="parameters" element="tns:ConsultarResponse"/>
+	</wsdl:message>
+	<wsdl:portType name="LoteSoap">
+		<wsdl:operation name="Autenticar">
+			<wsdl:input message="tns:AutenticarSoapIn"/>
+			<wsdl:output message="tns:AutenticarSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="Criar">
+			<wsdl:input message="tns:CriarSoapIn"/>
+			<wsdl:output message="tns:CriarSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="Cancelar">
+			<wsdl:input message="tns:CancelarSoapIn"/>
+			<wsdl:output message="tns:CancelarSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="Consultar">
+			<wsdl:input message="tns:ConsultarSoapIn"/>
+			<wsdl:output message="tns:ConsultarSoapOut"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="LoteSoap" type="tns:LoteSoap">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="Autenticar">
+			<soap:operation
+soapAction="http://www.ticketfrete.com.br/servicos/Autenticar"
+style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Criar">
+			<soap:operation
+soapAction="http://www.ticketfrete.com.br/servicos/Criar" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Cancelar">
+			<soap:operation
+soapAction="http://www.ticketfrete.com.br/servicos/Cancelar"
+style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Consultar">
+			<soap:operation
+soapAction="http://www.ticketfrete.com.br/servicos/Consultar"
+style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="LoteSoap12" type="tns:LoteSoap">
+		<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="Autenticar">
+			<soap12:operation
+soapAction="http://www.ticketfrete.com.br/servicos/Autenticar"
+style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Criar">
+			<soap12:operation
+soapAction="http://www.ticketfrete.com.br/servicos/Criar" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Cancelar">
+			<soap12:operation
+soapAction="http://www.ticketfrete.com.br/servicos/Cancelar"
+style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Consultar">
+			<soap12:operation
+soapAction="http://www.ticketfrete.com.br/servicos/Consultar"
+style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="Lote">
+		<wsdl:port name="LoteSoap" binding="tns:LoteSoap">
+			<soap:address
+location="http://lote.homologacaoticketfrete.com.br/Servicos/Lote.asmx"/>
+		</wsdl:port>
+		<wsdl:port name="LoteSoap12" binding="tns:LoteSoap12">
+			<soap12:address
+location="http://lote.homologacaoticketfrete.com.br/Servicos/Lote.asmx"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
+

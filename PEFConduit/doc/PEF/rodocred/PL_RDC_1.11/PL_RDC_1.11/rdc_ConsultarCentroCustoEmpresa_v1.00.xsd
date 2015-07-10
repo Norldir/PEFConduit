@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<xs:schema xmlns:rdc="https://ws.rodocred.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ws.rodocred.com.br/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="rdc_TiposPadrao_v1.04.xsd"/>
+	<xs:element name="ConsultarCentroCustoEmpresa">
+		<xs:annotation>
+			<xs:documentation>Permite Consultar as Classificações de Combustível</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:ConsultarCentroCustoEmpresaRequest"/>
+				<xs:element ref="rdc:ConsultarCentroCustoEmpresaResponse"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarCentroCustoEmpresaRequest">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Requisição consultar as Classificações de Combustível</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:IdentificacaoIntegracao"/>
+				<xs:element ref="rdc:IdClienteResponsavel" minOccurs="0"/>
+				<xs:element ref="rdc:CodigoCentroCusto" minOccurs="0"/>
+				<xs:element ref="rdc:NomeCentroCusto" minOccurs="0"/>
+				<xs:element ref="rdc:Situacao" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarCentroCustoEmpresaResponse">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Retorno consultar as Classificações de Combustível</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:RetornoMensagem"/>
+				<xs:element name="ListaCentroCusto" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="rdc:CentroCusto" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

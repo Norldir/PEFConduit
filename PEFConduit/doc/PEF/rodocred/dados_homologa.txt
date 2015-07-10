@@ -1,0 +1,4 @@
+WebSErve : http://homologacao.ws.rodocred.com.br/rodocred.asmx
+usuario : integra-tecinco
+senha: 123456
+cliente: 429

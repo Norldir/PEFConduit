@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<xs:schema xmlns:rdc="https://ws.rodocred.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ws.rodocred.com.br/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="rdc_TiposPadrao_v1.02.xsd"/>
+	<xs:element name="EncerrarViagem">
+		<xs:annotation>
+			<xs:documentation>Mensagem que permite Encerrar uma Deteminada Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:EncerrarViagemRequest"/>
+				<xs:element ref="rdc:EncerrarViagemResponse"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EncerrarViagemRequest">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Requisição que permite Encerrar uma Deteminada Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:IdentificacaoIntegracao"/>
+				<xs:element ref="rdc:IdClienteResponsavel" minOccurs="0"/>
+				<xs:element ref="rdc:NumeroViagem">
+					<xs:annotation>
+						<xs:documentation>Número da Viagem
+Formato: x.xxxx.x
+Este campo será obrigatório para Operações de Alteração e Cancelamento </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:ValoresViagemEncerrar" minOccurs="0"/>
+				<xs:element ref="rdc:ImpostosViagem" minOccurs="0"/>
+				<xs:element ref="rdc:OperacaoViagem" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="InformacoesPagamento" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Informações extras sobre o pagamento.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="500"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EncerrarViagemResponse">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Retorno do Encerramento de uma Deteminada Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:RetornoMensagem"/>
+				<xs:element ref="rdc:NumeroViagem"/>
+				<xs:element ref="rdc:SituacaoViagem" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

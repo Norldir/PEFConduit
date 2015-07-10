@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<xs:schema xmlns:rdc="https://ws.rodocred.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ws.rodocred.com.br/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="rdc_TiposPadrao_v1.00.xsd"/>
+	<xs:element name="RetificarViagem">
+		<xs:annotation>
+			<xs:documentation>Mensagem que Permite Retificar uma Deteminada Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:RetificarViagemRequest"/>
+				<xs:element ref="rdc:RetificarViagemResponse"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RetificarViagemRequest">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Requisição que Permite Retificar uma Deteminada Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:IdentificacaoIntegracao"/>
+				<xs:element ref="rdc:IdClienteResponsavel" minOccurs="0"/>
+				<xs:element ref="rdc:NumeroViagem">
+					<xs:annotation>
+						<xs:documentation>Número da Viagem
+Formato: x.xxxx.x
+Este campo será obrigatório para Operações de Alteração e Cancelamento </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Embarque" type="xs:dateTime" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Data e hora da data de embarque da viagem.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PrevisaoEntrega" type="xs:dateTime" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Data e hora da data de previsão de entrega da viagem.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="DataVigencia" type="xs:dateTime" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Data e hora da vigência da viagem.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="rdc:PesoCarga" minOccurs="0"/>
+				<xs:element ref="rdc:VeiculosViagem" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="rdc:DocumentosViagem" minOccurs="0"/>
+				<xs:element ref="rdc:MotoristaViagem" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RetificarViagemResponse">
+		<xs:annotation>
+			<xs:documentation>Mensagem de Retorno com a Retificação de uma Deteminada Viagem</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rdc:RetornoMensagem"/>
+				<xs:element ref="rdc:NumeroViagem"/>
+				<xs:element ref="rdc:CIOT" minOccurs="0"/>
+				<xs:element ref="rdc:SituacaoViagem" minOccurs="0"/>
+				<xs:element name="TranportadorRetorno">
+					<xs:annotation>
+						<xs:documentation>Lista de Transportadores Cadastrados</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="RNTRCTransportador" type="rdc:RNTRCType">
+								<xs:annotation>
+									<xs:documentation>RNTRC do Transportador</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element ref="rdc:CNPJCPF">
+								<xs:annotation>
+									<xs:documentation>CNPJ/CPF do transportador.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="SitucaoTransportadorANTT" type="xs:boolean" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Indicador de Situação RNTRC na ANTT</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element ref="rdc:StatusRetorno"/>
+							<xs:element ref="rdc:Excecao" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="rdc:Veiculos" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
